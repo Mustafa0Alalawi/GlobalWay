@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar.tsx";
 import Link from "next/link";
 
 const Hero: React.FC = () => {
