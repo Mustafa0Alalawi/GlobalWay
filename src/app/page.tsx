@@ -1,10 +1,10 @@
-import Testimonials from "./components/Testimonials.tsx";
-import Impact from "./components/Impact.tsx";
-import SupportSection from "./components/SupportSection.tsx";
-import StudentWord from "./components/StudentWord.tsx";
-import SubscriptionPlans from "./components/SubscriptionPlans.tsx";
-import ContactForm from "./components/ContactForm.tsx";
-import Hero from "./components/Hero.tsx";
+import Testimonials from "./components/Testimonials";
+import Impact from "./components/Impact";
+import SupportSection from "./components/SupportSection";
+import StudentWord from "./components/StudentWord";
+import SubscriptionPlans from "./components/SubscriptionPlans";
+import ContactForm from "./components/ContactForm";
+import Hero from "./components/Hero";
 
 const HomePage = () => {
   return (
