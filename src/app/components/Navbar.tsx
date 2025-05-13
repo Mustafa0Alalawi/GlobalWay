@@ -17,9 +17,10 @@ const Navbar = () => {
         <div className="w-2/3 xl:w-1/2 flex items-center justify-between gap-8">
           <Link href="/">Home</Link>
           <Link href="/mentors">Mentors</Link>
+          <Link href="/university">Universities</Link>
           <Link href="/contact">Courses</Link>
-          <Link href="/contact">Resources</Link>
-          <Link href="/contact">Blog</Link>
+          <Link href="/resources">Resources</Link>
+          <Link href="/blog">Blog</Link>
           <Link href="/contact">Profile</Link>
           <div className="px-6 py-2 text-black bg-[#60a5fa] rounded-full font-medium shadow-md hover:bg-gray-100 transition">
             <Link href="/contact">Login</Link>
