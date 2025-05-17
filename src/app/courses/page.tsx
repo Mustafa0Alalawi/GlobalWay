@@ -146,7 +146,7 @@ export default function CoursePage() {
 
   const categories = Object.keys(mockData);
   const sections = selectedCategory
-    ? Object.keys(mockData[selectedCategory])
+    ? Object.keys(mockData[selectedCategory as keyof typeof mockData])
     : [];
   const links =
     selectedCategory && selectedSection
