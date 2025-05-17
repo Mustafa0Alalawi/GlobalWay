@@ -150,7 +150,9 @@ export default function CoursePage() {
     : [];
   const links =
     selectedCategory && selectedSection
-      ? mockData[selectedCategory][selectedSection]
+      ? mockData[selectedCategory as keyof typeof mockData][
+          selectedSection as keyof (typeof mockData)[typeof selectedCategory]
+        ]
       : [];
 
   return (
