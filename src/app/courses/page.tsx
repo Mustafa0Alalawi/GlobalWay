@@ -4,7 +4,19 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import ParticleBackground from "../components/ParticleBackground";
 
-const mockData = {
+type VideoLink = {
+  title: string;
+  url: string;
+  bg: string;
+};
+
+type CourseData = {
+  [category: string]: {
+    [section: string]: VideoLink[];
+  };
+};
+
+const mockData: CourseData = {
   "Outside from school": {
     Leadership: [
       {
@@ -141,21 +153,20 @@ const mockData = {
 } as const;
 
 export default function CoursePage() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<
+    keyof CourseData | null
+  >(null);
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
 
   const categories = Object.keys(mockData);
 
-  const sections =
-    selectedCategory && mockData[selectedCategory as keyof typeof mockData]
-      ? Object.keys(mockData[selectedCategory as keyof typeof mockData])
-      : [];
+  const sections = selectedCategory
+    ? Object.keys(mockData[selectedCategory])
+    : [];
 
   const links =
     selectedCategory && selectedSection
-      ? mockData[selectedCategory as keyof typeof mockData][
-          selectedSection as keyof (typeof mockData)[keyof typeof mockData]
-        ]
+      ? mockData[selectedCategory][selectedSection] ?? []
       : [];
 
   return (
