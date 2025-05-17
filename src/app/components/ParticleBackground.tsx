@@ -1,7 +1,9 @@
+"use client";
+
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import type { Engine } from "@tsparticles/engine";
+import type { Engine } from "tsparticles-engine";
 
 export default function ParticleBackground() {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -15,20 +17,12 @@ export default function ParticleBackground() {
       options={{
         fullScreen: false,
         background: {
-          color: {
-            value: "#ffffff00",
-          },
+          color: { value: "#ffffff00" },
         },
         particles: {
-          number: {
-            value: 50,
-          },
-          size: {
-            value: 3,
-          },
-          color: {
-            value: "#247e9f",
-          },
+          number: { value: 50 },
+          size: { value: 3 },
+          color: { value: "#247e9f" },
           links: {
             enable: true,
             color: "#247e9f",
