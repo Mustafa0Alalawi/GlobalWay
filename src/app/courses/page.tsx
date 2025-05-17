@@ -138,20 +138,23 @@ const mockData = {
       },
     ],
   },
-};
+} as const;
 
 export default function CoursePage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
 
   const categories = Object.keys(mockData);
-  const sections = selectedCategory
-    ? Object.keys(mockData[selectedCategory as keyof typeof mockData])
-    : [];
+
+  const sections =
+    selectedCategory && mockData[selectedCategory as keyof typeof mockData]
+      ? Object.keys(mockData[selectedCategory as keyof typeof mockData])
+      : [];
+
   const links =
     selectedCategory && selectedSection
       ? mockData[selectedCategory as keyof typeof mockData][
-          selectedSection as keyof (typeof mockData)[typeof selectedCategory]
+          selectedSection as keyof (typeof mockData)[keyof typeof mockData]
         ]
       : [];
 
