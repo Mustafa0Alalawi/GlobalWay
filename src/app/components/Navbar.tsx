@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link href="/">Home</Link>
           <Link href="/mentors">Mentors</Link>
           <Link href="/university">Universities</Link>
-          <Link href="/contact">Courses</Link>
+          <Link href="/courses">Courses</Link>
           <Link href="/resources">Resources</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/contact">Profile</Link>
