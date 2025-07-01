@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import SecNavbar from "./SecNavbar";
 import Link from "next/link";
 
 const Hero: React.FC = () => {
@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
     <section className="relative w-full h-screen overflow-hidden flex items-center justify-center text-white">
       {/* Navbar */}
       <div className="absolute top-0 left-1 w-full z-20">
-        <Navbar />
+        <SecNavbar />
       </div>
       {/* Background Image */}
       <img

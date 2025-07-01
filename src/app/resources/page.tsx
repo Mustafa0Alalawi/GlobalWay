@@ -2,6 +2,7 @@
 
 import Navbar from "../components/Navbar";
 import { useState } from "react";
+import ParticleBackground from "../components/ParticleBackground";
 
 const resourceCategories = [
   {
@@ -73,10 +74,11 @@ export default function ResourcesPage() {
 
   return (
     <>
+      <ParticleBackground />
       <Navbar />
       <div className="flex">
         {/* Sidebar */}
-        <aside className="w-64 bg-[#f0f8f8] p-6 border-r hidden md:block sticky top-0 h-screen">
+        <aside className="w-64 p-6 border-r hidden md:block sticky top-0 h-screen">
           <h2 className="text-xl font-bold mb-4">Categories</h2>
           <ul className="space-y-4">
             {resourceCategories.map((cat) => (

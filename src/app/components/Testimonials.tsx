@@ -53,7 +53,7 @@ const Testimonials = () => {
           {/* University Logos */}
           <div className="flex flex-wrap justify-center gap-6 mt-10">
             <a href="university/queens">
-              <img src="/logo1.JPG" alt="University Logo" className="h-16" />
+              <img src="/logo1.png" alt="University Logo" className="h-16" />
             </a>
             <img src="/logo2.png" alt="University Logo" className="h-16" />
             <img src="/logo3.png" alt="University Logo" className="h-16" />

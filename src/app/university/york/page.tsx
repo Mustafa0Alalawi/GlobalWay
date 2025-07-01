@@ -66,14 +66,14 @@ const QueensUniversityPage = () => {
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
               <div className="flex items-center">
                 <img
-                  src="/logo1.png"
-                  alt="Queen's University Logo"
+                  src="/logo10.png"
+                  alt=""
                   width={120}
                   height={120}
                   className="mr-4"
                 />
                 <h1 className="text-3xl md:text-4xl font-bold text-[#247e9f]">
-                  Queen’s University
+                  York University
                 </h1>
               </div>
               <div className="flex flex-col items-end gap-2 text-right">

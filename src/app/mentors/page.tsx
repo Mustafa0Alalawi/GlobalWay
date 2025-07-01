@@ -1,34 +1,13 @@
 import Navbar from "../components/Navbar";
+import ParticleBackground from "../components/ParticleBackground";
 
 const MentorPage = () => {
   return (
     <>
+      <ParticleBackground />
       {/* Navbar */}
       <Navbar />
       <main className="flex flex-col items-center">
-        {/* HERO Section */}
-        <section className="w-full bg-[#247e9f] text-white py-20 text-center">
-          <h1 className="text-4xl font-bold mb-4">
-            Connect with Global Mentors
-          </h1>
-          <p className="text-lg mb-10 max-w-2xl mx-auto">
-            Schedule personalized 1-on-1 meetings with experienced mentors who
-            understand your educational journey.
-          </p>
-
-          {/* Search Input */}
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
-            <input
-              type="text"
-              placeholder="Enter mentor name"
-              className="p-3 rounded-md w-80 text-black focus:outline-none"
-            />
-            <button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-md">
-              Find Mentors
-            </button>
-          </div>
-        </section>
-
         {/* FILTERS Section */}
         <section className="w-full max-w-7xl mx-auto px-6 mt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -72,7 +51,7 @@ const MentorPage = () => {
         {/* MENTORS Section */}
         <section className="w-full max-w-7xl mx-auto px-6 mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {/* Mentor Card */}
-          <div className="border rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col">
+          <div className="border rounded-lg shadow-md hover:shadow-lg transition p-6 flex flex-col mb-8">
             {/* Mentor Profile */}
             <div className="flex items-center gap-4 mb-4">
               <img

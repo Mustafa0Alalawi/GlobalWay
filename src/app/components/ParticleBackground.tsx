@@ -15,23 +15,34 @@ export default function ParticleBackground() {
       id="tsparticles"
       init={particlesInit}
       options={{
-        fullScreen: false,
+        fullScreen: {
+          enable: true,
+          zIndex: -1,
+        },
         background: {
-          color: { value: "#ffffff00" },
+          color: { value: "#FFFFFF" },
         },
         particles: {
-          number: { value: 50 },
-          size: { value: 3 },
+          number: { value: 120 },
+          size: { value: 1 },
           color: { value: "#247e9f" },
           links: {
             enable: true,
-            color: "#247e9f",
+            color: "#410d8f",
             distance: 150,
-            opacity: 0.4,
+            opacity: 0.2,
           },
           move: {
             enable: true,
-            speed: 1,
+            speed: 0.5,
+          },
+        },
+        interactivity: {
+          events: {
+            onHover: {
+              enable: false,
+              mode: "repulse",
+            },
           },
         },
       }}

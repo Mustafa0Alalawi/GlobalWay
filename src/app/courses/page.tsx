@@ -170,101 +170,101 @@ export default function CoursePage() {
       : [];
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Background animation */}
-      <div className="absolute inset-0 -z-10">
-        <ParticleBackground />
-      </div>
-
-      {/* Main Content */}
+    <>
+      <ParticleBackground />
       <Navbar />
+      <div className="flex">
+        {/* Main Content */}
 
-      <div className="flex min-h-[calc(100vh-64px)]">
-        {/* Sidebar 1: Categories */}
-        <aside className="w-56 bg-white/80 backdrop-blur border-r p-6 shadow-md">
-          <h2 className="font-bold text-xl text-[#247e9f] mb-4">Categories</h2>
-          <div className="space-y-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => {
-                  setSelectedCategory(cat);
-                  setSelectedSection(null);
-                }}
-                className={`w-full text-left px-4 py-2 rounded-lg transition font-medium ${
-                  selectedCategory === cat
-                    ? "bg-[#247e9f] text-white"
-                    : "hover:bg-[#e5f5f9] text-gray-800"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </aside>
-
-        {/* Sidebar 2: Sections */}
-        <aside className="w-64 bg-white/80 backdrop-blur border-r p-6 shadow-md">
-          <h2 className="font-bold text-xl text-[#247e9f] mb-4">Sections</h2>
-          <div className="space-y-2">
-            {sections.map((sec) => (
-              <button
-                key={sec}
-                onClick={() => setSelectedSection(sec)}
-                className={`w-full text-left px-4 py-2 rounded-lg transition font-medium ${
-                  selectedSection === sec
-                    ? "bg-[#1e6d88] text-white"
-                    : "hover:bg-[#e6f3f7] text-gray-800"
-                }`}
-              >
-                {sec}
-              </button>
-            ))}
-          </div>
-        </aside>
-
-        {/* Sidebar 3: Links */}
-        <main className="flex-1 bg-white/80 backdrop-blur p-6 shadow-inner">
-          <h2 className="font-bold text-xl text-[#247e9f] mb-4">Links</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {links.length > 0 ? (
-              links.map((link, idx) => (
-                <div
-                  key={idx}
-                  className="relative rounded-lg overflow-hidden shadow-md border bg-cover bg-center group"
-                  style={{
-                    backgroundImage: `url(${link.bg || "/course-bg.jpg"})`, // fallback background
-                    minHeight: "200px",
+        <div className="flex min-h-[calc(100vh-64px)]">
+          {/* Sidebar 1: Categories */}
+          <aside className="w-56   p-6 shadow-md">
+            <h2 className="font-bold text-xl text-[#247e9f] mb-4">
+              Categories
+            </h2>
+            <div className="space-y-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => {
+                    setSelectedCategory(cat);
+                    setSelectedSection(null);
                   }}
+                  className={`w-full text-left px-4 py-2 rounded-lg transition font-medium ${
+                    selectedCategory === cat
+                      ? "bg-[#247e9f] text-white"
+                      : "hover:bg-[#e5f5f9] text-gray-800"
+                  }`}
                 >
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition" />
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </aside>
 
-                  {/* Content */}
-                  <div className="relative z-10 p-4 h-full flex flex-col justify-between">
-                    <h3 className="text-lg font-semibold text-white mb-4">
-                      {link.title}
-                    </h3>
+          {/* Sidebar 2: Sections */}
+          <aside className="w-64  p-6 shadow-md">
+            <h2 className="font-bold text-xl text-[#247e9f] mb-4">Sections</h2>
+            <div className="space-y-2">
+              {sections.map((sec) => (
+                <button
+                  key={sec}
+                  onClick={() => setSelectedSection(sec)}
+                  className={`w-full text-left px-4 py-2 rounded-lg transition font-medium ${
+                    selectedSection === sec
+                      ? "bg-[#1e6d88] text-white"
+                      : "hover:bg-[#e6f3f7] text-gray-800"
+                  }`}
+                >
+                  {sec}
+                </button>
+              ))}
+            </div>
+          </aside>
 
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-[#247e9f] hover:bg-[#1e6d88] text-white px-4 py-2 rounded-md font-medium transition w-fit self-start inline-block"
-                    >
-                      ▶ Play Video
-                    </a>
+          {/* Sidebar 3: Links */}
+          <main className="flex-1 p-6 shadow-inner">
+            <h2 className="font-bold text-xl text-[#247e9f] mb-4">Links</h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {links.length > 0 ? (
+                links.map((link, idx) => (
+                  <div
+                    key={idx}
+                    className="relative rounded-lg overflow-hidden shadow-md border bg-cover bg-center group"
+                    style={{
+                      backgroundImage: `url(${link.bg || "/course-bg.jpg"})`,
+                      minHeight: "200px",
+                    }}
+                  >
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition" />
+
+                    {/* Content */}
+                    <div className="relative z-10 p-4 h-full flex flex-col justify-between">
+                      <h3 className="text-lg font-semibold text-white mb-4">
+                        {link.title}
+                      </h3>
+
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#247e9f] hover:bg-[#1e6d88] text-white px-4 py-2 rounded-md font-medium transition w-fit self-start inline-block"
+                      >
+                        ▶ Play Video
+                      </a>
+                    </div>
                   </div>
-                </div>
-              ))
-            ) : (
-              <p className="text-gray-400 italic">
-                Select a section to see links.
-              </p>
-            )}
-          </div>
-        </main>
+                ))
+              ) : (
+                <p className="text-gray-400 italic">
+                  Select a section to see links.
+                </p>
+              )}
+            </div>
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
