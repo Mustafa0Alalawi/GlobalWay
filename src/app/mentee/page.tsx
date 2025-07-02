@@ -414,7 +414,15 @@ const allMentees = [
   },
 ];
 
-const ProfileDetail = ({ label, value, children }) => (
+const ProfileDetail = ({
+  label,
+  value,
+  children,
+}: {
+  label: string;
+  value: string | number;
+  children?: React.ReactNode;
+}) => (
   <div className="bg-white/70 backdrop-blur-sm p-4 rounded-lg shadow-sm border h-full min-h-[90px] flex flex-col justify-between">
     <div>
       <p className="text-sm font-medium text-gray-500">{label}</p>
