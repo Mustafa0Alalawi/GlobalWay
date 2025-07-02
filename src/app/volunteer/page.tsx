@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../components/Navbar.tsx";
-import ParticleBackground from "../components/ParticleBackground.tsx";
+import Navbar from "../components/Navbar";
+import ParticleBackground from "../components/ParticleBackground.jsx";
 
-// New, detailed data structure for all roles
 const roles = [
   {
     title: "Volunteer Interviewer – International Student Insights",
