@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import ParticleBackground from "../components/ParticleBackground.jsx";
+import ParticleBackground from "../components/ParticleBackground";
 
 const roles = [
   {
