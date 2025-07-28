@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for Western University
+// Data structure holding both English and Chinese links for SAIC
 const universityViewData = [
   {
     id: "overview",
@@ -11,21 +11,21 @@ const universityViewData = [
       en: [
         {
           title: "QS Ranking",
-          url: "https://www.topuniversities.com/universities/western-university?utm_source=chatgpt.com",
+          url: "https://www.saic.edu/news/saic-ranked-10-qs-world-university-rankings-top-art-and-design-schools",
         },
         {
           title: "Campus Map",
-          url: "https://accessibility.uwo.ca/resources/maps/index.html",
+          url: "https://www.saic.edu/sites/default/files/legacy/SAIC-CampusMap.pdf",
         },
       ],
       cn: [
         {
           title: "QS 排名",
-          url: "https://www.topuniversities.com/universities/western-university?utm_source=chatgpt.com",
+          url: "https://www.saic.edu/news/saic-ranked-10-qs-world-university-rankings-top-art-and-design-schools",
         },
         {
           title: "校区地图",
-          url: "https://accessibility.uwo.ca/resources/maps/index.html",
+          url: "https://www.saic.edu/sites/default/files/legacy/SAIC-CampusMap.pdf",
         },
       ],
     },
@@ -36,27 +36,14 @@ const universityViewData = [
       en: [
         {
           title: "Programs List / Viewbook",
-          url: "https://welcome.uwo.ca/what-can-i-study/undergraduate-programs/index.html",
-        },
-        {
-          title: "Degree Structure",
-          url: "https://welcome.uwo.ca/what-can-i-study/degree-structure.html",
-        },
-        {
-          title: "Faculty Introduction",
-          url: "https://www.uwo.ca/academics/index.html",
+          url: "https://www.saic.edu/academics/undergraduate-studies",
         },
       ],
       cn: [
         {
           title: "专业列表 / 宣传册",
-          url: "https://welcome.uwo.ca/what-can-i-study/undergraduate-programs/index.html",
+          url: "https://www.saic.edu/academics/undergraduate-studies",
         },
-        {
-          title: "学位结构说明",
-          url: "https://welcome.uwo.ca/what-can-i-study/degree-structure.html",
-        },
-        { title: "学院介绍", url: "https://www.uwo.ca/academics/index.html" },
       ],
     },
   },
@@ -64,31 +51,25 @@ const universityViewData = [
     id: "admissions",
     links: {
       en: [
-        {
-          title: "Undergraduate Admission Home",
-          url: "https://registrar.uwo.ca/admissions/index.html",
-        },
+        { title: "Undergraduate Admission Home", url: "https://www.saic.edu/" },
         {
           title: "Entry Requirements",
-          url: "https://welcome.uwo.ca/next-steps/requirements/index.html",
+          url: "https://www.saic.edu/writing/undergraduate/admissions-requirements",
         },
         {
           title: "Important Dates",
-          url: "https://welcome.uwo.ca/next-steps/apply/admission-deadlines.html",
+          url: "https://www.saic.edu/high-school-programs/early-college-program-summer-institute/important-dates-deadlines",
         },
       ],
       cn: [
-        {
-          title: "本科申请主页",
-          url: "https://registrar.uwo.ca/admissions/index.html",
-        },
+        { title: "本科申请主页", url: "https://www.saic.edu/" },
         {
           title: "入学要求",
-          url: "https://welcome.uwo.ca/next-steps/requirements/index.html",
+          url: "https://www.saic.edu/writing/undergraduate/admissions-requirements",
         },
         {
           title: "重要日期",
-          url: "https://welcome.uwo.ca/next-steps/apply/admission-deadlines.html",
+          url: "https://www.saic.edu/high-school-programs/early-college-program-summer-institute/important-dates-deadlines",
         },
       ],
     },
@@ -98,14 +79,14 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Ontario (OUAC) Process",
-          url: "https://welcome.uwo.ca/next-steps/apply/apply-on-the-ouac.html",
+          title: "Common App & Direct Application",
+          url: "https://www.saic.edu/admissions/undergraduate/how-apply-freshman",
         },
       ],
       cn: [
         {
-          title: "安省申请流程（OUAC）",
-          url: "https://welcome.uwo.ca/next-steps/apply/apply-on-the-ouac.html",
+          title: "Common App 与直申通道",
+          url: "https://www.saic.edu/admissions/undergraduate/how-apply-freshman",
         },
       ],
     },
@@ -116,29 +97,29 @@ const universityViewData = [
       en: [
         {
           title: "Tuition Fees",
-          url: "https://registrar.uwo.ca/student_finances/fees_refunds/fee_refund_schedules.html",
+          url: "https://www.saic.edu/cost-financial-aid/cost-fees",
         },
         {
           title: "Scholarship Search",
-          url: "https://registrar.uwo.ca/student_finances/scholarships_awards/index.html",
+          url: "https://www.saic.edu/cost-financial-aid/scholarships-grants/saic-scholarships-grants",
         },
         {
           title: "Work-Study / On-campus Job",
-          url: "https://registrar.uwo.ca/student_finances/bursaries_workstudy.html",
+          url: "https://www.saic.edu/cost-financial-aid/student-employment",
         },
       ],
       cn: [
         {
           title: "学费表",
-          url: "https://registrar.uwo.ca/student_finances/fees_refunds/fee_refund_schedules.html",
+          url: "https://www.saic.edu/cost-financial-aid/cost-fees",
         },
         {
           title: "奖学金查询",
-          url: "https://registrar.uwo.ca/student_finances/scholarships_awards/index.html",
+          url: "https://www.saic.edu/cost-financial-aid/scholarships-grants/saic-scholarships-grants",
         },
         {
           title: "勤工助学 / 校园兼职",
-          url: "https://registrar.uwo.ca/student_finances/bursaries_workstudy.html",
+          url: "https://www.saic.edu/cost-financial-aid/student-employment",
         },
       ],
     },
@@ -148,25 +129,25 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "AMS Club Directory (Clubs)",
-          url: "https://www.uwo.ca/campus_life/clubs_associations.html",
+          title: "Campus Life & Clubs",
+          url: "https://www.saic.edu/campus-life",
         },
         {
-          title: "Athletics & Recreation",
-          url: "https://www.uwo.ca/campus_life/athletics.html",
+          title: "Student Support",
+          url: "https://www.saic.edu/supporting-students",
         },
-        { title: "Dining & Meal Plan", url: "https://food.uwo.ca/meal-plan" },
+        {
+          title: "Dining & Meal Plan",
+          url: "https://www.saic.edu/where-eat/meal-plans",
+        },
       ],
       cn: [
+        { title: "校园生活与社团", url: "https://www.saic.edu/campus-life" },
+        { title: "学生支持", url: "https://www.saic.edu/supporting-students" },
         {
-          title: "社团目录（AMS）",
-          url: "https://www.uwo.ca/campus_life/clubs_associations.html",
+          title: "校园餐饮计划",
+          url: "https://www.saic.edu/where-eat/meal-plans",
         },
-        {
-          title: "体育与运动",
-          url: "https://www.uwo.ca/campus_life/athletics.html",
-        },
-        { title: "校园餐饮计划", url: "https://food.uwo.ca/meal-plan" },
       ],
     },
   },
@@ -174,23 +155,32 @@ const universityViewData = [
     id: "residence-housing",
     links: {
       en: [
-        { title: "Residence Home", url: "https://residence.uwo.ca/" },
+        {
+          title: "Residence Home",
+          url: "https://www.saic.edu/life-saic/housing-residential-life",
+        },
         {
           title: "Room Types & Fees",
-          url: "https://housing.uwo.ca/living/housing-options",
+          url: "https://www.saic.edu/cost-financial-aid/cost-fees#chapter=chapter-12185-Housing-Costs",
         },
         {
           title: "Off-Campus Housing Office",
-          url: "https://offcampus.uwo.ca/",
+          url: "https://www.saic.edu/where-live/campus-housing",
         },
       ],
       cn: [
-        { title: "宿舍主页", url: "https://residence.uwo.ca/" },
+        {
+          title: "宿舍主页",
+          url: "https://www.saic.edu/life-saic/housing-residential-life",
+        },
         {
           title: "房型与费用",
-          url: "https://housing.uwo.ca/living/housing-options",
+          url: "https://www.saic.edu/cost-financial-aid/cost-fees#chapter=chapter-12185-Housing-Costs",
         },
-        { title: "校外住宿办公室", url: "https://offcampus.uwo.ca/" },
+        {
+          title: "校外住宿办公室",
+          url: "https://www.saic.edu/where-live/campus-housing",
+        },
       ],
     },
   },
@@ -199,25 +189,25 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "International Office",
-          url: "https://international.uwo.ca/studentservices/visas/",
+          title: "International Affairs",
+          url: "https://www.saic.edu/international-affairs",
         },
         {
-          title: "Study Permit / PGWP Guide",
-          url: "https://international.uwo.ca/studentservices/pdf/resources/study-permit-presentation.pdf",
+          title: "Visa Application Process",
+          url: "https://www.saic.edu/admissions/undergraduate/info-international-students#chapter=chapter-13047-Visa-Application-Process",
         },
-        { title: "Health & Wellness", url: "https://www.uwo.ca/health/" },
+        { title: "Health & Wellness", url: "https://www.saic.edu/wellness" },
       ],
       cn: [
         {
           title: "国际事务办公室",
-          url: "https://international.uwo.ca/studentservices/visas/",
+          url: "https://www.saic.edu/international-affairs",
         },
         {
-          title: "学签 / PGWP 指南",
-          url: "https://international.uwo.ca/studentservices/pdf/resources/study-permit-presentation.pdf",
+          title: "签证申请流程",
+          url: "https://www.saic.edu/admissions/undergraduate/info-international-students#chapter=chapter-13047-Visa-Application-Process",
         },
-        { title: "健康与心理支持", url: "https://www.uwo.ca/health/" },
+        { title: "健康与心理支持", url: "https://www.saic.edu/wellness" },
       ],
     },
   },
@@ -226,31 +216,17 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Career Centre Home",
-          url: "https://career.uwo.ca/index.html?utm_source=chatgpt.com",
+          title: "Career Resources (CAPX)",
+          url: "https://www.saic.edu/capx/career-resources",
         },
-        {
-          title: "Co-op / Internship Info",
-          url: "https://international.uwo.ca/studentservices/visas/working_and_volunteering/coops_and_internships.html?utm_source=chatgpt.com",
-        },
-        {
-          title: "Alumni Network",
-          url: "https://career.uwo.ca/take_action/job_search.html?utm_source=chatgpt.com",
-        },
+        { title: "Alumni Network", url: "https://www.saic.edu/alumni" },
       ],
       cn: [
         {
-          title: "职业中心主页",
-          url: "https://career.uwo.ca/index.html?utm_source=chatgpt.com",
+          title: "职业资源 (CAPX)",
+          url: "https://www.saic.edu/capx/career-resources",
         },
-        {
-          title: "Co-op / 实习信息",
-          url: "https://international.uwo.ca/studentservices/visas/working_and_volunteering/coops_and_internships.html?utm_source=chatgpt.com",
-        },
-        {
-          title: "校友网络",
-          url: "https://career.uwo.ca/take_action/job_search.html?utm_source=chatgpt.com",
-        },
+        { title: "校友网络", url: "https://www.saic.edu/alumni" },
       ],
     },
   },
@@ -259,21 +235,23 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Transportation & Parking",
-          url: "https://www.uwo.ca/campus_life/transport_parking.html",
+          title: "Campus Housing Guide",
+          url: "https://www.saic.edu/where-live/campus-housing",
         },
-        { title: "Off-Campus Housing", url: "https://offcampus.uwo.ca/" },
-        { title: "Weather", url: "https://www.uwo.ca/weather.html" },
-        { title: "Campus Safety", url: "https://alert.westernu.ca/index.html" },
+        {
+          title: "Campus Safety Resources",
+          url: "https://www.saic.edu/campus-safety/resources",
+        },
       ],
       cn: [
         {
-          title: "交通与停车",
-          url: "https://www.uwo.ca/campus_life/transport_parking.html",
+          title: "校园住宿指南",
+          url: "https://www.saic.edu/where-live/campus-housing",
         },
-        { title: "校外租房", url: "https://offcampus.uwo.ca/" },
-        { title: "天气", url: "https://www.uwo.ca/weather.html" },
-        { title: "校园安全", url: "https://alert.westernu.ca/index.html" },
+        {
+          title: "校园安全资源",
+          url: "https://www.saic.edu/campus-safety/resources",
+        },
       ],
     },
   },
@@ -281,39 +259,17 @@ const universityViewData = [
     id: "tours-media",
     links: {
       en: [
-        {
-          title: "Book Campus Tour",
-          url: "https://studentservices.uwo.ca/secure/liaison/CT_web/index.cfm",
-        },
+        { title: "Visit SAIC", url: "https://www.saic.edu/visit" },
         {
           title: "Virtual Campus VR",
-          url: "https://virtualtour.uwo.ca/uwo/home/featured-tours/",
-        },
-        {
-          title: "Official YouTube",
-          url: "https://www.youtube.com/watch?v=-IBvFMulUSA",
-        },
-        {
-          title: "Official Instagram",
-          url: "https://www.instagram.com/p/Cz1MfnvOYKT/?hl=en&utm_source=chatgpt.com",
+          url: "https://www.saic.edu/admissions#virtualtour",
         },
       ],
       cn: [
-        {
-          title: "预约校园参观",
-          url: "https://studentservices.uwo.ca/secure/liaison/CT_web/index.cfm",
-        },
+        { title: "参观 SAIC", url: "https://www.saic.edu/visit" },
         {
           title: "虚拟校园 VR",
-          url: "https://virtualtour.uwo.ca/uwo/home/featured-tours/",
-        },
-        {
-          title: "官方 YouTube",
-          url: "https://www.youtube.com/watch?v=-IBvFMulUSA",
-        },
-        {
-          title: "官方 Instagram",
-          url: "https://www.instagram.com/p/Cz1MfnvOYKT/?hl=en&utm_source=chatgpt.com",
+          url: "https://www.saic.edu/admissions#virtualtour",
         },
       ],
     },
@@ -326,86 +282,63 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Undergraduate Viewbook ’25–26",
+          title: "Admissions Application Guide PDF",
           description:
-            "56 pp; Program directory, campus life, admission requirements",
-          url: "https://welcome.uwo.ca/pdf/western-viewbook-2025.pdf",
+            "This document details the application process for SAIC undergraduate and graduate programs, including artistic direction and more.",
+          url: "https://insidemcc.mchenry.edu/pubwebapp/uploadfile/transferguide/SAIC1920.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "International Undergraduate Viewbook 25–26",
-          description: "Pre-arrival visas, UHIP, housing, fees",
-          url: "https://welcome.uwo.ca/what-is-western-like/viewbooks.html",
-        },
-        {
-          title: "Exchange Fact Sheet 2025-26",
-          description: "Academic calendar, course load, visa requirements",
-          url: "https://international.uwo.ca/learning/pdf/fact-sheet-2025-26.pdf",
+          title: "Physical Exam Form",
+          description:
+            "Used for submitting student health information before enrollment.",
+          url: "https://www.saic.edu/sites/default/files/legacy/Physical_Exam.pdf?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
-          title: "2025-26 本科招生手册",
-          description: "56页；专业目录、校园生活、入学要求",
-          url: "https://welcome.uwo.ca/pdf/western-viewbook-2025.pdf",
+          title: "招生申请指南 PDF",
+          description:
+            "该文档详述 SAIC 本科与研究生的申请流程、专业设置、艺术方向等内容，助力申请准备。",
+          url: "https://insidemcc.mchenry.edu/pubwebapp/uploadfile/transferguide/SAIC1920.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "2025-26 国际本科招生手册",
-          description: "行前签证、UHIP、住宿、费用",
-          url: "https://welcome.uwo.ca/what-is-western-like/viewbooks.html",
-        },
-        {
-          title: "2025-26 交换生情况说明",
-          description: "校历、课程负荷、签证须知",
-          url: "https://international.uwo.ca/learning/pdf/fact-sheet-2025-26.pdf",
+          title: "入学体检表",
+          description:
+            "用于学生入学前健康资料提交，适合作为手册中的体检流程参考。",
+          url: "https://www.saic.edu/sites/default/files/legacy/Physical_Exam.pdf?utm_source=chatgpt.com",
         },
       ],
     },
   },
   {
-    id: "transition_and_housing",
+    id: "orientation_and_housing",
     links: {
       en: [
         {
-          title: "First-Year Course Registration Guide 2025-26 (Science)",
-          description: "Course start timeline, 5.0 credit rule",
-          url: "https://uwo.ca/sci/advising/pdf/First%20Year%20Registration%20Guide%202025.pdf",
+          title: "SAIC Undergraduate Welcome Week Schedule 2024",
+          description:
+            "Schedule for new undergraduate and transfer students, including check-in, housing assignments, welcome ceremonies, and international student programs.",
+          url: "https://www.saic.edu/sites/default/files/2024-07/SAIC%20Undergraduate%20Welcome%20Week%20Schedule%202024.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "Residence Offer Book 2025",
-          description: "32 pp: Room types, fees, dining, important dates",
-          url: "https://residence.uwo.ca/offer_book",
-        },
-        {
-          title: "Residence Contract 2025-26",
-          description: "Latest terms (updated Apr 2025)",
-          url: "https://residence.uwo.ca/residence_contract.pdf",
-        },
-        {
-          title: "Western Apartments Handbook 2025-26",
-          description: "On-campus apartment living guide",
-          url: "https://apartments.uwo.ca/handbook.cfm",
+          title: "Student Orientation Handbook (2025 Edition)",
+          description:
+            "Includes student code of conduct, campus resources, orientation process, and support for international students.",
+          url: "https://www.saic.edu/sites/default/files/2025-03/osa-02262025_orientation_handbook_student_v3.pdf?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
-          title: "2025-26 新生选课指南 (理科)",
-          description: "开课时间线、5.0 credit 规则",
-          url: "https://uwo.ca/sci/advising/pdf/First%20Year%20Registration%20Guide%202025.pdf",
+          title: "SAIC 本科生迎新周日程 2024",
+          description:
+            "这是SAIC本科新生与转学新生的迎新周活动安排 PDF，涵盖报到、分宿舍、欢迎仪式、国际学生专属项目等重要日程信息。",
+          url: "https://www.saic.edu/sites/default/files/2024-07/SAIC%20Undergraduate%20Welcome%20Week%20Schedule%202024.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "2025 住宿录取手册",
-          description: "32页：房型、费用、餐饮、重要日期",
-          url: "https://residence.uwo.ca/offer_book",
-        },
-        {
-          title: "2025-26 住宿合同",
-          description: "最新条款（更新于2025年4月）",
-          url: "https://residence.uwo.ca/residence_contract.pdf",
-        },
-        {
-          title: "2025-26 西安大略大学公寓手册",
-          description: "校内公寓生活指南",
-          url: "https://apartments.uwo.ca/handbook.cfm",
+          title: "学生迎新手册 (2025版)",
+          description:
+            "包括学生行为守则、校园资源介绍、迎新流程说明，以及国际学生相关支持内容，是新生衔接期的重要指导手册。",
+          url: "https://www.saic.edu/sites/default/files/2025-03/osa-02262025_orientation_handbook_student_v3.pdf?utm_source=chatgpt.com",
         },
       ],
     },
@@ -415,48 +348,53 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Tuition Fee Report 2025 (for 2025-26)",
+          title: "Financial Aid Award Guide",
           description:
-            "Local/international rates, appendix includes living expenses",
-          url: "https://planningandbudget.uwo.ca/wp-content/uploads/2024/04/2024-25-Tuition-Fee-Report.pdf",
+            "Details scholarships, grants, loans, and work-study opportunities, and provides strategies for financing tuition.",
+          url: "https://www.saic.edu/sites/default/files/2025-01/2025-26-ug_award_guide-final-12.17.24.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "Ivey HBA Employment Report 2024-25",
-          description: "91% employment rate, starting salary CAD 74k",
-          url: "https://www.ivey.uwo.ca/media/e5vljecy/ivey-hba-permanent-summer-employment-report.pdf",
-        },
-        {
-          title: "AEO Student Handbook 2025",
+          title: "Figure Your Cost",
           description:
-            "Ivey pre-admission (AEO) undergraduate development path",
-          url: "https://www.ivey.uwo.ca/media/t4tjpyfe/aeo-handbook-2025.pdf",
+            "A fillable form to self-calculate annual costs for tuition, housing, insurance, etc.",
+          url: "https://www.saic.edu/sites/default/files/2025-04/2025-26-fyc-ugrd-v2025-01-16-fillable.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "Engineering Undergraduate Viewbook 2025-26",
-          description: "Featured courses, Co-op, employment statistics",
-          url: "https://www.eng.uwo.ca/future-students/files/2025-26-Undergraduate-Viewbook.pdf",
+          title: "Career and Professional Experience (CAPX)",
+          description:
+            "CAPX brochure summarizing career services for students and alumni, including resume advising, internships, and job fairs. 93% graduate employment rate.",
+          url: "https://www.saic.edu/sites/default/files/2023-06/CAPX_Brochure.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "Supervisor's Guide to Student Payroll",
+          description:
+            "A guide for supervisors on payroll and HR processes for student employees.",
+          url: "https://www.saic.edu/sites/default/files/2024-08/24-25-supervisor-s-guide-to-student-payroll-v.8.20.24.pdf?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
-          title: "2025 学费报告 (适用于 2025-26)",
-          description: "本地/国际费率、附录含生活费",
-          url: "https://planningandbudget.uwo.ca/wp-content/uploads/2024/04/2024-25-Tuition-Fee-Report.pdf",
+          title: "财务援助奖项指南",
+          description:
+            "详细介绍奖学金、助学金、贷款及工作助学机会，提供家庭如何筹措学费的策略指南。",
+          url: "https://www.saic.edu/sites/default/files/2025-01/2025-26-ug_award_guide-final-12.17.24.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "Ivey HBA 就业报告 2024-25",
-          description: "91% 就业率、起薪 CAD 7.4 万",
-          url: "https://www.ivey.uwo.ca/media/e5vljecy/ivey-hba-permanent-summer-employment-report.pdf",
+          title: "计算您的费用",
+          description:
+            "可填写并自计算年学费、住宿、保险等项目成本，适用于新生预算规划与财务预估。",
+          url: "https://www.saic.edu/sites/default/files/2025-04/2025-26-fyc-ugrd-v2025-01-16-fillable.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "AEO 学生手册 2025",
-          description: "Ivey 预录取 (AEO) 本科生培养路线",
-          url: "https://www.ivey.uwo.ca/media/t4tjpyfe/aeo-handbook-2025.pdf",
+          title: "职业与专业经验 (CAPX)",
+          description:
+            "CAPX 宣传手册汇总了 SAIC 为学生与校友提供的职业发展服务，包括简历指导、项目实习机会、招聘活动等。毕业班就业率高达 93%。",
+          url: "https://www.saic.edu/sites/default/files/2023-06/CAPX_Brochure.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "2025-26 工程本科招生手册",
-          description: "特色课程、Co-op、就业统计",
-          url: "https://www.eng.uwo.ca/future-students/files/2025-26-Undergraduate-Viewbook.pdf",
+          title: "学生薪资主管指南",
+          description: "为招聘学生员工的主管准备的薪资与人事流程参考手册。",
+          url: "https://www.saic.edu/sites/default/files/2024-08/24-25-supervisor-s-guide-to-student-payroll-v.8.20.24.pdf?utm_source=chatgpt.com",
         },
       ],
     },
@@ -478,17 +416,17 @@ const translations = {
       categoriesTitle: "Categories",
     },
     header: {
-      title: "Western University",
+      title: "School of the Art Institute of Chicago",
       helpText: "Need help? Book a meeting",
       bookButton: "Book Now",
     },
     universityView: {
       infoPanelTitle: "Overview:",
-      aboutTitle: "🏰 About Western University",
+      aboutTitle: "🎨 About SAIC",
       aboutParagraph1:
-        "Founded in 1878, Western University is one of Canada's leading research-intensive universities, located in London, Ontario. With a picturesque campus, it is known for its exceptional academic programs and vibrant student life.",
+        "The School of the Art Institute of Chicago (SAIC) is one of America's largest accredited independent schools of art and design. It is located in the Loop in Chicago, Illinois.",
       aboutParagraph2:
-        "Western is a member of the U15 Group of Canadian Research Universities and is recognized for its contributions to various fields. The university offers a comprehensive range of undergraduate and graduate programs across 11 faculties and schools.",
+        "SAIC is renowned for its interdisciplinary curriculum, which allows students to explore a wide range of media and approaches. It has been consistently ranked among the top art and design schools in the United States.",
     },
     sectionTitles: {
       overview: "Overview",
@@ -503,7 +441,7 @@ const translations = {
       "city-snapshot": "City Snapshot",
       "tours-media": "Tours & Media",
       admission_guides: "Admission & General Guides",
-      transition_and_housing: "Transition & Housing",
+      orientation_and_housing: "Orientation & Housing",
       finance_and_career: "Finance & Career",
     },
   },
@@ -520,17 +458,17 @@ const translations = {
       categoriesTitle: "分类",
     },
     header: {
-      title: "西安大略大学",
+      title: "芝加哥艺术学院",
       helpText: "需要帮助？预约会议",
       bookButton: "立即预约",
     },
     universityView: {
       infoPanelTitle: "概览:",
-      aboutTitle: "🏰 关于西安大略大学",
+      aboutTitle: "🎨 关于 SAIC",
       aboutParagraph1:
-        "西安大略大学成立于1878年，是加拿大领先的研究密集型大学之一，位于安大略省伦敦市。凭借风景如画的校园，它以其卓越的学术课程和充满活力的学生生活而闻名。",
+        "芝加哥艺术学院（SAIC）是美国规模最大、获得认证的独立艺术与设计学院之一。它位于伊利诺伊州芝加哥市的卢普区。",
       aboutParagraph2:
-        "西安大略大学是加拿大U15研究型大学联盟的成员，因其在各个领域的贡献而受到认可。该大学通过11个学院和学院提供全面的本科和研究生课程。",
+        "SAIC以其跨学科的课程而闻名，允许学生探索广泛的媒介和方法。它一直被评为美国顶尖的艺术与设计学院之一。",
     },
     sectionTitles: {
       overview: "学校概览",
@@ -545,7 +483,7 @@ const translations = {
       "city-snapshot": "城市生活概况",
       "tours-media": "校园参观与媒体",
       admission_guides: "招生与通用指南",
-      transition_and_housing: "过渡与住宿",
+      orientation_and_housing: "迎新与住宿",
       finance_and_career: "财务与职业",
     },
   },
@@ -569,7 +507,7 @@ const SectionHeaderWithArrow = ({
   </div>
 );
 
-const WesternUniversityPage = () => {
+const SAICUniversityPage = () => {
   const [showInfoPanel, setShowInfoPanel] = useState(true);
   const [activeView, setActiveView] = useState<
     "university" | "highschool" | "instructions" | "pdfView"
@@ -694,8 +632,8 @@ const WesternUniversityPage = () => {
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
               <div className="flex items-center">
                 <img
-                  src="/logos/western.png"
-                  alt="Western University Logo"
+                  src="/logos/chicago.svg"
+                  alt="SAIC Logo"
                   width={120}
                   height={120}
                   className="mr-4"
@@ -734,17 +672,17 @@ const WesternUniversityPage = () => {
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
-                              📍 1151 Richmond St, London, ON N6A 3K7, Canada
+                              📍 36 S. Wabash Ave, Chicago, IL 60603, USA
                               <br />
-                              � (519) 661-2111
+                              📞 (312) 629-6100
                               <br />
                               🌐{" "}
                               <a
-                                href="https://www.uwo.ca/"
+                                href="https://www.saic.edu/"
                                 target="_blank"
                                 className="text-[#247e9f] underline"
                               >
-                                www.uwo.ca
+                                www.saic.edu
                               </a>
                             </p>
                           </>
@@ -825,4 +763,4 @@ const WesternUniversityPage = () => {
   );
 };
 
-export default WesternUniversityPage;
+export default SAICUniversityPage;

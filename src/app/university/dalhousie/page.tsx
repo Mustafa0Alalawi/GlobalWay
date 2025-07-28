@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for Université de Montréal
+// Data structure holding both English and Chinese links for Dalhousie University
 const universityViewData = [
   {
     id: "overview",
@@ -11,19 +11,22 @@ const universityViewData = [
       en: [
         {
           title: "QS Ranking",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          url: "https://www.topuniversities.com/universities/dalhousie-university?utm_source=chatgpt.com",
         },
         {
           title: "Campus Map",
-          url: "https://plancampus.umontreal.ca/montreal/",
+          url: "https://www.dal.ca/campus-maps/maps.html?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "QS 排名",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          url: "https://www.topuniversities.com/universities/dalhousie-university?utm_source=chatgpt.com",
         },
-        { title: "校区地图", url: "https://plancampus.umontreal.ca/montreal/" },
+        {
+          title: "校区地图",
+          url: "https://www.dal.ca/campus-maps/maps.html?utm_source=chatgpt.com",
+        },
       ],
     },
   },
@@ -33,21 +36,21 @@ const universityViewData = [
       en: [
         {
           title: "Programs List / Viewbook",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          url: "https://www.dal.ca/study/programs.html#level=Undergraduate",
         },
         {
           title: "Faculty Introduction",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.dal.ca/study/faculties.html?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "专业列表 / 宣传册",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          url: "https://www.dal.ca/study/programs.html#level=Undergraduate",
         },
         {
           title: "学院介绍",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.dal.ca/study/faculties.html?utm_source=chatgpt.com",
         },
       ],
     },
@@ -58,29 +61,29 @@ const universityViewData = [
       en: [
         {
           title: "Undergraduate Admission Home",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.dal.ca/dal/future-students.html",
         },
         {
           title: "Entry Requirements",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.dal.ca/admissions/how-to-apply/undergraduate-admissions/admission-requirements.html",
         },
         {
           title: "Important Dates",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.dal.ca/study/plan-your-degree/important-dates.html",
         },
       ],
       cn: [
         {
           title: "本科申请主页",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.dal.ca/dal/future-students.html",
         },
         {
           title: "入学要求",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.dal.ca/admissions/how-to-apply/undergraduate-admissions/admission-requirements.html",
         },
         {
           title: "重要日期",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.dal.ca/study/plan-your-degree/important-dates.html",
         },
       ],
     },
@@ -90,14 +93,14 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Direct Application",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          title: "Direct Application (How to Get In)",
+          url: "https://www.grantme.ca/blog/how-to-get-into-dalhousie?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "直申通道",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          url: "https://www.grantme.ca/blog/how-to-get-into-dalhousie?utm_source=chatgpt.com",
         },
       ],
     },
@@ -108,29 +111,29 @@ const universityViewData = [
       en: [
         {
           title: "Tuition Fees",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          url: "https://www.dal.ca/admissions/money_matters/tuition_payments/Tuition_Fees.html",
         },
         {
           title: "Scholarship Search",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://www.dal.ca/admissions/money_matters.html",
         },
         {
-          title: "Work-Study Program",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          title: "Work-Study / On-campus Job",
+          url: "https://www.dal.ca/admissions/money_matters/awards-financial-aid/working-while-studying.html",
         },
       ],
       cn: [
         {
           title: "学费表",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          url: "https://www.dal.ca/admissions/money_matters/tuition_payments/Tuition_Fees.html",
         },
         {
           title: "奖学金查询",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://www.dal.ca/admissions/money_matters.html",
         },
         {
-          title: "勤工助学项目",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          title: "勤工助学 / 校园兼职",
+          url: "https://www.dal.ca/admissions/money_matters/awards-financial-aid/working-while-studying.html",
         },
       ],
     },
@@ -139,23 +142,25 @@ const universityViewData = [
     id: "campus-life",
     links: {
       en: [
-        {
-          title: "Student Groups",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
-        },
+        { title: "Clubs Directory", url: "https://www.dsu.ca/join-a-society" },
         {
           title: "Athletics & Recreation",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          url: "https://athletics.dal.ca/facilities/langille-athletic-centre/camps_dalAC/LACCampParentGuide.html?utm_source=chatgpt.com",
+        },
+        {
+          title: "Dining & Meal Plan",
+          url: "https://www.dal.ca/campus_life/residence_housing/residence/friends-family/meal-plan-info.html",
         },
       ],
       cn: [
-        {
-          title: "学生社团",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
-        },
+        { title: "社团目录", url: "https://www.dsu.ca/join-a-society" },
         {
           title: "体育与运动",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          url: "https://athletics.dal.ca/facilities/langille-athletic-centre/camps_dalAC/LACCampParentGuide.html?utm_source=chatgpt.com",
+        },
+        {
+          title: "校园餐饮计划",
+          url: "https://www.dal.ca/campus_life/residence_housing/residence/friends-family/meal-plan-info.html",
         },
       ],
     },
@@ -165,22 +170,30 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Student Services (Housing)",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
+          title: "Residence Home",
+          url: "https://www.dal.ca/campus_life/residence_housing/residence.html",
+        },
+        {
+          title: "Room Types & Fees",
+          url: "https://www.dal.ca/campus_life/residence_housing/residence/agricultural-campus/costs---fees.html?utm_source=chatgpt.com",
         },
         {
           title: "Off-Campus Housing Office",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          url: "https://www.dal.ca/campus_life/residence_housing/off-campus-living.html",
         },
       ],
       cn: [
         {
-          title: "学生服务（住宿）",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
+          title: "宿舍主页",
+          url: "https://www.dal.ca/campus_life/residence_housing/residence.html",
+        },
+        {
+          title: "房型与费用",
+          url: "https://www.dal.ca/campus_life/residence_housing/residence/agricultural-campus/costs---fees.html?utm_source=chatgpt.com",
         },
         {
           title: "校外住宿办公室",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          url: "https://www.dal.ca/campus_life/residence_housing/off-campus-living.html",
         },
       ],
     },
@@ -190,38 +203,38 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "International Office",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
+          title: "International Centre",
+          url: "https://www.dal.ca/campus_life/international-centre.html",
         },
         {
-          title: "Immigration Info",
-          url: "https://international.umontreal.ca/english/home/",
+          title: "PGWP Guide",
+          url: "https://www.dal.ca/campus_life/international-centre/immigration-info/working-in-canada/pgwp.html",
         },
         {
-          title: "Required Documents",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          title: "On-Campus Work",
+          url: "https://www.dal.ca/campus_life/international-centre/immigration-info/working-in-canada/on-campus-work.html",
         },
         {
           title: "Health & Wellness",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.dal.ca/campus_life/health-and-wellness/health-centre-locations.html",
         },
       ],
       cn: [
         {
-          title: "国际事务办公室",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
+          title: "国际中心",
+          url: "https://www.dal.ca/campus_life/international-centre.html",
         },
         {
-          title: "移民信息",
-          url: "https://international.umontreal.ca/english/home/",
+          title: "PGWP 指南",
+          url: "https://www.dal.ca/campus_life/international-centre/immigration-info/working-in-canada/pgwp.html",
         },
         {
-          title: "所需文件",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          title: "校内工作",
+          url: "https://www.dal.ca/campus_life/international-centre/immigration-info/working-in-canada/on-campus-work.html",
         },
         {
           title: "健康与心理支持",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.dal.ca/campus_life/health-and-wellness/health-centre-locations.html",
         },
       ],
     },
@@ -231,28 +244,25 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Career Centre Home",
-          url: "https://www.umontreal.ca/carrieres/",
+          title: "Career & Leadership Centre",
+          url: "https://www.dal.ca/campus_life/career-and-leadership/job-resources-services.html",
         },
         {
           title: "Co-op / Internship Info",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          url: "https://www.dal.ca/study/ways-to-learn/work-integrated-learning-and-cooperative-education.html",
         },
-        {
-          title: "Alumni Network",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
-        },
+        { title: "Alumni Network", url: "https://www.dal.ca/alumni.html" },
       ],
       cn: [
-        { title: "职业中心主页", url: "https://www.umontreal.ca/carrieres/" },
+        {
+          title: "职业与领导力中心",
+          url: "https://www.dal.ca/campus_life/career-and-leadership/job-resources-services.html",
+        },
         {
           title: "Co-op / 实习信息",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          url: "https://www.dal.ca/study/ways-to-learn/work-integrated-learning-and-cooperative-education.html",
         },
-        {
-          title: "校友网络",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
-        },
+        { title: "校友网络", url: "https://www.dal.ca/alumni.html" },
       ],
     },
   },
@@ -261,38 +271,22 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "10 Things to Do When You Arrive",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
+          title: "Transit and Transportation",
+          url: "https://www.dal.ca/campus_life/residence_housing/off-campus-living/living-in-halifax/transit-and-transportation.html?utm_source=chatgpt.com",
         },
         {
-          title: "Finding an Apartment",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
-        },
-        {
-          title: "COVID-19 Info",
-          url: "https://infocovid19.umontreal.ca/en/english/",
-        },
-        {
-          title: "Chinese Student Resources (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "Campus Safety",
+          url: "https://www.dal.ca/dept/dalsafe.html?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
-          title: "抵达蒙特利尔后要做的10件事",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
+          title: "交通与运输",
+          url: "https://www.dal.ca/campus_life/residence_housing/off-campus-living/living-in-halifax/transit-and-transportation.html?utm_source=chatgpt.com",
         },
         {
-          title: "寻找公寓",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
-        },
-        {
-          title: "COVID-19 信息",
-          url: "https://infocovid19.umontreal.ca/en/english/",
-        },
-        {
-          title: "华人学生资源 (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "校园安全",
+          url: "https://www.dal.ca/dept/dalsafe.html?utm_source=chatgpt.com",
         },
       ],
     },
@@ -303,34 +297,21 @@ const universityViewData = [
       en: [
         {
           title: "Book Campus Tour",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.dal.ca/admissions/open-house-and-tours.html?utm_source=chatgpt.com",
         },
         {
           title: "Virtual Campus VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
-        },
-        {
-          title: "Official YouTube",
-          url: "https://www.youtube.com/@umontreal",
-        },
-        {
-          title: "Official Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          url: "https://virtualtour.dal.ca/dal/home/featured-tours/?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "预约校园参观",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.dal.ca/admissions/open-house-and-tours.html?utm_source=chatgpt.com",
         },
         {
           title: "虚拟校园 VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
-        },
-        { title: "官方 YouTube", url: "https://www.youtube.com/@umontreal" },
-        {
-          title: "官方 Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          url: "https://virtualtour.dal.ca/dal/home/featured-tours/?utm_source=chatgpt.com",
         },
       ],
     },
@@ -343,43 +324,42 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Admission Brochure – Undergraduate",
+          title: "Student Guide 2024–2025",
           description:
-            "Official UdeM guide covering all undergraduate programs, academic requirements, admission process, tuition, campus life, and student services.",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "This guide covers the admission process, application requirements, important dates, tuition, scholarships, campus services, and contact information, providing a comprehensive reference for undergraduate admission.",
+          url: "https://www.dal.ca/content/dam/www/study/registrars-office/student-guide.pdf",
         },
         {
-          title:
-            "“Starting University” Roadmap – International Students (2025)",
+          title: "Domestic Viewbook (2024)",
           description:
-            "A timeline guide for new international students, covering budget, housing, transport, language adaptation, student services, and community events.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
+            "A recruitment brochure for Canadian domestic students, introducing programs, academic requirements (e.g., math, English), experiential learning opportunities, and application guidelines.",
+          url: "https://www.dal.ca/content/dam/www/study/viewbooks/domestic-viewbook.pdf",
         },
         {
-          title: "Future Students Out of Quebec” Viewbook (2022–23)",
+          title: "International Viewbook",
           description:
-            "For Canadian and international applicants outside Quebec, detailing programs, scholarships, tuition, language support, and application steps.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "Covers undergraduate and agricultural campus programs, Co-op opportunities, and language and cultural support, serving as an important reference for overseas applicants.",
+          url: "https://www.dal.ca/content/dam/www/study/viewbooks/international-viewbook.pdf",
         },
       ],
       cn: [
         {
-          title: "本科招生手册",
+          title: "学生指南 2024–2025",
           description:
-            "来自官网“下载我们的招生手册”页面，由 UdeM 官方提供，内容涵盖所有本科专业、学术要求、入学流程、学费、校园生活与学生服务等。",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "该指南涵盖录取流程、申请要求、重要日期、学费、奖学金、校园服务，以及联系方式，是一份全方位的本科入学参考资料。",
+          url: "https://www.dal.ca/content/dam/www/study/registrars-office/student-guide.pdf",
         },
         {
-          title: "“开启大学生活”路线图 – 国际学生 (2025)",
+          title: "本地生招生宣传册 (2024)",
           description:
-            "聚焦国际新生，列出入学前到入学后的关键事项指南，如预算、住宿、交通、语言适应、学生服务与社区活动。“从申请到第一节课”的时间线清晰。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
+            "面向加拿大本地学生的招生宣传册，介绍课程设置、学科要求（如数学、英语）、体验式学习机会以及申请指南。",
+          url: "https://www.dal.ca/content/dam/www/study/viewbooks/domestic-viewbook.pdf",
         },
         {
-          title: "魁北克省外未来学生宣传册 (2022–23)",
+          title: "国际生招生宣传册",
           description:
-            "专为魁北克省以外的加拿大省份及国际申请者准备，介绍项目、奖学金、学费、语言支持与申请步骤，内容仍具参考价值。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "涵盖本科及农业校区课程、Co-op 机会、语言与文化支持，是海外申请者的重要参考资料。",
+          url: "https://www.dal.ca/content/dam/www/study/viewbooks/international-viewbook.pdf",
         },
       ],
     },
@@ -389,30 +369,42 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Université de Montréal International",
+          title: "Undergraduate Orientation Guide 2023–Fall (Engineering)",
           description:
-            "Explains that on-campus housing is mainly for local students with fewer options for exchange students; provides steps and platform recommendations for finding off-campus housing.",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "Includes guidance for undergraduate engineering freshmen, covering degree structure, curriculum, academic advising, important dates, and information for international students.",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/engineering/UndergraduateStudies/UG/Program%20Orientation%20Fall%202023.pdf",
         },
         {
-          title: "UdeM Campus Tour Map",
+          title: "Student Handbook 2024‑2025 (Health Sciences)",
           description:
-            "PDF campus map marking locations of student service centers, international office, off-campus housing assistance office, etc.",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "A comprehensive handbook for the Faculty of Health, including transition content like course registration, campus services, code of conduct, and wellness resources.",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/healthsciences/Fenwick222024-2025%20Student%20Handbook%20Doc.pdf.pdf",
+        },
+        {
+          title: "Residence Community Living Guide (2024)",
+          description:
+            "This 2024 guide for residence community living covers residence rules, safety protocols, student support services, visitor policies, and housing fees.",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/residence/RCLG%202024_Halifax_Aug%201.pdf",
         },
       ],
       cn: [
         {
-          title: "蒙特利尔大学国际部",
+          title: "本科迎新指南 2023秋季 (工程学院)",
           description:
-            "介绍校内住宿主要面向本地学生，交换生选择较少；提供寻找校外住房的步骤与平台建议（如学生住房银行、Facebook社群），并列出医疗保险、签证等实用信息。",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "涵盖工程学院本科新生的过渡指导，包括学位结构、课程设置、学术建议、重要日期与国际学生须知。",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/engineering/UndergraduateStudies/UG/Program%20Orientation%20Fall%202023.pdf",
         },
         {
-          title: "UdeM校园导览",
+          title: "学生手册 2024‑2025 (健康科学)",
           description:
-            "校园地图PDF，标注学生服务中心、国际办公室、校外住宿帮助办公地点等常用设施。",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "适用于健康科学学院，是一本综合性学生手册，包含入学过渡内容：课程注册流程、校园服务、行为守则、福利资源等。",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/healthsciences/Fenwick222024-2025%20Student%20Handbook%20Doc.pdf.pdf",
+        },
+        {
+          title: "住宿社区生活指南 (2024)",
+          description:
+            "此指南为2024年住宿社区生活手册，覆盖宿舍规则、安全守则、学生支持服务、访客政策、住宿费用等内容，是新生入住宿舍的核心参考资料。",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/residence/RCLG%202024_Halifax_Aug%201.pdf",
         },
       ],
     },
@@ -422,76 +414,43 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Official Regulations – Tuition & Other Fees (2025)",
-          description:
-            "Legal document detailing the fee structure, including per-credit fees, semester fees, student service fees, and specialized program fees.",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
-        },
-        {
-          title: "Job Search for Students and Graduates",
-          description:
-            "Produced by the Faculty of Law's Career Development Centre, this guide details strategies to enhance job competitiveness within Canada, including job platform recommendations.",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
-        },
-        {
-          title: "CV and Letter Samples",
-          description:
-            "Published by the Student Affairs Office, includes resume and cover letter templates for positions like research assistant, project coordinator, and research roles.",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
-        },
-      ],
-      cn: [
-        {
-          title: "官方规定 - 学费及其他费用 (2025版)",
-          description:
-            "法规文件，详细列出收费结构，包括学分费、学期费、学生服务费、专家课程费等项，适用于制定预算与合规参考。",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
-        },
-        {
-          title: "学生与毕业生的求职",
-          description:
-            "由法学院职业发展中心制作，详述加拿大境内提升就业竞争力的策略，包含就业平台推荐、简历/求职信注意事项等。",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
-        },
-        {
-          title: "简历与信函范例",
-          description:
-            "由学生事务办公室发布，包含简历与求职信模板示例，涵盖研究助理、项目协调、科研职位等。",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
-        },
-      ],
-    },
-  },
-  {
-    id: "department_handbooks",
-    links: {
-      en: [
-        {
           title:
-            "Undergraduate Guide to Biomedical Sciences (Faculty of Medicine)",
+            "2024–2025 International Fee Schedule – Guaranteed Tuition Model",
           description:
-            "Details the goals, curriculum, faculty, and support for the biomedical sciences program.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
+            "A guide to guaranteed tuition for international students in Canada, including fee standards and additional costs for programs like engineering, architecture, and health sciences.",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/images/admissions/moneymatters/ITG%202024-2025.pdf",
         },
         {
-          title: "Guide to a Minor in Arts and Sciences",
+          title: "Political Science Career Guide",
           description:
-            "For the Arts and Sciences minor program, explaining course options, program flexibility, and credit requirements.",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "Introduces career paths, transferable skills, industry analysis, and job title suggestions for political science majors.",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/politicalscience/Poli%20Sci%20Career%20Guide.pdf",
+        },
+        {
+          title: "Management Career Services Fact Sheet",
+          description:
+            "Details the Management Co-op program, fourth-year internship details, employer engagement pathways, and myCareer platform functions.",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/management/management-career-services/Dalhousie%20MCS%20All%20Co-op%20and%20Internship%20Programs%20Fact%20Sheet.pdf",
         },
       ],
       cn: [
         {
-          title: "生物医学科学本科指南（医学院）",
+          title: "2024–2025 国际生固定学费指南",
           description:
-            "详尽介绍生物医学科学专业目标、课程结构、教学团队及入学支持。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
+            "加拿大国际生固定学费指南，包含工程、建筑、健康科学等专业的学费标准和附加费用。",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/images/admissions/moneymatters/ITG%202024-2025.pdf",
         },
         {
-          title: "文理辅修指南",
+          title: "政治学专业职业指南",
           description:
-            "针对文理学院辅修项目，说明辅修课程设置、专业灵活性与学分要求。",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "介绍政治学专业相关职业方向、技能迁移能力、行业分析与职称建议，是该专业学生就业规划的实用手册。",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/politicalscience/Poli%20Sci%20Career%20Guide.pdf",
+        },
+        {
+          title: "管理学院职业服务概况",
+          description:
+            "介绍了管理学院合作教育方案、大四实习项目细则、雇主参与路径及 myCareer 平台功能，是商科学生的重要就业指南。",
+          url: "https://cdn.dal.ca/content/dam/dalhousie/pdf/faculty/management/management-career-services/Dalhousie%20MCS%20All%20Co-op%20and%20Internship%20Programs%20Fact%20Sheet.pdf",
         },
       ],
     },
@@ -513,17 +472,17 @@ const translations = {
       categoriesTitle: "Categories",
     },
     header: {
-      title: "Université de Montréal",
+      title: "Dalhousie University",
       helpText: "Need help? Book a meeting",
       bookButton: "Book Now",
     },
     universityView: {
       infoPanelTitle: "Overview:",
-      aboutTitle: "⚜️ About Université de Montréal",
+      aboutTitle: "🌊 About Dalhousie University",
       aboutParagraph1:
-        "The Université de Montréal is a French-language public research university in Montreal, Quebec, Canada. It is one of the largest universities in the country and a member of the U15 Group of Canadian Research Universities.",
+        "Dalhousie University is a public research university in Halifax, Nova Scotia, Canada, with three campuses in Halifax, a fourth in Bible Hill, and a second medical school campus in Saint John, New Brunswick. Dalhousie offers more than 4,000 courses, and 180 degree programs in twelve undergraduate, graduate, and professional faculties.",
       aboutParagraph2:
-        "Founded in 1878, UdeM is renowned for its comprehensive programs, particularly in health sciences, and its vibrant campus life in the multicultural city of Montreal. It attracts students from all over the world, contributing to a diverse and dynamic academic environment.",
+        "As a member of the U15 Group of Canadian Research Universities, it is a leading institution in Atlantic Canada, known for its strong programs in health sciences, law, and oceanography.",
     },
     sectionTitles: {
       overview: "Overview",
@@ -540,7 +499,6 @@ const translations = {
       admission_guides: "Admission & General Guides",
       orientation_and_housing: "Orientation & Housing",
       finance_and_career: "Finance & Career",
-      department_handbooks: "Department Handbooks",
     },
   },
   cn: {
@@ -556,17 +514,17 @@ const translations = {
       categoriesTitle: "分类",
     },
     header: {
-      title: "蒙特利尔大学",
+      title: "戴尔豪斯大学",
       helpText: "需要帮助？预约会议",
       bookButton: "立即预约",
     },
     universityView: {
       infoPanelTitle: "概览:",
-      aboutTitle: "⚜️ 关于蒙特利尔大学",
+      aboutTitle: "🌊 关于戴尔豪斯大学",
       aboutParagraph1:
-        "蒙特利尔大学是位于加拿大魁北克省蒙特利尔市的一所法语公立研究型大学。它是加拿大规模最大的大学之一，也是加拿大U15研究型大学联盟的成员。",
+        "戴尔豪斯大学是位于加拿大新斯科舍省哈利法克斯市的一所公立研究型大学，在哈利法克斯拥有三个校区，在Bible Hill有第四个校区，并在新不伦瑞克省圣约翰市设有第二个医学院校区。戴尔豪斯大学在十二个本科、研究生和专业学院提供超过4000门课程和180个学位项目。",
       aboutParagraph2:
-        "UdeM成立于1878年，以其全面的课程，尤其是在健康科学领域的卓越表现，以及在多元文化城市蒙特利尔充满活力的校园生活而闻名。它吸引了来自世界各地的学生，为多元化和充满活力的学术环境做出了贡献。",
+        "作为加拿大U15研究型大学联盟的成员，它是加拿大大西洋地区的领先学府，以其在健康科学、法律和海洋学领域的强大课程而闻名。",
     },
     sectionTitles: {
       overview: "学校概览",
@@ -583,7 +541,6 @@ const translations = {
       admission_guides: "招生与通用指南",
       orientation_and_housing: "迎新与住宿",
       finance_and_career: "财务与职业",
-      department_handbooks: "院系手册",
     },
   },
 };
@@ -606,7 +563,7 @@ const SectionHeaderWithArrow = ({
   </div>
 );
 
-const MontrealUniversityPage = () => {
+const DalhousieUniversityPage = () => {
   const [showInfoPanel, setShowInfoPanel] = useState(true);
   const [activeView, setActiveView] = useState<
     "university" | "highschool" | "instructions" | "pdfView"
@@ -731,8 +688,8 @@ const MontrealUniversityPage = () => {
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
               <div className="flex items-center">
                 <img
-                  src="/logos/montreal.png"
-                  alt="Université de Montréal Logo"
+                  src="/logos/dalhousie.png"
+                  alt="Dalhousie University Logo"
                   width={120}
                   height={120}
                   className="mr-4"
@@ -771,18 +728,17 @@ const MontrealUniversityPage = () => {
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
-                              📍 2900 Edouard Montpetit Blvd, Montreal, Quebec
-                              H3T 1J4, Canada
+                              📍 6299 South St, Halifax, NS B3H 4R2, Canada
                               <br />
-                              📞 (514) 343-6111
+                              � (902) 494-2211
                               <br />
                               🌐{" "}
                               <a
-                                href="https://www.umontreal.ca/en/"
+                                href="https://www.dal.ca/"
                                 target="_blank"
                                 className="text-[#247e9f] underline"
                               >
-                                www.umontreal.ca
+                                www.dal.ca
                               </a>
                             </p>
                           </>
@@ -863,4 +819,4 @@ const MontrealUniversityPage = () => {
   );
 };
 
-export default MontrealUniversityPage;
+export default DalhousieUniversityPage;

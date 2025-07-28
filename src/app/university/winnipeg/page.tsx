@@ -3,27 +3,27 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for Université de Montréal
+// Data structure holding both English and Chinese links for University of Winnipeg
 const universityViewData = [
   {
     id: "overview",
     links: {
       en: [
         {
-          title: "QS Ranking",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          title: "QS Ranking (U of Manitoba for reference)",
+          url: "https://www.topuniversities.com/universities/university-manitoba?utm_source",
         },
         {
           title: "Campus Map",
-          url: "https://plancampus.umontreal.ca/montreal/",
+          url: "https://www.uwinnipeg.ca/maps/?utm_source",
         },
       ],
       cn: [
         {
-          title: "QS 排名",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          title: "QS 排名 (曼尼托巴大学作参考)",
+          url: "https://www.topuniversities.com/universities/university-manitoba?utm_source",
         },
-        { title: "校区地图", url: "https://plancampus.umontreal.ca/montreal/" },
+        { title: "校区地图", url: "https://www.uwinnipeg.ca/maps/?utm_source" },
       ],
     },
   },
@@ -33,21 +33,21 @@ const universityViewData = [
       en: [
         {
           title: "Programs List / Viewbook",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          url: "https://www.uwinnipeg.ca/future-student/academic-progs/undergrad.html?utm_source",
         },
         {
           title: "Faculty Introduction",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.uwinnipeg.ca/future-student/academic-progs/undergrad.html?utm_source",
         },
       ],
       cn: [
         {
           title: "专业列表 / 宣传册",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          url: "https://www.uwinnipeg.ca/future-student/academic-progs/undergrad.html?utm_source",
         },
         {
           title: "学院介绍",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.uwinnipeg.ca/future-student/academic-progs/undergrad.html?utm_source",
         },
       ],
     },
@@ -58,29 +58,29 @@ const universityViewData = [
       en: [
         {
           title: "Undergraduate Admission Home",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.uwinnipeg.ca/future-student/international/how-to-apply.html",
         },
         {
           title: "Entry Requirements",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.uwinnipeg.ca/future-student/international/countries-a-to-z/",
         },
         {
           title: "Important Dates",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.uwinnipeg.ca/future-student/international/countries-a-to-z/",
         },
       ],
       cn: [
         {
           title: "本科申请主页",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.uwinnipeg.ca/future-student/international/how-to-apply.html",
         },
         {
           title: "入学要求",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.uwinnipeg.ca/future-student/international/countries-a-to-z/",
         },
         {
           title: "重要日期",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.uwinnipeg.ca/future-student/international/countries-a-to-z/",
         },
       ],
     },
@@ -90,14 +90,22 @@ const universityViewData = [
     links: {
       en: [
         {
+          title: "Application Guide Video",
+          url: "https://www.youtube.com/watch?v=Yf2vmaZYKHs",
+        },
+        {
           title: "Direct Application",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          url: "https://www.uwinnipeg.ca/future-student/international/how-to-apply.html?utm_source",
         },
       ],
       cn: [
         {
+          title: "申请指南视频",
+          url: "https://www.youtube.com/watch?v=Yf2vmaZYKHs",
+        },
+        {
           title: "直申通道",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          url: "https://www.uwinnipeg.ca/future-student/international/how-to-apply.html?utm_source",
         },
       ],
     },
@@ -108,29 +116,29 @@ const universityViewData = [
       en: [
         {
           title: "Tuition Fees",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          url: "https://www.uwinnipeg.ca/fees/tuition.html?utm_source",
         },
         {
           title: "Scholarship Search",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://uwinnipeg.academicworks.ca/?utm_source=chatgpt.com",
         },
         {
           title: "Work-Study Program",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          url: "https://www.uwinnipeg.ca/awards/work-study-program.html",
         },
       ],
       cn: [
         {
           title: "学费表",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          url: "https://www.uwinnipeg.ca/fees/tuition.html?utm_source",
         },
         {
           title: "奖学金查询",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://uwinnipeg.academicworks.ca/?utm_source=chatgpt.com",
         },
         {
           title: "勤工助学项目",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          url: "https://www.uwinnipeg.ca/awards/work-study-program.html",
         },
       ],
     },
@@ -139,23 +147,17 @@ const universityViewData = [
     id: "campus-life",
     links: {
       en: [
+        { title: "Athletics & Recreation", url: "https://wesmen.ca/" },
         {
-          title: "Student Groups",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
-        },
-        {
-          title: "Athletics & Recreation",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          title: "Dining & Meal Plan",
+          url: "https://www.uwinnipeg.ca/campus-restaurants/",
         },
       ],
       cn: [
+        { title: "体育与运动", url: "https://wesmen.ca/" },
         {
-          title: "学生社团",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
-        },
-        {
-          title: "体育与运动",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          title: "校园餐饮计划",
+          url: "https://www.uwinnipeg.ca/campus-restaurants/",
         },
       ],
     },
@@ -165,22 +167,19 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Student Services (Housing)",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
+          title: "Residence Home",
+          url: "https://www.uwinnipeg.ca/campus-living/",
         },
         {
-          title: "Off-Campus Housing Office",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          title: "Room Types & Fees",
+          url: "https://www.uwinnipeg.ca/campus-living/fees-payments.html",
         },
       ],
       cn: [
+        { title: "宿舍主页", url: "https://www.uwinnipeg.ca/campus-living/" },
         {
-          title: "学生服务（住宿）",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
-        },
-        {
-          title: "校外住宿办公室",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          title: "房型与费用",
+          url: "https://www.uwinnipeg.ca/campus-living/fees-payments.html",
         },
       ],
     },
@@ -190,38 +189,27 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "International Office",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
+          title: "International Student Services",
+          url: "https://www.uwinnipeg.ca/iss/",
         },
         {
-          title: "Immigration Info",
-          url: "https://international.umontreal.ca/english/home/",
-        },
-        {
-          title: "Required Documents",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          title: "PGWP Guide (PDF)",
+          url: "https://www.uwinnipeg.ca/iss/docs/immigration/pgwp-nov-2024.pdf",
         },
         {
           title: "Health & Wellness",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.uwinnipeg.ca/student-wellness/",
         },
       ],
       cn: [
+        { title: "国际学生服务", url: "https://www.uwinnipeg.ca/iss/" },
         {
-          title: "国际事务办公室",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
-        },
-        {
-          title: "移民信息",
-          url: "https://international.umontreal.ca/english/home/",
-        },
-        {
-          title: "所需文件",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          title: "PGWP 指南 (PDF)",
+          url: "https://www.uwinnipeg.ca/iss/docs/immigration/pgwp-nov-2024.pdf",
         },
         {
           title: "健康与心理支持",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.uwinnipeg.ca/student-wellness/",
         },
       ],
     },
@@ -231,27 +219,30 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Career Centre Home",
-          url: "https://www.umontreal.ca/carrieres/",
+          title: "Career Services",
+          url: "https://www.uwinnipeg.ca/career-services/?utm_source",
         },
         {
-          title: "Co-op / Internship Info",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          title: "Co-op Program",
+          url: "https://www.uwinnipeg.ca/coop-program/?utm_source",
         },
         {
           title: "Alumni Network",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
+          url: "https://www.uwinnipeg.ca/alumni/?utm_source",
         },
       ],
       cn: [
-        { title: "职业中心主页", url: "https://www.umontreal.ca/carrieres/" },
         {
-          title: "Co-op / 实习信息",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          title: "职业服务",
+          url: "https://www.uwinnipeg.ca/career-services/?utm_source",
+        },
+        {
+          title: "Co-op 项目",
+          url: "https://www.uwinnipeg.ca/coop-program/?utm_source",
         },
         {
           title: "校友网络",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
+          url: "https://www.uwinnipeg.ca/alumni/?utm_source",
         },
       ],
     },
@@ -261,38 +252,14 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "10 Things to Do When You Arrive",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
-        },
-        {
-          title: "Finding an Apartment",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
-        },
-        {
-          title: "COVID-19 Info",
-          url: "https://infocovid19.umontreal.ca/en/english/",
-        },
-        {
-          title: "Chinese Student Resources (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "Transportation",
+          url: "https://www.uwinnipeg.ca/visitor/transportation.html?utm_source",
         },
       ],
       cn: [
         {
-          title: "抵达蒙特利尔后要做的10件事",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
-        },
-        {
-          title: "寻找公寓",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
-        },
-        {
-          title: "COVID-19 信息",
-          url: "https://infocovid19.umontreal.ca/en/english/",
-        },
-        {
-          title: "华人学生资源 (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "交通",
+          url: "https://www.uwinnipeg.ca/visitor/transportation.html?utm_source",
         },
       ],
     },
@@ -303,34 +270,21 @@ const universityViewData = [
       en: [
         {
           title: "Book Campus Tour",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.uwinnipeg.ca/future-student/campus-tours.html?utm_source",
         },
         {
-          title: "Virtual Campus VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
-        },
-        {
-          title: "Official YouTube",
-          url: "https://www.youtube.com/@umontreal",
-        },
-        {
-          title: "Official Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          title: "Virtual Campus (Photos)",
+          url: "https://www.uwinnipeg.ca/future-student/student-exp/campus-photos.html",
         },
       ],
       cn: [
         {
           title: "预约校园参观",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.uwinnipeg.ca/future-student/campus-tours.html?utm_source",
         },
         {
-          title: "虚拟校园 VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
-        },
-        { title: "官方 YouTube", url: "https://www.youtube.com/@umontreal" },
-        {
-          title: "官方 Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          title: "虚拟校园（照片）",
+          url: "https://www.uwinnipeg.ca/future-student/student-exp/campus-photos.html",
         },
       ],
     },
@@ -343,43 +297,42 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Admission Brochure – Undergraduate",
+          title: "Admission Procedures and Policies",
           description:
-            "Official UdeM guide covering all undergraduate programs, academic requirements, admission process, tuition, campus life, and student services.",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "Details the undergraduate application process, including fees, required documents, deadlines, admission categories (Regular, Conditional, Mature, etc.), language requirements, and credit transfer policies.",
+          url: "https://www.uwinnipeg.ca/academics/calendar/docs/admission.pdf",
         },
         {
-          title:
-            "“Starting University” Roadmap – International Students (2025)",
+          title: "Undergraduate International Viewbook",
           description:
-            "A timeline guide for new international students, covering budget, housing, transport, language adaptation, student services, and community events.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
+            "For international students, covering university features, undergraduate program directory, admission steps, language programs, tuition fees, and application deadlines.",
+          url: "https://www.uwinnipeg.ca/future-student/docs/uwinnipeg-undergrad-intl-brochure-english.pdf",
         },
         {
-          title: "Future Students Out of Quebec” Viewbook (2022–23)",
+          title: "Undergrad Viewbook 2025–2026",
           description:
-            "For Canadian and international applicants outside Quebec, detailing programs, scholarships, tuition, language support, and application steps.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "The university's undergraduate program guide, introducing 50+ majors, research opportunities, small class sizes, and campus experiences.",
+          url: "https://www.uwinnipeg.ca/future-student/docs/viewbook.pdf",
         },
       ],
       cn: [
         {
-          title: "本科招生手册",
+          title: "招生程序与政策",
           description:
-            "来自官网“下载我们的招生手册”页面，由 UdeM 官方提供，内容涵盖所有本科专业、学术要求、入学流程、学费、校园生活与学生服务等。",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "详细说明本科申请流程，包括申请费用、所需材料、截止日期、录取分类（Regular、Conditional、Mature 等），语言要求及学分转移政策。",
+          url: "https://www.uwinnipeg.ca/academics/calendar/docs/admission.pdf",
         },
         {
-          title: "“开启大学生活”路线图 – 国际学生 (2025)",
+          title: "国际本科招生手册",
           description:
-            "聚焦国际新生，列出入学前到入学后的关键事项指南，如预算、住宿、交通、语言适应、学生服务与社区活动。“从申请到第一节课”的时间线清晰。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
+            "面向国际学生，涵盖学校特色、本科专业目录、入学步骤、语言项目、学费和申请期限。",
+          url: "https://www.uwinnipeg.ca/future-student/docs/uwinnipeg-undergrad-intl-brochure-english.pdf",
         },
         {
-          title: "魁北克省外未来学生宣传册 (2022–23)",
+          title: "2025–2026年本科招生手册",
           description:
-            "专为魁北克省以外的加拿大省份及国际申请者准备，介绍项目、奖学金、学费、语言支持与申请步骤，内容仍具参考价值。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "大学本科专业指南，介绍50+专业、研究机会、小班教学和校园体验，适合全面了解各学院设置。",
+          url: "https://www.uwinnipeg.ca/future-student/docs/viewbook.pdf",
         },
       ],
     },
@@ -389,30 +342,42 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Université de Montréal International",
+          title: "Resource Guide for International Students 2024/25",
           description:
-            "Explains that on-campus housing is mainly for local students with fewer options for exchange students; provides steps and platform recommendations for finding off-campus housing.",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "For new international students, covering campus integration, cultural adaptation, use of main campus resources (health, safety, clubs), and orientation event schedules.",
+          url: "https://www.uwinnipeg.ca/orientation/docs/resource-guide-international.pdf",
         },
         {
-          title: "UdeM Campus Tour Map",
+          title: "2025 First Year Guide – Faculty of Education",
           description:
-            "PDF campus map marking locations of student service centers, international office, off-campus housing assistance office, etc.",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "A guide for new students in the Faculty of Education, including course selection instructions, timetable creation guidance, important dates, and on-site orientation schedules.",
+          url: "https://www.uwinnipeg.ca/education/docs/registration-guides/first-year-guide.pdf",
+        },
+        {
+          title: "Campus Living Contract 2024–25",
+          description:
+            "The latest version of the housing contract, detailing residence terms, fees, rights and obligations, and safety and visitor policies.",
+          url: "https://www.uwinnipeg.ca/campus-living/docs/campus-living-contract.pdf",
         },
       ],
       cn: [
         {
-          title: "蒙特利尔大学国际部",
+          title: "2024/25国际学生资源指南",
           description:
-            "介绍校内住宿主要面向本地学生，交换生选择较少；提供寻找校外住房的步骤与平台建议（如学生住房银行、Facebook社群），并列出医疗保险、签证等实用信息。",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "面向国际新生，涵盖融入校园方法、文化适应建议、主要校园资源使用指南（如健康、安全、社团）、迎新活动时间表等内容。",
+          url: "https://www.uwinnipeg.ca/orientation/docs/resource-guide-international.pdf",
         },
         {
-          title: "UdeM校园导览",
+          title: "2025年新生指南 – 教育学院",
           description:
-            "校园地图PDF，标注学生服务中心、国际办公室、校外住宿帮助办公地点等常用设施。",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "为教育学院新生准备的入学指南，包含课程选择说明、课表制作指导、重要日期、迎新现场会安排及校园资源导航。",
+          url: "https://www.uwinnipeg.ca/education/docs/registration-guides/first-year-guide.pdf",
+        },
+        {
+          title: "2024–25年校园住宿合同",
+          description:
+            "官网最新版住宿合同，详述宿舍条款、费用、权利义务、安全与访客政策等，是所有入住学生的协议依据。",
+          url: "https://www.uwinnipeg.ca/campus-living/docs/campus-living-contract.pdf",
         },
       ],
     },
@@ -422,76 +387,42 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Official Regulations – Tuition & Other Fees (2025)",
+          title: "Tuition Fees 2018–2019",
           description:
-            "Legal document detailing the fee structure, including per-credit fees, semester fees, student service fees, and specialized program fees.",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
+            "Lists the tuition structure for domestic and international students based on credit courses, as well as additional fees like UWSA and facility fees.",
+          url: "https://www.uwinnipeg.ca/theology/docs/forms/fee-schedule.pdf",
         },
         {
-          title: "Job Search for Students and Graduates",
+          title: "Academic and Career Services Overview",
           description:
-            "Produced by the Faculty of Law's Career Development Centre, this guide details strategies to enhance job competitiveness within Canada, including job platform recommendations.",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
+            "Introduces the on-campus academic & career services process, including scheduling advising, resume review, interview preparation, and job search strategies.",
+          url: "https://www.uwinnipeg.ca/career-services/docs/2023-exhibitor-profiles/academic-and-career-services.pdf",
         },
         {
-          title: "CV and Letter Samples",
+          title: "Career Pathfinders (Various Depts)",
           description:
-            "Published by the Student Affairs Office, includes resume and cover letter templates for positions like research assistant, project coordinator, and research roles.",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
-        },
-      ],
-      cn: [
-        {
-          title: "官方规定 - 学费及其他费用 (2025版)",
-          description:
-            "法规文件，详细列出收费结构，包括学分费、学期费、学生服务费、专家课程费等项，适用于制定预算与合规参考。",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
-        },
-        {
-          title: "学生与毕业生的求职",
-          description:
-            "由法学院职业发展中心制作，详述加拿大境内提升就业竞争力的策略，包含就业平台推荐、简历/求职信注意事项等。",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
-        },
-        {
-          title: "简历与信函范例",
-          description:
-            "由学生事务办公室发布，包含简历与求职信模板示例，涵盖研究助理、项目协调、科研职位等。",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
-        },
-      ],
-    },
-  },
-  {
-    id: "department_handbooks",
-    links: {
-      en: [
-        {
-          title:
-            "Undergraduate Guide to Biomedical Sciences (Faculty of Medicine)",
-          description:
-            "Details the goals, curriculum, faculty, and support for the biomedical sciences program.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
-        },
-        {
-          title: "Guide to a Minor in Arts and Sciences",
-          description:
-            "For the Arts and Sciences minor program, explaining course options, program flexibility, and credit requirements.",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "Career guides for various majors like Sociology, Conflict Resolution, Education, and Philosophy, listing potential career types, skills, and employer fields.",
+          url: "https://www.uwinnipeg.ca/career-services/docs/pathfinders/",
         },
       ],
       cn: [
         {
-          title: "生物医学科学本科指南（医学院）",
+          title: "2018–2019年学费表",
           description:
-            "详尽介绍生物医学科学专业目标、课程结构、教学团队及入学支持。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
+            "列出了国内与国际学生按“学分课计算”的学费结构，以及附加费用如 UWSA 和设施费。",
+          url: "https://www.uwinnipeg.ca/theology/docs/forms/fee-schedule.pdf",
         },
         {
-          title: "文理辅修指南",
+          title: "学术与职业服务概览",
           description:
-            "针对文理学院辅修项目，说明辅修课程设置、专业灵活性与学分要求。",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "介绍校园内学术&职业服务流程，包括预约辅导、简历修改、面试准备和求职策略等。",
+          url: "https://www.uwinnipeg.ca/career-services/docs/2023-exhibitor-profiles/academic-and-career-services.pdf",
+        },
+        {
+          title: "各专业职业路径指南",
+          description:
+            "适用于社会学、冲突解决研究、教育、哲学等专业，列出可从事的职业类型、技能与雇主领域。",
+          url: "https://www.uwinnipeg.ca/career-services/docs/pathfinders/",
         },
       ],
     },
@@ -513,17 +444,17 @@ const translations = {
       categoriesTitle: "Categories",
     },
     header: {
-      title: "Université de Montréal",
+      title: "University of Winnipeg",
       helpText: "Need help? Book a meeting",
       bookButton: "Book Now",
     },
     universityView: {
       infoPanelTitle: "Overview:",
-      aboutTitle: "⚜️ About Université de Montréal",
+      aboutTitle: "🍁 About University of Winnipeg",
       aboutParagraph1:
-        "The Université de Montréal is a French-language public research university in Montreal, Quebec, Canada. It is one of the largest universities in the country and a member of the U15 Group of Canadian Research Universities.",
+        "The University of Winnipeg is a public research university in Winnipeg, Manitoba, Canada. It offers undergraduate faculties of art, business and economics, education, science and kinesiology and applied health as well as graduate programs.",
       aboutParagraph2:
-        "Founded in 1878, UdeM is renowned for its comprehensive programs, particularly in health sciences, and its vibrant campus life in the multicultural city of Montreal. It attracts students from all over the world, contributing to a diverse and dynamic academic environment.",
+        "Known for its small class sizes, academic excellence, and commitment to accessibility, UWinnipeg provides a supportive and diverse learning environment in the heart of downtown Winnipeg.",
     },
     sectionTitles: {
       overview: "Overview",
@@ -540,7 +471,6 @@ const translations = {
       admission_guides: "Admission & General Guides",
       orientation_and_housing: "Orientation & Housing",
       finance_and_career: "Finance & Career",
-      department_handbooks: "Department Handbooks",
     },
   },
   cn: {
@@ -556,17 +486,17 @@ const translations = {
       categoriesTitle: "分类",
     },
     header: {
-      title: "蒙特利尔大学",
+      title: "温尼伯大学",
       helpText: "需要帮助？预约会议",
       bookButton: "立即预约",
     },
     universityView: {
       infoPanelTitle: "概览:",
-      aboutTitle: "⚜️ 关于蒙特利尔大学",
+      aboutTitle: "🍁 关于温尼伯大学",
       aboutParagraph1:
-        "蒙特利尔大学是位于加拿大魁北克省蒙特利尔市的一所法语公立研究型大学。它是加拿大规模最大的大学之一，也是加拿大U15研究型大学联盟的成员。",
+        "温尼伯大学是位于加拿大马尼托巴省温尼伯市的一所公立研究型大学。它提供文科、商业与经济、教育、科学以及运动机能学与应用健康等本科学院，并设有研究生课程。",
       aboutParagraph2:
-        "UdeM成立于1878年，以其全面的课程，尤其是在健康科学领域的卓越表现，以及在多元文化城市蒙特利尔充满活力的校园生活而闻名。它吸引了来自世界各地的学生，为多元化和充满活力的学术环境做出了贡献。",
+        "温尼伯大学以其小班教学、卓越的学术水平和对无障碍教育的承诺而闻名，在温尼伯市中心提供了一个支持性强且多元化的学习环境。",
     },
     sectionTitles: {
       overview: "学校概览",
@@ -583,7 +513,6 @@ const translations = {
       admission_guides: "招生与通用指南",
       orientation_and_housing: "迎新与住宿",
       finance_and_career: "财务与职业",
-      department_handbooks: "院系手册",
     },
   },
 };
@@ -606,7 +535,7 @@ const SectionHeaderWithArrow = ({
   </div>
 );
 
-const MontrealUniversityPage = () => {
+const WinnipegUniversityPage = () => {
   const [showInfoPanel, setShowInfoPanel] = useState(true);
   const [activeView, setActiveView] = useState<
     "university" | "highschool" | "instructions" | "pdfView"
@@ -731,8 +660,8 @@ const MontrealUniversityPage = () => {
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
               <div className="flex items-center">
                 <img
-                  src="/logos/montreal.png"
-                  alt="Université de Montréal Logo"
+                  src="/logos/winnipeg.png"
+                  alt="University of Winnipeg Logo"
                   width={120}
                   height={120}
                   className="mr-4"
@@ -771,18 +700,17 @@ const MontrealUniversityPage = () => {
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
-                              📍 2900 Edouard Montpetit Blvd, Montreal, Quebec
-                              H3T 1J4, Canada
+                              📍 515 Portage Ave, Winnipeg, MB R3B 2E9, Canada
                               <br />
-                              📞 (514) 343-6111
+                              📞 (204) 786-7811
                               <br />
                               🌐{" "}
                               <a
-                                href="https://www.umontreal.ca/en/"
+                                href="https://www.uwinnipeg.ca/"
                                 target="_blank"
                                 className="text-[#247e9f] underline"
                               >
-                                www.umontreal.ca
+                                www.uwinnipeg.ca
                               </a>
                             </p>
                           </>
@@ -863,4 +791,4 @@ const MontrealUniversityPage = () => {
   );
 };
 
-export default MontrealUniversityPage;
+export default WinnipegUniversityPage;

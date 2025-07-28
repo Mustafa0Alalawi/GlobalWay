@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for Université de Montréal
+// Data structure holding both English and Chinese links for Binghamton University
 const universityViewData = [
   {
     id: "overview",
@@ -11,19 +11,22 @@ const universityViewData = [
       en: [
         {
           title: "QS Ranking",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          url: "https://www.topuniversities.com/universities/binghamton-university-suny",
         },
         {
           title: "Campus Map",
-          url: "https://plancampus.umontreal.ca/montreal/",
+          url: "https://www.binghamton.edu/maps/index.html",
         },
       ],
       cn: [
         {
           title: "QS 排名",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          url: "https://www.topuniversities.com/universities/binghamton-university-suny",
         },
-        { title: "校区地图", url: "https://plancampus.umontreal.ca/montreal/" },
+        {
+          title: "校区地图",
+          url: "https://www.binghamton.edu/maps/index.html",
+        },
       ],
     },
   },
@@ -33,21 +36,21 @@ const universityViewData = [
       en: [
         {
           title: "Programs List / Viewbook",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          url: "https://www.binghamton.edu/academics/programs/index.html",
         },
         {
           title: "Faculty Introduction",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.binghamton.edu/academics/schools.html",
         },
       ],
       cn: [
         {
           title: "专业列表 / 宣传册",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          url: "https://www.binghamton.edu/academics/programs/index.html",
         },
         {
           title: "学院介绍",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.binghamton.edu/academics/schools.html",
         },
       ],
     },
@@ -58,29 +61,29 @@ const universityViewData = [
       en: [
         {
           title: "Undergraduate Admission Home",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.binghamton.edu/admissions/undergraduate/index.html",
         },
         {
           title: "Entry Requirements",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.binghamton.edu/admissions/undergraduate/apply/freshman/index.html",
         },
         {
           title: "Important Dates",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.binghamton.edu/admissions/undergraduate/new-students/fall/timeline.html",
         },
       ],
       cn: [
         {
           title: "本科申请主页",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.binghamton.edu/admissions/undergraduate/index.html",
         },
         {
           title: "入学要求",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.binghamton.edu/admissions/undergraduate/apply/freshman/index.html",
         },
         {
           title: "重要日期",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.binghamton.edu/admissions/undergraduate/new-students/fall/timeline.html",
         },
       ],
     },
@@ -90,14 +93,14 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Direct Application",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          title: "Common App & SUNY App Process",
+          url: "https://www.binghamton.edu/admissions/undergraduate/apply/index.html",
         },
       ],
       cn: [
         {
-          title: "直申通道",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          title: "Common App 与 SUNY 申请流程",
+          url: "https://www.binghamton.edu/admissions/undergraduate/apply/index.html",
         },
       ],
     },
@@ -108,29 +111,29 @@ const universityViewData = [
       en: [
         {
           title: "Tuition Fees",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          url: "https://www.binghamton.edu/student-accounts/tuition-fees/tuition-semester/index.html",
         },
         {
           title: "Scholarship Search",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://www.binghamton.edu/financial-aid/types-of-aid/scholarships/index.html",
         },
         {
-          title: "Work-Study Program",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          title: "Work-Study / On-campus Job",
+          url: "https://www.binghamton.edu/financial-aid/types-of-aid/work-study.html",
         },
       ],
       cn: [
         {
           title: "学费表",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          url: "https://www.binghamton.edu/student-accounts/tuition-fees/tuition-semester/index.html",
         },
         {
           title: "奖学金查询",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://www.binghamton.edu/financial-aid/types-of-aid/scholarships/index.html",
         },
         {
-          title: "勤工助学项目",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          title: "勤工助学 / 校园兼职",
+          url: "https://www.binghamton.edu/financial-aid/types-of-aid/work-study.html",
         },
       ],
     },
@@ -140,22 +143,30 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Student Groups",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
+          title: "Clubs Directory",
+          url: "https://www.binghamton.edu/admissions/undergraduate/life/clubs.html",
         },
         {
           title: "Athletics & Recreation",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          url: "https://www.binghamton.edu/admissions/undergraduate/life/health-fitness.html",
+        },
+        {
+          title: "Dining & Meal Plan",
+          url: "https://www.binghamton.edu/services/auxiliary/dining/",
         },
       ],
       cn: [
         {
-          title: "学生社团",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
+          title: "社团目录",
+          url: "https://www.binghamton.edu/admissions/undergraduate/life/clubs.html",
         },
         {
           title: "体育与运动",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          url: "https://www.binghamton.edu/admissions/undergraduate/life/health-fitness.html",
+        },
+        {
+          title: "校园餐饮计划",
+          url: "https://www.binghamton.edu/services/auxiliary/dining/",
         },
       ],
     },
@@ -165,22 +176,30 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Student Services (Housing)",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
+          title: "Residence Home",
+          url: "https://www.binghamton.edu/residential-life/housing/index.html",
+        },
+        {
+          title: "Room Types & Fees (First Year)",
+          url: "https://www.binghamton.edu/residential-life/housing/newstudents/first-year.html",
         },
         {
           title: "Off-Campus Housing Office",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          url: "https://www.binghamton.edu/occ/housing/index.html",
         },
       ],
       cn: [
         {
-          title: "学生服务（住宿）",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
+          title: "宿舍主页",
+          url: "https://www.binghamton.edu/residential-life/housing/index.html",
+        },
+        {
+          title: "房型与费用（大一）",
+          url: "https://www.binghamton.edu/residential-life/housing/newstudents/first-year.html",
         },
         {
           title: "校外住宿办公室",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          url: "https://www.binghamton.edu/occ/housing/index.html",
         },
       ],
     },
@@ -190,38 +209,22 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "International Office",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
-        },
-        {
-          title: "Immigration Info",
-          url: "https://international.umontreal.ca/english/home/",
-        },
-        {
-          title: "Required Documents",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          title: "International Student Services",
+          url: "https://www.binghamton.edu/international/student-scholar-services/index.html",
         },
         {
           title: "Health & Wellness",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.binghamton.edu/health/index.html",
         },
       ],
       cn: [
         {
-          title: "国际事务办公室",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
-        },
-        {
-          title: "移民信息",
-          url: "https://international.umontreal.ca/english/home/",
-        },
-        {
-          title: "所需文件",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          title: "国际学生服务",
+          url: "https://www.binghamton.edu/international/student-scholar-services/index.html",
         },
         {
           title: "健康与心理支持",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.binghamton.edu/health/index.html",
         },
       ],
     },
@@ -232,26 +235,29 @@ const universityViewData = [
       en: [
         {
           title: "Career Centre Home",
-          url: "https://www.umontreal.ca/carrieres/",
+          url: "https://www.binghamton.edu/ccpd/index.html",
         },
         {
-          title: "Co-op / Internship Info",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          title: "Internship Search",
+          url: "https://careertools.binghamton.edu/jobs/category/internship/",
         },
         {
           title: "Alumni Network",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
+          url: "https://www.binghamton.edu/alumni/index.html",
         },
       ],
       cn: [
-        { title: "职业中心主页", url: "https://www.umontreal.ca/carrieres/" },
         {
-          title: "Co-op / 实习信息",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          title: "职业中心主页",
+          url: "https://www.binghamton.edu/ccpd/index.html",
+        },
+        {
+          title: "实习查询",
+          url: "https://careertools.binghamton.edu/jobs/category/internship/",
         },
         {
           title: "校友网络",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
+          url: "https://www.binghamton.edu/alumni/index.html",
         },
       ],
     },
@@ -261,38 +267,38 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "10 Things to Do When You Arrive",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
+          title: "Getting to Binghamton",
+          url: "https://www.binghamton.edu/international/student-scholar-services/new-students/gettingtobing.html",
         },
         {
-          title: "Finding an Apartment",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
+          title: "Off-Campus Housing",
+          url: "https://www.binghamton.edu/occ/housing/index.html",
         },
         {
-          title: "COVID-19 Info",
-          url: "https://infocovid19.umontreal.ca/en/english/",
+          title: "Emergency Response Plan",
+          url: "https://www.binghamton.edu/emergency/emergency-response-plan/annex-21.html",
         },
         {
-          title: "Chinese Student Resources (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "Travel to Binghamton (Chinese)",
+          url: "https://www.binghamton.edu/international/student-scholar-services/new-students/travel-to-bing-1.html",
         },
       ],
       cn: [
         {
-          title: "抵达蒙特利尔后要做的10件事",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
+          title: "如何抵达宾汉姆顿",
+          url: "https://www.binghamton.edu/international/student-scholar-services/new-students/gettingtobing.html",
         },
         {
-          title: "寻找公寓",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
+          title: "校外住宿",
+          url: "https://www.binghamton.edu/occ/housing/index.html",
         },
         {
-          title: "COVID-19 信息",
-          url: "https://infocovid19.umontreal.ca/en/english/",
+          title: "应急响应计划",
+          url: "https://www.binghamton.edu/emergency/emergency-response-plan/annex-21.html",
         },
         {
-          title: "华人学生资源 (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "前往宾汉姆顿（中文）",
+          url: "https://www.binghamton.edu/international/student-scholar-services/new-students/travel-to-bing-1.html",
         },
       ],
     },
@@ -303,34 +309,29 @@ const universityViewData = [
       en: [
         {
           title: "Book Campus Tour",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.binghamton.edu/admissions/undergraduate/visit/tour/index.html",
         },
         {
           title: "Virtual Campus VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
+          url: "https://www.binghamton.edu/admissions/undergraduate/visit/tour/campus360.html",
         },
         {
-          title: "Official YouTube",
-          url: "https://www.youtube.com/@umontreal",
-        },
-        {
-          title: "Official Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          title: "Social Media Guidelines",
+          url: "https://www.binghamton.edu/communications-and-marketing/media-public-relations/social-media/guidelines.html",
         },
       ],
       cn: [
         {
           title: "预约校园参观",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.binghamton.edu/admissions/undergraduate/visit/tour/index.html",
         },
         {
           title: "虚拟校园 VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
+          url: "https://www.binghamton.edu/admissions/undergraduate/visit/tour/campus360.html",
         },
-        { title: "官方 YouTube", url: "https://www.youtube.com/@umontreal" },
         {
-          title: "官方 Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          title: "社交媒体指南",
+          url: "https://www.binghamton.edu/communications-and-marketing/media-public-relations/social-media/guidelines.html",
         },
       ],
     },
@@ -343,43 +344,54 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Admission Brochure – Undergraduate",
+          title: "College Link Application for Admission",
           description:
-            "Official UdeM guide covering all undergraduate programs, academic requirements, admission process, tuition, campus life, and student services.",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "Application for the 'College Link' program for students with advanced college credits from high school.",
+          url: "https://www.binghamton.edu/admissions/undergraduate/pdf/college-link-application.pdf",
         },
         {
-          title:
-            "“Starting University” Roadmap – International Students (2025)",
+          title: "Undergraduate Re-Enrollment Guidelines",
           description:
-            "A timeline guide for new international students, covering budget, housing, transport, language adaptation, student services, and community events.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
+            "Details the process for applying for re-enrollment after a leave of absence of three semesters.",
+          url: "https://www.binghamton.edu/admissions/undergraduate/pdf/reenrollment_guidelines.pdf",
         },
         {
-          title: "Future Students Out of Quebec” Viewbook (2022–23)",
+          title: "Binghamton By the Book (2025 Edition)",
           description:
-            "For Canadian and international applicants outside Quebec, detailing programs, scholarships, tuition, language support, and application steps.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "President's annual report compilation, showing admission data, SAT/GPA requirements, and enrollment trends.",
+          url: "https://www.binghamton.edu/president/docs/by_the_book_2025.pdf",
+        },
+        {
+          title: "Common Data Set 2024–2025",
+          description:
+            "Standardized admission data including applicant/admitted/enrolled numbers, SAT/GPA distributions, and evaluation criteria.",
+          url: "https://www.binghamton.edu/offices/oir/upload_data/cds20242025p.pdf",
         },
       ],
       cn: [
         {
-          title: "本科招生手册",
+          title: "大学链接项目申请表",
           description:
-            "来自官网“下载我们的招生手册”页面，由 UdeM 官方提供，内容涵盖所有本科专业、学术要求、入学流程、学费、校园生活与学生服务等。",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "适用于在高中阶段完成大学先修课程并申请入学的学生，注明申请流程与成绩/推荐信要求。",
+          url: "https://www.binghamton.edu/admissions/undergraduate/pdf/college-link-application.pdf",
         },
         {
-          title: "“开启大学生活”路线图 – 国际学生 (2025)",
+          title: "本科生重新入学指南",
           description:
-            "聚焦国际新生，列出入学前到入学后的关键事项指南，如预算、住宿、交通、语言适应、学生服务与社区活动。“从申请到第一节课”的时间线清晰。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
+            "详细说明休学三学期后申请重新入学的流程、所需材料、各学院政策及可能的财政援助调整。",
+          url: "https://www.binghamton.edu/admissions/undergraduate/pdf/reenrollment_guidelines.pdf",
         },
         {
-          title: "魁北克省外未来学生宣传册 (2022–23)",
+          title: "宾汉姆顿大学手册 (2025年版)",
           description:
-            "专为魁北克省以外的加拿大省份及国际申请者准备，介绍项目、奖学金、学费、语言支持与申请步骤，内容仍具参考价值。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "校长年度报告汇编文件，展示招生数据、录取人数、SAT/GPA要求、学生保留率及录取趋势。",
+          url: "https://www.binghamton.edu/president/docs/by_the_book_2025.pdf",
+        },
+        {
+          title: "通用数据集 2024–2025",
+          description:
+            "标准化招生资料，列出申请人/录取人/注册人数据，SAT/GPA分布，高中必修课程要求及评价指标。",
+          url: "https://www.binghamton.edu/offices/oir/upload_data/cds20242025p.pdf",
         },
       ],
     },
@@ -389,30 +401,42 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Université de Montréal International",
+          title: "J-1 Exchange Visitor Orientation Guide",
           description:
-            "Explains that on-campus housing is mainly for local students with fewer options for exchange students; provides steps and platform recommendations for finding off-campus housing.",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "Official guide for J-1 exchange visitors detailing check-in, immigration, insurance, and campus safety.",
+          url: "https://www.binghamton.edu/international/student-scholar-services/faculty/pdf/international_scholar_orientation_guide.pdf",
         },
         {
-          title: "UdeM Campus Tour Map",
+          title: "A New Student’s Guide to Off-Campus Living",
           description:
-            "PDF campus map marking locations of student service centers, international office, off-campus housing assistance office, etc.",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "Practical guide for undergraduates living off-campus, covering location, rent, roommates, and transportation.",
+          url: "https://www.binghamton.edu/occ/pdfs/newstudentguide.pdf",
+        },
+        {
+          title: "Housing Accommodation Request Student Form",
+          description:
+            "Application form for students with special housing needs (e.g., accessibility, quiet environment).",
+          url: "https://www.binghamton.edu/ssd/policies/studenthousingformfillable.pdf",
         },
       ],
       cn: [
         {
-          title: "蒙特利尔大学国际部",
+          title: "J-1 交换访问学者迎新指南",
           description:
-            "介绍校内住宿主要面向本地学生，交换生选择较少；提供寻找校外住房的步骤与平台建议（如学生住房银行、Facebook社群），并列出医疗保险、签证等实用信息。",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "官方针对 J-1 项目访问学者发布，详细介绍报到流程、入境指南、保险服务、学生身份管理及校园安全信息。",
+          url: "https://www.binghamton.edu/international/student-scholar-services/faculty/pdf/international_scholar_orientation_guide.pdf",
         },
         {
-          title: "UdeM校园导览",
+          title: "新生校外住宿指南",
           description:
-            "校园地图PDF，标注学生服务中心、国际办公室、校外住宿帮助办公地点等常用设施。",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "本科新生离校后租房实用手册，详解选址方式、租金水平、室友配对、交通选项与租赁注意事项。",
+          url: "https://www.binghamton.edu/occ/pdfs/newstudentguide.pdf",
+        },
+        {
+          title: "住宿特殊需求申请表",
+          description:
+            "提供给有特殊住宿需求（如无障碍、安静环境等）学生的申请表格。",
+          url: "https://www.binghamton.edu/ssd/policies/studenthousingformfillable.pdf",
         },
       ],
     },
@@ -422,42 +446,66 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Official Regulations – Tuition & Other Fees (2025)",
+          title: "Undergraduate Tuition and Fee Rates: Fall 2024",
           description:
-            "Legal document detailing the fee structure, including per-credit fees, semester fees, student service fees, and specialized program fees.",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
+            "Lists in-state and out-of-state/international tuition and mandatory fees by credit hour.",
+          url: "https://www.binghamton.edu/student-accounts/tuition-fees/tuition-semester/undergradtuitionfall2024.pdf",
         },
         {
-          title: "Job Search for Students and Graduates",
+          title: "Undergraduate Tuition and Fee Rates: Summer 2024",
           description:
-            "Produced by the Faculty of Law's Career Development Centre, this guide details strategies to enhance job competitiveness within Canada, including job platform recommendations.",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
+            "Covers per-credit tuition rates for undergraduate and graduate summer courses.",
+          url: "https://www.binghamton.edu/student-accounts/tuition-fees/tuition-semester/undergradtuitionsummer2024.pdf",
         },
         {
-          title: "CV and Letter Samples",
+          title: "Estimated Costs for Exchange Students (2025–26)",
           description:
-            "Published by the Student Affairs Office, includes resume and cover letter templates for positions like research assistant, project coordinator, and research roles.",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
+            "Budget breakdown for exchange students, including tuition, housing, meals, insurance, and living expenses.",
+          url: "https://www.binghamton.edu/offices/iegi/pdf/undergraduate-exchange-tuition-fees.pdf",
+        },
+        {
+          title: "Career Guide 2023–24 (Interactive PDF)",
+          description:
+            "A comprehensive university-wide guide covering resumes, cover letters, interviews, career planning, and networking.",
+          url: "https://cdn.uconnectlabs.com/wp-content/uploads/sites/60/2023/08/Career-Guide-2023%E2%80%9324-interactive.pdf",
+        },
+        {
+          title: "MPA Internship Handbook 2025–26",
+          description:
+            "Paid internship handbook for Public Administration students, outlining objectives, schedule, and credit requirements.",
+          url: "https://www.binghamton.edu/public-administration-and-policy/academics/internships/2526mpainternhandbook.pdf",
         },
       ],
       cn: [
         {
-          title: "官方规定 - 学费及其他费用 (2025版)",
+          title: "2024年秋季本科学费和费用标准",
           description:
-            "法规文件，详细列出收费结构，包括学分费、学期费、学生服务费、专家课程费等项，适用于制定预算与合规参考。",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
+            "列出不同学分下的本地与州外/国际本科生学费和各种强制性杂费。",
+          url: "https://www.binghamton.edu/student-accounts/tuition-fees/tuition-semester/undergradtuitionfall2024.pdf",
         },
         {
-          title: "学生与毕业生的求职",
+          title: "2024年夏季本科学费和费用标准",
           description:
-            "由法学院职业发展中心制作，详述加拿大境内提升就业竞争力的策略，包含就业平台推荐、简历/求职信注意事项等。",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
+            "涵盖夏季学期按学分计费的学费表，包括本科生和研究生夏季课程的收费标准。",
+          url: "https://www.binghamton.edu/student-accounts/tuition-fees/tuition-semester/undergradtuitionsummer2024.pdf",
         },
         {
-          title: "简历与信函范例",
+          title: "交换生预估费用 (2025–26)",
           description:
-            "由学生事务办公室发布，包含简历与求职信模板示例，涵盖研究助理、项目协调、科研职位等。",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
+            "列出交换生每学期学费、住宿与餐饮计划、健康保险费、课本及生活费用估算等总预算明细。",
+          url: "https://www.binghamton.edu/offices/iegi/pdf/undergraduate-exchange-tuition-fees.pdf",
+        },
+        {
+          title: "2023–24 职业指南 (互动PDF)",
+          description:
+            "由 Fleishman 职业发展中心发布，涵盖简历、求职信、面试、职业探索、实习申请与网络建设。",
+          url: "https://cdn.uconnectlabs.com/wp-content/uploads/sites/60/2023/08/Career-Guide-2023%E2%80%9324-interactive.pdf",
+        },
+        {
+          title: "MPA 实习手册 2025–26",
+          description:
+            "公共管理专业学生的带薪实习手册，提供实习目标、时间安排、学分要求与注册流程。",
+          url: "https://www.binghamton.edu/public-administration-and-policy/academics/internships/2526mpainternhandbook.pdf",
         },
       ],
     },
@@ -467,31 +515,54 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title:
-            "Undergraduate Guide to Biomedical Sciences (Faculty of Medicine)",
+          title: "Chemistry Undergraduate Student Handbook (2023–24)",
           description:
-            "Details the goals, curriculum, faculty, and support for the biomedical sciences program.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
+            "Includes curriculum, 4+1 BS/MS program structure, and application details.",
+          url: "https://www.binghamton.edu/chemistry/undergraduate/undergradstudenthandbook-2023-24-final-1.pdf",
         },
         {
-          title: "Guide to a Minor in Arts and Sciences",
+          title: "Graduate Program Handbook Template",
           description:
-            "For the Arts and Sciences minor program, explaining course options, program flexibility, and credit requirements.",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "Default handbook template for graduate programs, covering program structure, requirements, and policies.",
+          url: "https://www.binghamton.edu/grad-school/pdf/graduate_program_handbook_template.pdf",
+        },
+        {
+          title: "Philosophy Graduate Student Handbook (2024–25)",
+          description:
+            "Covers curriculum, GPA requirements, writing milestones, and appeal procedures for philosophy grad students.",
+          url: "https://www.binghamton.edu/philosophy/documents/spel-grad-handbook.pdf",
+        },
+        {
+          title: "SSIE Graduate Student Handbook (2022)",
+          description:
+            "Handbook for Systems Science and Industrial Engineering graduate students.",
+          url: "https://www.binghamton.edu/ssie/graduate/ssie_graduate_handbook_042522.pdf",
         },
       ],
       cn: [
         {
-          title: "生物医学科学本科指南（医学院）",
+          title: "化学系本科生手册 (2023–24)",
           description:
-            "详尽介绍生物医学科学专业目标、课程结构、教学团队及入学支持。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
+            "化学系本科手册，包含课程体系、4＋1 本/硕连读方案结构与申请流程、以及本/硕衔接注意事项。",
+          url: "https://www.binghamton.edu/chemistry/undergraduate/undergradstudenthandbook-2023-24-final-1.pdf",
         },
         {
-          title: "文理辅修指南",
+          title: "研究生项目手册模板",
           description:
-            "针对文理学院辅修项目，说明辅修课程设置、专业灵活性与学分要求。",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "研究生项目默认手册模板，覆盖专业结构、课程要求、论文流程和学术政策。",
+          url: "https://www.binghamton.edu/grad-school/pdf/graduate_program_handbook_template.pdf",
+        },
+        {
+          title: "哲学研究生手册 (2024–25)",
+          description:
+            "哲学系研究生手册，涵盖课程设置、GPA 要求、写作里程碑与申诉流程。",
+          url: "https://www.binghamton.edu/philosophy/documents/spel-grad-handbook.pdf",
+        },
+        {
+          title: "SSIE 研究生手册 (2022)",
+          description:
+            "系统科学与工业工程 (SSIE) 研究生手册，内容包括学术要求、课程途径、政策规定与资源说明。",
+          url: "https://www.binghamton.edu/ssie/graduate/ssie_graduate_handbook_042522.pdf",
         },
       ],
     },
@@ -513,17 +584,17 @@ const translations = {
       categoriesTitle: "Categories",
     },
     header: {
-      title: "Université de Montréal",
+      title: "Binghamton University",
       helpText: "Need help? Book a meeting",
       bookButton: "Book Now",
     },
     universityView: {
       infoPanelTitle: "Overview:",
-      aboutTitle: "⚜️ About Université de Montréal",
+      aboutTitle: "🐻 About Binghamton University",
       aboutParagraph1:
-        "The Université de Montréal is a French-language public research university in Montreal, Quebec, Canada. It is one of the largest universities in the country and a member of the U15 Group of Canadian Research Universities.",
+        "Binghamton University, part of the State University of New York (SUNY) system, is a premier public research university. It is known for its rigorous academic programs, vibrant campus life, and commitment to providing an accessible, high-quality education.",
       aboutParagraph2:
-        "Founded in 1878, UdeM is renowned for its comprehensive programs, particularly in health sciences, and its vibrant campus life in the multicultural city of Montreal. It attracts students from all over the world, contributing to a diverse and dynamic academic environment.",
+        "Recognized as a 'Public Ivy,' Binghamton offers a broad range of undergraduate and graduate degrees across six schools. It attracts high-achieving students from around the world and is noted for its strong research output and value.",
     },
     sectionTitles: {
       overview: "Overview",
@@ -556,17 +627,17 @@ const translations = {
       categoriesTitle: "分类",
     },
     header: {
-      title: "蒙特利尔大学",
+      title: "宾汉姆顿大学",
       helpText: "需要帮助？预约会议",
       bookButton: "立即预约",
     },
     universityView: {
       infoPanelTitle: "概览:",
-      aboutTitle: "⚜️ 关于蒙特利尔大学",
+      aboutTitle: "🐻 关于宾汉姆顿大学",
       aboutParagraph1:
-        "蒙特利尔大学是位于加拿大魁北克省蒙特利尔市的一所法语公立研究型大学。它是加拿大规模最大的大学之一，也是加拿大U15研究型大学联盟的成员。",
+        "宾汉姆顿大学是纽约州立大学（SUNY）系统的一部分，是一所顶尖的公立研究型大学。它以其严谨的学术课程、充满活力的校园生活以及致力于提供平价优质教育而闻名。",
       aboutParagraph2:
-        "UdeM成立于1878年，以其全面的课程，尤其是在健康科学领域的卓越表现，以及在多元文化城市蒙特利尔充满活力的校园生活而闻名。它吸引了来自世界各地的学生，为多元化和充满活力的学术环境做出了贡献。",
+        "宾汉姆顿大学被誉为“公立常春藤”，通过六个学院提供广泛的本科和研究生学位。它吸引了来自世界各地的高成就学生，并以其强大的科研产出和价值而著称。",
     },
     sectionTitles: {
       overview: "学校概览",
@@ -606,7 +677,7 @@ const SectionHeaderWithArrow = ({
   </div>
 );
 
-const MontrealUniversityPage = () => {
+const BinghamtonUniversityPage = () => {
   const [showInfoPanel, setShowInfoPanel] = useState(true);
   const [activeView, setActiveView] = useState<
     "university" | "highschool" | "instructions" | "pdfView"
@@ -731,8 +802,8 @@ const MontrealUniversityPage = () => {
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
               <div className="flex items-center">
                 <img
-                  src="/logos/montreal.png"
-                  alt="Université de Montréal Logo"
+                  src="/logos/binghamton.png"
+                  alt="Binghamton University Logo"
                   width={120}
                   height={120}
                   className="mr-4"
@@ -771,18 +842,17 @@ const MontrealUniversityPage = () => {
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
-                              📍 2900 Edouard Montpetit Blvd, Montreal, Quebec
-                              H3T 1J4, Canada
+                              📍 4400 Vestal Pkwy E, Binghamton, NY 13902, USA
                               <br />
-                              📞 (514) 343-6111
+                              📞 (607) 777-2000
                               <br />
                               🌐{" "}
                               <a
-                                href="https://www.umontreal.ca/en/"
+                                href="https://www.binghamton.edu/"
                                 target="_blank"
                                 className="text-[#247e9f] underline"
                               >
-                                www.umontreal.ca
+                                www.binghamton.edu
                               </a>
                             </p>
                           </>
@@ -863,4 +933,4 @@ const MontrealUniversityPage = () => {
   );
 };
 
-export default MontrealUniversityPage;
+export default BinghamtonUniversityPage;

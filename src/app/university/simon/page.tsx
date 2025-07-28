@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for Université de Montréal
+// Data structure holding both English and Chinese links for Simon Fraser University
 const universityViewData = [
   {
     id: "overview",
@@ -11,19 +11,22 @@ const universityViewData = [
       en: [
         {
           title: "QS Ranking",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          url: "https://www.topuniversities.com/universities/simon-fraser-university?utm_source=chatgpt.com",
         },
         {
           title: "Campus Map",
-          url: "https://plancampus.umontreal.ca/montreal/",
+          url: "https://www.sfu.ca/fs/campus-maps.html?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "QS 排名",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          url: "https://www.topuniversities.com/universities/simon-fraser-university?utm_source=chatgpt.com",
         },
-        { title: "校区地图", url: "https://plancampus.umontreal.ca/montreal/" },
+        {
+          title: "校区地图",
+          url: "https://www.sfu.ca/fs/campus-maps.html?utm_source=chatgpt.com",
+        },
       ],
     },
   },
@@ -32,22 +35,22 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Programs List / Viewbook",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          title: "Programs List (A-Z)",
+          url: "https://www.sfu.ca/students/admission/programs/a-z.html",
         },
         {
           title: "Faculty Introduction",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.sfu.ca/students/admission/programs/faculties.html",
         },
       ],
       cn: [
         {
-          title: "专业列表 / 宣传册",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          title: "专业列表 (A-Z)",
+          url: "https://www.sfu.ca/students/admission/programs/a-z.html",
         },
         {
           title: "学院介绍",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.sfu.ca/students/admission/programs/faculties.html",
         },
       ],
     },
@@ -58,29 +61,29 @@ const universityViewData = [
       en: [
         {
           title: "Undergraduate Admission Home",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.sfu.ca/students/admission.html",
         },
         {
           title: "Entry Requirements",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.sfu.ca/students/admission/admission-requirements.html",
         },
         {
           title: "Important Dates",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.sfu.ca/students/admission/apply/timeline-and-evaluation.html?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "本科申请主页",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.sfu.ca/students/admission.html",
         },
         {
           title: "入学要求",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.sfu.ca/students/admission/admission-requirements.html",
         },
         {
           title: "重要日期",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.sfu.ca/students/admission/apply/timeline-and-evaluation.html?utm_source=chatgpt.com",
         },
       ],
     },
@@ -91,13 +94,13 @@ const universityViewData = [
       en: [
         {
           title: "Direct Application",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          url: "https://www.sfu.ca/students/admission/apply.html",
         },
       ],
       cn: [
         {
-          title: "直申通道",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          title: "直接申请",
+          url: "https://www.sfu.ca/students/admission/apply.html",
         },
       ],
     },
@@ -107,30 +110,30 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Tuition Fees",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          title: "Tuition & Fees",
+          url: "https://www.sfu.ca/students/admission/fees-scholarships.html?utm_source=chatgpt.com",
         },
         {
           title: "Scholarship Search",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://www.sfu.ca/students/financial-aid/undergraduate/scholarships.html",
         },
         {
           title: "Work-Study Program",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          url: "https://www.sfu.ca/students/financial-aid/undergraduate/work-study.html",
         },
       ],
       cn: [
         {
-          title: "学费表",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          title: "学费与费用",
+          url: "https://www.sfu.ca/students/admission/fees-scholarships.html?utm_source=chatgpt.com",
         },
         {
           title: "奖学金查询",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://www.sfu.ca/students/financial-aid/undergraduate/scholarships.html",
         },
         {
           title: "勤工助学项目",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          url: "https://www.sfu.ca/students/financial-aid/undergraduate/work-study.html",
         },
       ],
     },
@@ -139,23 +142,25 @@ const universityViewData = [
     id: "campus-life",
     links: {
       en: [
-        {
-          title: "Student Groups",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
-        },
+        { title: "Clubs Directory", url: "https://go.sfss.ca/clubs/list" },
         {
           title: "Athletics & Recreation",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          url: "https://www.sfu.ca/recreation/facility/SportsClubs.html",
+        },
+        {
+          title: "Dining & Meal Plan",
+          url: "https://www.sfu.ca/food/mealplans.html",
         },
       ],
       cn: [
-        {
-          title: "学生社团",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
-        },
+        { title: "社团目录", url: "https://go.sfss.ca/clubs/list" },
         {
           title: "体育与运动",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          url: "https://www.sfu.ca/recreation/facility/SportsClubs.html",
+        },
+        {
+          title: "校园餐饮计划",
+          url: "https://www.sfu.ca/food/mealplans.html",
         },
       ],
     },
@@ -165,22 +170,30 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Student Services (Housing)",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
+          title: "Residence Home",
+          url: "https://www.sfu.ca/students/residences.html",
+        },
+        {
+          title: "Room Types & Fees",
+          url: "https://www.sfu.ca/students/residences/housing-options.html",
         },
         {
           title: "Off-Campus Housing Office",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          url: "https://www.sfu.ca/students/residences/housing-options/off-campus-housing.html",
         },
       ],
       cn: [
         {
-          title: "学生服务（住宿）",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
+          title: "宿舍主页",
+          url: "https://www.sfu.ca/students/residences.html",
+        },
+        {
+          title: "房型与费用",
+          url: "https://www.sfu.ca/students/residences/housing-options.html",
         },
         {
           title: "校外住宿办公室",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          url: "https://www.sfu.ca/students/residences/housing-options/off-campus-housing.html",
         },
       ],
     },
@@ -190,38 +203,38 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "International Office",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
+          title: "International Services for Students (ISS)",
+          url: "https://www.sfu.ca/students/iss.html",
         },
         {
-          title: "Immigration Info",
-          url: "https://international.umontreal.ca/english/home/",
+          title: "Work After Graduation (PGWP)",
+          url: "https://www.sfu.ca/students/isap/explore/employment/work-after-grad11.html",
         },
         {
-          title: "Required Documents",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          title: "Resource Guides",
+          url: "https://www.sfu.ca/students/isap/resources/guides.html",
         },
         {
           title: "Health & Wellness",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.sfu.ca/vancouver/students/health-wellness-services.html",
         },
       ],
       cn: [
         {
-          title: "国际事务办公室",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
+          title: "国际学生服务 (ISS)",
+          url: "https://www.sfu.ca/students/iss.html",
         },
         {
-          title: "移民信息",
-          url: "https://international.umontreal.ca/english/home/",
+          title: "毕业后工作 (PGWP)",
+          url: "https://www.sfu.ca/students/isap/explore/employment/work-after-grad11.html",
         },
         {
-          title: "所需文件",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          title: "资源指南",
+          url: "https://www.sfu.ca/students/isap/resources/guides.html",
         },
         {
           title: "健康与心理支持",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.sfu.ca/vancouver/students/health-wellness-services.html",
         },
       ],
     },
@@ -231,28 +244,43 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "Career Centre Home",
-          url: "https://www.umontreal.ca/carrieres/",
+          title: "Career & Volunteer Services",
+          url: "https://www.sfu.ca/students/career.html",
+        },
+        { title: "Co-op Home", url: "https://www.sfu.ca/coop.html" },
+        {
+          title: "Co-op Career Development Program",
+          url: "https://www.sfu.ca/students/get-involved/programs-and-opportunities/co-op-career-development-program.html",
         },
         {
-          title: "Co-op / Internship Info",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          title: "Co-op Programs",
+          url: "https://www.sfu.ca/hire/coop/programs.html",
         },
         {
-          title: "Alumni Network",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
+          title: "Finding a Co-op Job (International)",
+          url: "https://www.sfu.ca/coop/international/finding-a-job.html",
         },
+        { title: "Alumni Network", url: "https://www.sfu.ca/alumni.html" },
       ],
       cn: [
-        { title: "职业中心主页", url: "https://www.umontreal.ca/carrieres/" },
         {
-          title: "Co-op / 实习信息",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          title: "职业与志愿者服务",
+          url: "https://www.sfu.ca/students/career.html",
+        },
+        { title: "Co-op 主页", url: "https://www.sfu.ca/coop.html" },
+        {
+          title: "Co-op 职业发展项目",
+          url: "https://www.sfu.ca/students/get-involved/programs-and-opportunities/co-op-career-development-program.html",
         },
         {
-          title: "校友网络",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
+          title: "Co-op 专业",
+          url: "https://www.sfu.ca/hire/coop/programs.html",
         },
+        {
+          title: "寻找 Co-op 工作（国际生）",
+          url: "https://www.sfu.ca/coop/international/finding-a-job.html",
+        },
+        { title: "校友网络", url: "https://www.sfu.ca/alumni.html" },
       ],
     },
   },
@@ -261,38 +289,38 @@ const universityViewData = [
     links: {
       en: [
         {
-          title: "10 Things to Do When You Arrive",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
+          title: "U-Pass (Transit)",
+          url: "https://www.sfu.ca/students/enrolment-services/upass/general-info.html?utm_source=chatgpt.com",
         },
         {
-          title: "Finding an Apartment",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
+          title: "Arriving in Vancouver",
+          url: "https://www.sfu.ca/students/isap/new/plan-your-trip/arriving-vancouver.html?utm_source=chatgpt.com",
         },
         {
-          title: "COVID-19 Info",
-          url: "https://infocovid19.umontreal.ca/en/english/",
+          title: "Severe Weather Procedures",
+          url: "https://www.sfu.ca/srs/risk-emergency-planning/emergency-preparedness/emergency-procedures/severe-weather.html?utm_source=chatgpt.com",
         },
         {
-          title: "Chinese Student Resources (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "Chinese Students & Scholars Association",
+          url: "https://go.sfss.ca/clubs/126/info?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
-          title: "抵达蒙特利尔后要做的10件事",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
+          title: "U-Pass (公交)",
+          url: "https://www.sfu.ca/students/enrolment-services/upass/general-info.html?utm_source=chatgpt.com",
         },
         {
-          title: "寻找公寓",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
+          title: "抵达温哥华",
+          url: "https://www.sfu.ca/students/isap/new/plan-your-trip/arriving-vancouver.html?utm_source=chatgpt.com",
         },
         {
-          title: "COVID-19 信息",
-          url: "https://infocovid19.umontreal.ca/en/english/",
+          title: "恶劣天气应急程序",
+          url: "https://www.sfu.ca/srs/risk-emergency-planning/emergency-preparedness/emergency-procedures/severe-weather.html?utm_source=chatgpt.com",
         },
         {
-          title: "华人学生资源 (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "中华学生学者联谊会",
+          url: "https://go.sfss.ca/clubs/126/info?utm_source=chatgpt.com",
         },
       ],
     },
@@ -303,34 +331,29 @@ const universityViewData = [
       en: [
         {
           title: "Book Campus Tour",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.sfu.ca/students/admission/tours-events/campus-tours.html?utm_source=chatgpt.com",
         },
         {
           title: "Virtual Campus VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
+          url: "https://www.sfu.ca/students/admission/tours-events/virtual-campus-tours.html?utm_source=chatgpt.com",
         },
         {
-          title: "Official YouTube",
-          url: "https://www.youtube.com/@umontreal",
-        },
-        {
-          title: "Official Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          title: "Tours & Events Home",
+          url: "https://www.sfu.ca/students/admission/tours-events.html?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "预约校园参观",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.sfu.ca/students/admission/tours-events/campus-tours.html?utm_source=chatgpt.com",
         },
         {
           title: "虚拟校园 VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
+          url: "https://www.sfu.ca/students/admission/tours-events/virtual-campus-tours.html?utm_source=chatgpt.com",
         },
-        { title: "官方 YouTube", url: "https://www.youtube.com/@umontreal" },
         {
-          title: "官方 Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          title: "参观与活动主页",
+          url: "https://www.sfu.ca/students/admission/tours-events.html?utm_source=chatgpt.com",
         },
       ],
     },
@@ -343,43 +366,42 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Admission Brochure – Undergraduate",
+          title: "SFU Main Undergraduate Viewbook",
           description:
-            "Official UdeM guide covering all undergraduate programs, academic requirements, admission process, tuition, campus life, and student services.",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "SFU's core recruitment material, detailing undergraduate program overviews, campus life, student testimonials, admission timelines, application steps, and student support systems.",
+          url: "https://www.sfu.ca/content/dam/sfu/communicators-toolkit/brand/recruitment-toolkit/SFU-Viewbook-2025-Main.pdf",
         },
         {
-          title:
-            "“Starting University” Roadmap – International Students (2025)",
+          title: "SFU Compact Undergraduate Viewbook",
           description:
-            "A timeline guide for new international students, covering budget, housing, transport, language adaptation, student services, and community events.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
+            "A simplified version of the recruitment handbook, covering program features, application process, and key timelines, suitable for users getting a quick overview of SFU.",
+          url: "https://www.sfu.ca/content/dam/sfu/communicators-toolkit/brand/recruitment-toolkit/SFU-Viewbook-2025-Main.pdf",
         },
         {
-          title: "Future Students Out of Quebec” Viewbook (2022–23)",
+          title: "Graduate Student Admission Handbook",
           description:
-            "For Canadian and international applicants outside Quebec, detailing programs, scholarships, tuition, language support, and application steps.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "A guide for SFU graduate and doctoral candidates, including program introductions, application steps, scholarships, and campus resources.",
+          url: "https://www.uniagents.com/ga-institution/uploads/prospectus/institute_2455_prospectus1610000138Graduate%20and%20Postdoctoral%20Studies%20Student%20Handbook.pdf",
         },
       ],
       cn: [
         {
-          title: "本科招生手册",
+          title: "SFU本科招生主手册",
           description:
-            "来自官网“下载我们的招生手册”页面，由 UdeM 官方提供，内容涵盖所有本科专业、学术要求、入学流程、学费、校园生活与学生服务等。",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "SFU 的核心招生资料，详述本科专业概览、校园生活、学生推荐、入学时间轴、申请步骤及学生支持体系，为未来申请人提供一站式了解 SFU 的官方手册。",
+          url: "https://www.sfu.ca/content/dam/sfu/communicators-toolkit/brand/recruitment-toolkit/SFU-Viewbook-2025-Main.pdf",
         },
         {
-          title: "“开启大学生活”路线图 – 国际学生 (2025)",
+          title: "SFU本科招生简明手册",
           description:
-            "聚焦国际新生，列出入学前到入学后的关键事项指南，如预算、住宿、交通、语言适应、学生服务与社区活动。“从申请到第一节课”的时间线清晰。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
+            "简化版本的招生手册，涵盖项目特色、申请流程、关键时间节点，适合初步了解 SFU 的用户快速阅读。",
+          url: "https://www.sfu.ca/content/dam/sfu/communicators-toolkit/brand/recruitment-toolkit/SFU-Viewbook-2025-Main.pdf",
         },
         {
-          title: "魁北克省外未来学生宣传册 (2022–23)",
+          title: "研究生入学手册",
           description:
-            "专为魁北克省以外的加拿大省份及国际申请者准备，介绍项目、奖学金、学费、语言支持与申请步骤，内容仍具参考价值。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "为 SFU 研究生及博士候选人设计的招生指导，包括专业介绍、申请步骤、奖学金与校园资源，完整展示研究生入学路径。",
+          url: "https://www.uniagents.com/ga-institution/uploads/prospectus/institute_2455_prospectus1610000138Graduate%20and%20Postdoctoral%20Studies%20Student%20Handbook.pdf",
         },
       ],
     },
@@ -389,75 +411,87 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Université de Montréal International",
+          title: "MBB Graduate Student Orientation Booklet",
           description:
-            "Explains that on-campus housing is mainly for local students with fewer options for exchange students; provides steps and platform recommendations for finding off-campus housing.",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "A guide for new graduate students in the Molecular Biology and Biochemistry department, covering academic planning, campus resources, the advising system, and procedural guidance.",
+          url: "https://www.sfu.ca/content/dam/sfu/mbb/Grad/MBB%20Orientation%20Booklet%202023.pdf",
         },
         {
-          title: "UdeM Campus Tour Map",
+          title: "Residence & Housing Handbook (2024-25 & 2025-26)",
           description:
-            "PDF campus map marking locations of student service centers, international office, off-campus housing assistance office, etc.",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "A must-read for new and returning residents, covering community guidelines, room change procedures, move-in guides, and public space rules.",
+          url: "https://www.sfu.ca/students/residences/community/contract-handbook.html?utm_source=chatgpt.com",
+        },
+        {
+          title: "SFU Vancouver Student Guide",
+          description:
+            "A practical guide for students at the Vancouver campus, including campus resources, event organizations, service centers, life tips, and housing information.",
+          url: "https://www.sfu.ca/content/sfu/vancouver/students/_jcr_content/main_content/download/file.res/SFU%20Vancouver%20Student%20Guide.pdf",
         },
       ],
       cn: [
         {
-          title: "蒙特利尔大学国际部",
+          title: "MBB研究生迎新册",
           description:
-            "介绍校内住宿主要面向本地学生，交换生选择较少；提供寻找校外住房的步骤与平台建议（如学生住房银行、Facebook社群），并列出医疗保险、签证等实用信息。",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "面向分子生物与生化系（MBB）研究生的新生指南，内容包括学术规划、校园资源、导师制度及程序引导，适合研究型专业入门类内容拆解。",
+          url: "https://www.sfu.ca/content/dam/sfu/mbb/Grad/MBB%20Orientation%20Booklet%202023.pdf",
         },
         {
-          title: "UdeM校园导览",
+          title: "住宿手册 (2024-25 & 2025-26)",
           description:
-            "校园地图PDF，标注学生服务中心、国际办公室、校外住宿帮助办公地点等常用设施。",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "新老居民必读，涵盖社区守则、换房流程、入住指南、公共空间规则等，适合制作住宿生活说明与细节讲解。",
+          url: "https://www.sfu.ca/students/residences/community/contract-handbook.html?utm_source=chatgpt.com",
+        },
+        {
+          title: "SFU温哥华校区学生指南",
+          description:
+            "提供温哥华校区学生实用指南，包括校园资源、活动组织、服务中心、生活技巧、住宿信息等，适合拆解为“校园生活全指南”内容系列。",
+          url: "https://www.sfu.ca/content/sfu/vancouver/students/_jcr_content/main_content/download/file.res/SFU%20Vancouver%20Student%20Guide.pdf",
         },
       ],
     },
   },
   {
-    id: "finance_and_career",
+    id: "career_guides",
     links: {
       en: [
         {
-          title: "Official Regulations – Tuition & Other Fees (2025)",
+          title: "Preparing an Academic CV",
           description:
-            "Legal document detailing the fee structure, including per-credit fees, semester fees, student service fees, and specialized program fees.",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
+            "Written by an SFU math professor, this guide details the key points of writing an academic CV, including category structure, formatting standards, and content quality.",
+          url: "https://www.sfu.ca/~jstockie/research/cfdgroup/cvs2017.pdf",
         },
         {
-          title: "Job Search for Students and Graduates",
+          title: "Job Search Strategies (Beedie School of Business)",
           description:
-            "Produced by the Faculty of Law's Career Development Centre, this guide details strategies to enhance job competitiveness within Canada, including job platform recommendations.",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
+            "Covers the entire job search process, including industry research, optimizing application documents, networking, and interview preparation. Especially suitable for business students.",
+          url: "https://beediecommunity.sfu.ca/content/documents/Link/CMC/4_%20Job%20Search%20Strategies.pdf",
         },
         {
-          title: "CV and Letter Samples",
+          title: "Effective Cover Letters (Beedie Real Estate Centre)",
           description:
-            "Published by the Student Affairs Office, includes resume and cover letter templates for positions like research assistant, project coordinator, and research roles.",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
+            "Provides a structural guide and writing advice for high-quality cover letters, including techniques for targeting specific positions.",
+          url: "https://beediecommunity.sfu.ca/content/documents/Link/Cover%20Letters%282%29.pdf",
         },
       ],
       cn: [
         {
-          title: "官方规定 - 学费及其他费用 (2025版)",
+          title: "准备学术简历",
           description:
-            "法规文件，详细列出收费结构，包括学分费、学期费、学生服务费、专家课程费等项，适用于制定预算与合规参考。",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
+            "由 SFU 数学系教授编写，详细说明学术型简历的编写要点，包括分类结构、格式规范和内容优劣，是准备科研职位或研究生申请简历的实用模板。",
+          url: "https://www.sfu.ca/~jstockie/research/cfdgroup/cvs2017.pdf",
         },
         {
-          title: "学生与毕业生的求职",
+          title: "求职策略 (Beedie商学院)",
           description:
-            "由法学院职业发展中心制作，详述加拿大境内提升就业竞争力的策略，包含就业平台推荐、简历/求职信注意事项等。",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
+            "全面涵盖求职流程，包括行业研究、求职文件优化、网络拓展与面试准备，尤其适合商科学生及职涯初入者。",
+          url: "https://beediecommunity.sfu.ca/content/documents/Link/CMC/4_%20Job%20Search%20Strategies.pdf",
         },
         {
-          title: "简历与信函范例",
+          title: "有效的求职信 (Beedie地产中心)",
           description:
-            "由学生事务办公室发布，包含简历与求职信模板示例，涵盖研究助理、项目协调、科研职位等。",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
+            "提供撰写高质量求职信的结构指南和写作建议，包括针对目标职位的技巧。",
+          url: "https://beediecommunity.sfu.ca/content/documents/Link/Cover%20Letters%282%29.pdf",
         },
       ],
     },
@@ -468,30 +502,30 @@ const pdfViewData = [
       en: [
         {
           title:
-            "Undergraduate Guide to Biomedical Sciences (Faculty of Medicine)",
+            "SIAT Survival Guide (School of Interactive Arts and Technology)",
           description:
-            "Details the goals, curriculum, faculty, and support for the biomedical sciences program.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
+            "A 'survival guide' written by SIAT students, covering course recommendations, equipment, portfolio advice, and critique participation strategies.",
+          url: "https://www.sfu.ca/~kkt12/SIAT%20Survival%20Guide/SIAT_survivalguide.pdf",
         },
         {
-          title: "Guide to a Minor in Arts and Sciences",
+          title: "Urban Studies Student Handbook (Graduate Program)",
           description:
-            "For the Arts and Sciences minor program, explaining course options, program flexibility, and credit requirements.",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "Official handbook for the 2024-25 Urban Studies graduate program, containing curriculum structure, research projects, internal communication, resource links, and graduation requirements.",
+          url: "https://www.sfu.ca/content/dam/sfu/urban/currentstudents/Studenthandbook/2024-25_UrbanStudiesStudentHandbook.pdf",
         },
       ],
       cn: [
         {
-          title: "生物医学科学本科指南（医学院）",
+          title: "SIAT生存指南 (互动艺术与技术学院)",
           description:
-            "详尽介绍生物医学科学专业目标、课程结构、教学团队及入学支持。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
+            "由 SIAT 学生编写的专业“生存指南”，内容包括课程推荐、工具设备、项目组合（portfolio）建议、批评会参与策略等，聚焦实战技能，非常实用。",
+          url: "https://www.sfu.ca/~kkt12/SIAT%20Survival%20Guide/SIAT_survivalguide.pdf",
         },
         {
-          title: "文理辅修指南",
+          title: "城市研究学生手册 (研究生项目)",
           description:
-            "针对文理学院辅修项目，说明辅修课程设置、专业灵活性与学分要求。",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "Urban Studies 项目官方手册，针对 2024–25 年度研究生，含课程结构、研究项目、校内交流、资源链接、毕业要求等。",
+          url: "https://www.sfu.ca/content/dam/sfu/urban/currentstudents/Studenthandbook/2024-25_UrbanStudiesStudentHandbook.pdf",
         },
       ],
     },
@@ -513,17 +547,17 @@ const translations = {
       categoriesTitle: "Categories",
     },
     header: {
-      title: "Université de Montréal",
+      title: "Simon Fraser University",
       helpText: "Need help? Book a meeting",
       bookButton: "Book Now",
     },
     universityView: {
       infoPanelTitle: "Overview:",
-      aboutTitle: "⚜️ About Université de Montréal",
+      aboutTitle: "🏔️ About Simon Fraser University",
       aboutParagraph1:
-        "The Université de Montréal is a French-language public research university in Montreal, Quebec, Canada. It is one of the largest universities in the country and a member of the U15 Group of Canadian Research Universities.",
+        "Simon Fraser University (SFU) is a public research university in British Columbia, Canada, with three campuses: Burnaby (main campus), Surrey, and Vancouver. Established in 1965, SFU has a reputation for its interdisciplinary programs and innovative spirit.",
       aboutParagraph2:
-        "Founded in 1878, UdeM is renowned for its comprehensive programs, particularly in health sciences, and its vibrant campus life in the multicultural city of Montreal. It attracts students from all over the world, contributing to a diverse and dynamic academic environment.",
+        "SFU is consistently ranked as one of Canada's top comprehensive universities and is known for its strong co-op education program, which provides students with valuable work experience. It is a member of the U15 Group of Canadian Research Universities.",
     },
     sectionTitles: {
       overview: "Overview",
@@ -539,7 +573,7 @@ const translations = {
       "tours-media": "Tours & Media",
       admission_guides: "Admission & General Guides",
       orientation_and_housing: "Orientation & Housing",
-      finance_and_career: "Finance & Career",
+      career_guides: "Career Guides",
       department_handbooks: "Department Handbooks",
     },
   },
@@ -556,17 +590,17 @@ const translations = {
       categoriesTitle: "分类",
     },
     header: {
-      title: "蒙特利尔大学",
+      title: "西蒙菲莎大学",
       helpText: "需要帮助？预约会议",
       bookButton: "立即预约",
     },
     universityView: {
       infoPanelTitle: "概览:",
-      aboutTitle: "⚜️ 关于蒙特利尔大学",
+      aboutTitle: "🏔️ 关于西蒙菲莎大学",
       aboutParagraph1:
-        "蒙特利尔大学是位于加拿大魁北克省蒙特利尔市的一所法语公立研究型大学。它是加拿大规模最大的大学之一，也是加拿大U15研究型大学联盟的成员。",
+        "西蒙菲莎大学（SFU）是加拿大不列颠哥伦比亚省的一所公立研究型大学，拥有三个校区：本那比（主校区）、素里和温哥华。SFU成立于1965年，以其跨学科课程和创新精神而闻名。",
       aboutParagraph2:
-        "UdeM成立于1878年，以其全面的课程，尤其是在健康科学领域的卓越表现，以及在多元文化城市蒙特利尔充满活力的校园生活而闻名。它吸引了来自世界各地的学生，为多元化和充满活力的学术环境做出了贡献。",
+        "SFU一直被评为加拿大顶尖的综合性大学之一，并以其强大的合作教育（co-op）项目而著称，该项目为学生提供了宝贵的工作经验。它是加拿大U15研究型大学联盟的成员。",
     },
     sectionTitles: {
       overview: "学校概览",
@@ -582,7 +616,7 @@ const translations = {
       "tours-media": "校园参观与媒体",
       admission_guides: "招生与通用指南",
       orientation_and_housing: "迎新与住宿",
-      finance_and_career: "财务与职业",
+      career_guides: "职业指南",
       department_handbooks: "院系手册",
     },
   },
@@ -606,7 +640,7 @@ const SectionHeaderWithArrow = ({
   </div>
 );
 
-const MontrealUniversityPage = () => {
+const SFUUniversityPage = () => {
   const [showInfoPanel, setShowInfoPanel] = useState(true);
   const [activeView, setActiveView] = useState<
     "university" | "highschool" | "instructions" | "pdfView"
@@ -731,8 +765,8 @@ const MontrealUniversityPage = () => {
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
               <div className="flex items-center">
                 <img
-                  src="/logos/montreal.png"
-                  alt="Université de Montréal Logo"
+                  src="/logos/sfu.png"
+                  alt="SFU Logo"
                   width={120}
                   height={120}
                   className="mr-4"
@@ -771,18 +805,17 @@ const MontrealUniversityPage = () => {
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
-                              📍 2900 Edouard Montpetit Blvd, Montreal, Quebec
-                              H3T 1J4, Canada
+                              📍 8888 University Dr, Burnaby, BC V5A 1S6, Canada
                               <br />
-                              📞 (514) 343-6111
+                              📞 (778) 782-3111
                               <br />
                               🌐{" "}
                               <a
-                                href="https://www.umontreal.ca/en/"
+                                href="https://www.sfu.ca/"
                                 target="_blank"
                                 className="text-[#247e9f] underline"
                               >
-                                www.umontreal.ca
+                                www.sfu.ca
                               </a>
                             </p>
                           </>
@@ -863,4 +896,4 @@ const MontrealUniversityPage = () => {
   );
 };
 
-export default MontrealUniversityPage;
+export default SFUUniversityPage;

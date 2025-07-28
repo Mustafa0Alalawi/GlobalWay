@@ -59,6 +59,51 @@ const universities = [
     slug: "/university/montreal",
     logo: "/logo8.png",
   },
+  {
+    name: "California college of the Arts",
+    slug: "/university/california",
+    logo: "/logos/california.png",
+  },
+  {
+    name: "dalhousie university",
+    slug: "/university/dalhousie",
+    logo: "/logos/dalhousie.png",
+  },
+  {
+    name: "chicago university",
+    slug: "/university/chicago",
+    logo: "/logos/chicago.svg",
+  },
+  {
+    name: "ottawa university",
+    slug: "/university/ottawa",
+    logo: "/logos/ottawa.png",
+  },
+  {
+    name: "simon fraser university",
+    slug: "/university/simon",
+    logo: "/logos/sfu.png",
+  },
+  {
+    name: "wilfred laurier university",
+    slug: "/university/wilfred",
+    logo: "/logos/wilfred.png",
+  },
+  {
+    name: "winnipeg university",
+    slug: "/university/winnipeg",
+    logo: "/logos/winnipeg.png",
+  },
+  {
+    name: "calgary university",
+    slug: "/university/calgary",
+    logo: "/logos/calgary.png",
+  },
+  {
+    name: "binghamton university",
+    slug: "/university/binghamton",
+    logo: "/logos/binghamton.png",
+  },
 ];
 
 const mapImages = ["/CanadaMap.png", "/UniMap.png"];
