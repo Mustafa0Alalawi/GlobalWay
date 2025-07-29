@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
+import { type SectionData, type Translations } from "../../types";
 
 // --- DATA FOR UNIVERSITY VIEW ---
-const universityViewData = [
+const universityViewData: SectionData[] = [
   {
     id: "overview",
     links: {
@@ -46,7 +47,7 @@ const universityViewData = [
       ],
     },
   },
-    {
+  {
     id: "admissions",
     links: {
       en: [
@@ -301,65 +302,187 @@ const universityViewData = [
 ];
 
 // --- NEW DATA FOR PDF VIEW ---
-const pdfViewData = [
+const pdfViewData: SectionData[] = [
   {
-    id: 'general_admissions_guides',
+    id: "general_admissions",
     links: {
       en: [
-        { title: "Undergraduate Viewbook 2025", description: "Academic overview, campus support, application & scholarship summary (38-page color brochure)", url: "#" },
-        { title: "Undergraduate Admission Viewbook 2024", description: "A different year's version from the one above, can be used for comparison", url: "#" },
-        { title: "International Applicant Handbook 2024", description: "Visa timeline, language requirements, cost estimation for international students", url: "#" },
-        { title: "International Undergraduate Viewbook 2025", description: "A “Why Queen’s” brochure designed for overseas high school students", url: "#" },
+        {
+          title: "Undergraduate Viewbook 2025",
+          description:
+            "Academic overview, campus support, application & scholarship summary (38-page color brochure).",
+          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "Undergraduate Admission Viewbook 2024",
+          description:
+            "A different year's version from the one above, can be used for comparison.",
+          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "International Applicant Handbook 2024",
+          description:
+            "Visa timeline, language requirements, cost estimation for international students.",
+          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_2024_Intl_Applicant_Handbook.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "International Undergraduate Viewbook 2025",
+          description:
+            "A “Why Queen’s” brochure designed for overseas high school students.",
+          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_International_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+        },
       ],
       cn: [
-        { title: "Undergraduate Viewbook 2025", description: "学术概况、校园支持、申请与奖学金综览（38 页彩册）", url: "#" },
-        { title: "Undergraduate Admission Viewbook 2024", description: "与上一本不同年度版本，可双版本并列供对比", url: "#" },
-        { title: "International Applicant Handbook 2024", description: "国际生签证时程、语言要求、费用估算", url: "#" },
-        { title: "International Undergraduate Viewbook 2025", description: "专为海外高中生设计的“Why Queen’s”彩册", url: "#" },
-      ]
-    }
+        {
+          title: "Undergraduate Viewbook 2025",
+          description: "学术概况、校园支持、申请与奖学金综览（38 页彩册）。",
+          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "Undergraduate Admission Viewbook 2024",
+          description: "与上一本不同年度版本，可双版本并列供对比。",
+          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "International Applicant Handbook 2024",
+          description: "国际生签证时程、语言要求、费用估算。",
+          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_2024_Intl_Applicant_Handbook.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "International Undergraduate Viewbook 2025",
+          description: "专为海外高中生设计的“Why Queen’s”彩册。",
+          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_International_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+        },
+      ],
+    },
   },
   {
-    id: 'faculty_specific_guides',
+    id: "faculty_and_academics",
     links: {
-        en: [
-            { title: "First-Year Student Handbook (Arts & Science)", description: "Course selection rules, first-year course combinations, Plan application instructions", url: "#"},
-            { title: "Public Health Sciences First-Year Handbook", description: "Major requirements & research/internship pathways", url: "#"},
-            { title: "Exchange Student Handbook – Smith School of Business", description: "Course selection for exchange students, arrival process, life guide", url: "#"},
-        ],
-        cn: [
-            { title: "First-Year Student Handbook (Arts & Science)", description: "选课规则、第一学年课程组合、Plan 申请说明", url: "#"},
-            { title: "Public Health Sciences First-Year Handbook", description: "专业必修 & 研究/实习路线图", url: "#"},
-            { title: "Exchange Student Handbook – Smith School of Business", description: "交换生选课、到达流程、生活指南", url: "#"},
-        ]
-    }
+      en: [
+        {
+          title: "First-Year Student Handbook (Arts & Science)",
+          description:
+            "Course selection rules, first-year course combinations, Plan application instructions.",
+          url: "https://healthsci.queensu.ca/liscbchm/sites/liscbchm/files/inline-files/first_year_handbook_2021.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "Public Health Sciences First-Year Handbook",
+          description: "Major requirements & research/internship pathways.",
+          url: "https://phs.queensu.ca/source/PHS/2021%2008%2017%20MPH%20Student%20handbook%20-%202021-22%20Academic%20Year.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "Exchange Student Handbook – Smith School of Business",
+          description:
+            "Course selection for exchange students, arrival process, life guide.",
+          url: "https://smith.queensu.ca/_templates/documents/international/Exchange_Student_Handbook.pdf?utm_source=chatgpt.com",
+        },
+      ],
+      cn: [
+        {
+          title: "新生手册 (文理学院)",
+          description: "选课规则、第一学年课程组合、Plan 申请说明。",
+          url: "https://healthsci.queensu.ca/liscbchm/sites/liscbchm/files/inline-files/first_year_handbook_2021.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "公共卫生科学新生手册",
+          description: "专业必修 & 研究/实习路线图。",
+          url: "https://phs.queensu.ca/source/PHS/2021%2008%2017%20MPH%20Student%20handbook%20-%202021-22%20Academic%20Year.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "交换生手册 – 史密斯商学院",
+          description: "交换生选课、到达流程、生活指南。",
+          url: "https://smith.queensu.ca/_templates/documents/international/Exchange_Student_Handbook.pdf?utm_source=chatgpt.com",
+        },
+      ],
+    },
   },
   {
-    id: 'campus_life_and_career_guides',
+    id: "housing_and_campus_life",
     links: {
-        en: [
-            { title: "Residence Contract & Community Standards", description: "Housing terms, demerit point system, code of conduct", url: "#"},
-            { title: "Residence Move-in Web PDF (with checklist)", description: "Move-in week schedule, must-bring items, parking routes", url: "#"},
-            { title: "BCom Employment Report 2023", description: "Business school undergraduate employment rate, starting salary, industry breakdown", url: "#"},
-            { title: "BCom Employment Report 2022", description: "Can be used for year-over-year comparison", url: "#"},
-            { title: "Queen’s University Employment Rate 2021 (Provincial KPI)", description: "Overall undergraduate 6-month & 24-month employment rate", url: "#"},
-            { title: "Career Services Tipsheet – CV for Grad School", description: "CV samples for new job seekers / graduate school applications", url: "#"},
-        ],
-        cn: [
-            { title: "Residence Contract & Community Standards", description: "住宿条款、违规点制、行为准则", url: "#"},
-            { title: "Residence Move-in Web PDF（含清单）", description: "报到周时程、必带物品、停车路线", url: "#"},
-            { title: "BCom Employment Report 2023", description: "商学院本科就业率、起薪、行业去向", url: "#"},
-            { title: "BCom Employment Report 2022", description: "可做历年对比", url: "#"},
-            { title: "Queen’s University Employment Rate 2021 (Provincial KPI)", description: "本科整体 6 月 & 24 月就业率", url: "#"},
-            { title: "Career Services Tipsheet – CV for Grad School", description: "新生求职 / 研究生申请 CV 样例", url: "#"},
-        ]
-    }
-  }
+      en: [
+        {
+          title: "Residence Contract & Community Standards",
+          description: "Housing terms, demerit point system, code of conduct.",
+          url: "https://www.queensu.ca/residences/sites/residencewww/files/uploaded_files/Conduct/ResidenceContractFinal.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "Residence Move-in Web PDF (with checklist)",
+          description:
+            "Move-in week schedule, must-bring items, parking routes.",
+          url: "https://www.queensu.ca/registrar/registration/student-guide-registration",
+        },
+      ],
+      cn: [
+        {
+          title: "住宿合同与社区标准",
+          description: "住宿条款、违规点制、行为准则。",
+          url: "https://www.queensu.ca/residences/sites/residencewww/files/uploaded_files/Conduct/ResidenceContractFinal.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "住宿入住指南PDF（含清单）",
+          description: "报到周时程、必带物品、停车路线。",
+          url: "https://www.queensu.ca/registrar/registration/student-guide-registration",
+        },
+      ],
+    },
+  },
+  {
+    id: "career_and_employment",
+    links: {
+      en: [
+        {
+          title: "BCom Employment Report 2023",
+          description:
+            "Business school undergraduate employment rate, starting salary, industry breakdown.",
+          url: "https://smith.queensu.ca/_templates/documents/bcom/cac-bcom-employment-report.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "BCom Employment Report 2022",
+          description: "Can be used for year-over-year comparison.",
+          url: "https://smith.queensu.ca/_templates/documents/bcom/CAC-BCom2022-employment-report.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "Queen’s University Employment Rate 2021 (Provincial KPI)",
+          description:
+            "Overall undergraduate 6-month & 24-month employment rate.",
+          url: "https://www.queensu.ca/planningandbudget/irp/sites/irpwww/files/uploaded_files/KPIs/Emp%20Rate%202021%20for%202019%20grads%20-%2012Jan23.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "Career Services Tipsheet – CV for Grad School",
+          description:
+            "CV samples for new job seekers / graduate school applications.",
+          url: "https://careers.queensu.ca/sites/cars3www/files/uploaded_files/TipSheets/CV_for_GradSchool_Tipsheet%20Visual%20Updated_0.pdf?utm_source=chatgpt.com",
+        },
+      ],
+      cn: [
+        {
+          title: "BCom 就业报告 2023",
+          description: "商学院本科就业率、起薪、行业去向。",
+          url: "https://smith.queensu.ca/_templates/documents/bcom/cac-bcom-employment-report.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "BCom 就业报告 2022",
+          description: "可做历年对比。",
+          url: "https://smith.queensu.ca/_templates/documents/bcom/CAC-BCom2022-employment-report.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "女王大学就业率 2021 (省级KPI)",
+          description: "本科整体 6 月 & 24 月就业率。",
+          url: "https://www.queensu.ca/planningandbudget/irp/sites/irpwww/files/uploaded_files/KPIs/Emp%20Rate%202021%20for%202019%20grads%20-%2012Jan23.pdf?utm_source=chatgpt.com",
+        },
+        {
+          title: "职业服务提示 – 研究生院简历",
+          description: "新生求职 / 研究生申请 CV 样例。",
+          url: "https://careers.queensu.ca/sites/cars3www/files/uploaded_files/TipSheets/CV_for_GradSchool_Tipsheet%20Visual%20Updated_0.pdf?utm_source=chatgpt.com",
+        },
+      ],
+    },
+  },
 ];
 
-
 // Centralized object for all translated UI text
-const translations = {
+const translations: Translations = {
   en: {
     sidebar: {
       instructionsTitle: "Page Instructions:",
@@ -449,9 +572,9 @@ const translations = {
       "co-op-careers": "Co-op Careers",
       "city-snapshot": "City Snapshot",
       "tours-media": "Tours & Media",
-      "general_admissions_guides": "General & Admissions Guides",
-      "faculty_specific_guides": "Faculty-Specific Handbooks",
-      "campus_life_and_career_guides": "Campus Life & Career Guides",
+      general_admissions_guides: "General & Admissions Guides",
+      faculty_specific_guides: "Faculty-Specific Handbooks",
+      campus_life_and_career_guides: "Campus Life & Career Guides",
     },
   },
   cn: {
@@ -539,9 +662,9 @@ const translations = {
       "co-op-careers": "实习与就业",
       "city-snapshot": "城市生活概况",
       "tours-media": "校园参观与媒体",
-      "general_admissions_guides": "通用与招生指南",
-      "faculty_specific_guides": "各学院手册",
-      "campus_life_and_career_guides": "校园生活与职业指南",
+      general_admissions_guides: "通用与招生指南",
+      faculty_specific_guides: "各学院手册",
+      campus_life_and_career_guides: "校园生活与职业指南",
     },
   },
 };
@@ -571,7 +694,7 @@ const QueensUniversityPage = () => {
   >("instructions");
   const [language, setLanguage] = useState<"en" | "cn">("en");
 
-  const t = translations[language]; 
+  const t = translations[language];
 
   return (
     <>
@@ -603,44 +726,50 @@ const QueensUniversityPage = () => {
 
           {/* --- View Selector --- */}
           <div className="mb-8 pb-8 border-b">
-             <div className="mb-4">
-                <p className="text-sm font-semibold text-gray-600 mb-2">{t.sidebar.instructionsTitle}</p>
-                <button
-                    className={`w-full text-left px-4 py-2 rounded-lg font-semibold text-sm transition ${
-                        activeView === "instructions"
-                        ? "bg-[#247e9f] text-white"
-                        : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                    }`}
-                    onClick={() => setActiveView("instructions")}
-                >
-                    {t.sidebar.instructionsButton}
-                </button>
+            <div className="mb-4">
+              <p className="text-sm font-semibold text-gray-600 mb-2">
+                {t.sidebar.instructionsTitle}
+              </p>
+              <button
+                className={`w-full text-left px-4 py-2 rounded-lg font-semibold text-sm transition ${
+                  activeView === "instructions"
+                    ? "bg-[#247e9f] text-white"
+                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                }`}
+                onClick={() => setActiveView("instructions")}
+              >
+                {t.sidebar.instructionsButton}
+              </button>
             </div>
             <div className="mb-4">
-                <p className="text-sm font-semibold text-gray-600 mb-2">{t.sidebar.currentStudentTitle}</p>
-                <button
-                    className={`w-full text-left px-4 py-2 rounded-lg font-semibold text-sm transition ${
-                        activeView === "university"
-                        ? "bg-[#247e9f] text-white"
-                        : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                    }`}
-                    onClick={() => setActiveView("university")}
-                >
-                    {t.sidebar.universityButton}
-                </button>
+              <p className="text-sm font-semibold text-gray-600 mb-2">
+                {t.sidebar.currentStudentTitle}
+              </p>
+              <button
+                className={`w-full text-left px-4 py-2 rounded-lg font-semibold text-sm transition ${
+                  activeView === "university"
+                    ? "bg-[#247e9f] text-white"
+                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                }`}
+                onClick={() => setActiveView("university")}
+              >
+                {t.sidebar.universityButton}
+              </button>
             </div>
             <div className="mb-4">
-                <p className="text-sm font-semibold text-gray-600 mb-2">{t.sidebar.highSchoolTitle}</p>
-                <button
-                    className={`w-full text-left px-4 py-2 rounded-lg font-semibold text-sm transition ${
-                        activeView === "highschool"
-                        ? "bg-[#247e9f] text-white"
-                        : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-                    }`}
-                    onClick={() => setActiveView("highschool")}
-                >
-                    {t.sidebar.highSchoolButton}
-                </button>
+              <p className="text-sm font-semibold text-gray-600 mb-2">
+                {t.sidebar.highSchoolTitle}
+              </p>
+              <button
+                className={`w-full text-left px-4 py-2 rounded-lg font-semibold text-sm transition ${
+                  activeView === "highschool"
+                    ? "bg-[#247e9f] text-white"
+                    : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                }`}
+                onClick={() => setActiveView("highschool")}
+              >
+                {t.sidebar.highSchoolButton}
+              </button>
             </div>
             <div>
               <p className="text-sm font-semibold text-gray-600 mb-2">
@@ -780,8 +909,7 @@ const QueensUniversityPage = () => {
                               </a>
                               <br />
                               📞 (613) 533-2218
-                              <br />
-                              �{" "}
+                              <br />�{" "}
                               <a
                                 href="https://www.queensu.ca/"
                                 target="_blank"
@@ -837,41 +965,131 @@ const QueensUniversityPage = () => {
                     <section>
                       <h2 className="text-2xl font-bold mb-2">Why Queen’s?</h2>
                       <ul className="list-disc pl-5">
-                        <li><a href="https://www.queensu.ca/" className="text-[#247e9f] underline">Official Website</a></li>
-                        <li><a href="https://bit.ly/Queens_Viewbook" className="text-[#247e9f] underline">Viewbook (Domestic)</a></li>
-                        <li><a href="https://bit.ly/Queens_Int_Viewbook" className="text-[#247e9f] underline">Viewbook (International)</a></li>
+                        <li>
+                          <a
+                            href="https://www.queensu.ca/"
+                            className="text-[#247e9f] underline"
+                          >
+                            Official Website
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://bit.ly/Queens_Viewbook"
+                            className="text-[#247e9f] underline"
+                          >
+                            Viewbook (Domestic)
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://bit.ly/Queens_Int_Viewbook"
+                            className="text-[#247e9f] underline"
+                          >
+                            Viewbook (International)
+                          </a>
+                        </li>
                       </ul>
                     </section>
                     <section>
-                      <h2 className="text-2xl font-bold mb-2">Programs & Faculties</h2>
-                      <a href="https://www.queensu.ca/academics/programs" className="text-[#247e9f] underline">Explore Programs</a>
+                      <h2 className="text-2xl font-bold mb-2">
+                        Programs & Faculties
+                      </h2>
+                      <a
+                        href="https://www.queensu.ca/academics/programs"
+                        className="text-[#247e9f] underline"
+                      >
+                        Explore Programs
+                      </a>
                     </section>
                     <section>
-                      <h2 className="text-2xl font-bold mb-2">Admissions & Deadlines</h2>
+                      <h2 className="text-2xl font-bold mb-2">
+                        Admissions & Deadlines
+                      </h2>
                       <ul className="list-disc pl-5">
-                        <li><a href="https://www.queensu.ca/admission/applying/how-to-apply" className="text-[#247e9f] underline">How to Apply</a></li>
-                        <li><a href="https://www.queensu.ca/admission/applying/dates-deadlines" className="text-[#247e9f] underline">Important Dates</a></li>
-                        <li><a href="https://www.ouac.on.ca/guide/undergrad-guide" className="text-[#247e9f] underline">OUAC</a></li>
+                        <li>
+                          <a
+                            href="https://www.queensu.ca/admission/applying/how-to-apply"
+                            className="text-[#247e9f] underline"
+                          >
+                            How to Apply
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.queensu.ca/admission/applying/dates-deadlines"
+                            className="text-[#247e9f] underline"
+                          >
+                            Important Dates
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.ouac.on.ca/guide/undergrad-guide"
+                            className="text-[#247e9f] underline"
+                          >
+                            OUAC
+                          </a>
+                        </li>
                       </ul>
                     </section>
                     <section>
-                      <h2 className="text-2xl font-bold mb-2">Costs & Scholarships</h2>
+                      <h2 className="text-2xl font-bold mb-2">
+                        Costs & Scholarships
+                      </h2>
                       <ul className="list-disc pl-5">
-                        <li><a href="https://www.queensu.ca/registrar/financial-aid" className="text-[#247e9f] underline">Financial Aid</a></li>
-                        <li><a href="https://www.queensu.ca/admission/scholarships" className="text-[#247e9f] underline">Entrance Scholarships</a></li>
+                        <li>
+                          <a
+                            href="https://www.queensu.ca/registrar/financial-aid"
+                            className="text-[#247e9f] underline"
+                          >
+                            Financial Aid
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.queensu.ca/admission/scholarships"
+                            className="text-[#247e9f] underline"
+                          >
+                            Entrance Scholarships
+                          </a>
+                        </li>
                       </ul>
                     </section>
                     <section>
-                      <h2 className="text-2xl font-bold mb-2">Campus Life Snapshot</h2>
+                      <h2 className="text-2xl font-bold mb-2">
+                        Campus Life Snapshot
+                      </h2>
                       <ul className="list-disc pl-5">
-                        <li><a href="https://www.queensu.ca/residences/" className="text-[#247e9f] underline">Residence</a></li>
-                        <li><a href="https://www.myams.org/clubs/club-directory/" className="text-[#247e9f] underline">Clubs & Activities</a></li>
+                        <li>
+                          <a
+                            href="https://www.queensu.ca/residences/"
+                            className="text-[#247e9f] underline"
+                          >
+                            Residence
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.myams.org/clubs/club-directory/"
+                            className="text-[#247e9f] underline"
+                          >
+                            Clubs & Activities
+                          </a>
+                        </li>
                       </ul>
                     </section>
                     <section>
                       <h2 className="text-2xl font-bold mb-2">Contact Info</h2>
                       <p>
-                        📧 <a href="mailto:admission@queensu.ca" className="text-[#247e9f] underline">admission@queensu.ca</a><br />
+                        📧{" "}
+                        <a
+                          href="mailto:admission@queensu.ca"
+                          className="text-[#247e9f] underline"
+                        >
+                          admission@queensu.ca
+                        </a>
+                        <br />
                         📞 (613) 533-2218
                       </p>
                     </section>
@@ -879,29 +1097,33 @@ const QueensUniversityPage = () => {
                 </div>
               )}
               {/* PDF VIEW */}
-               {activeView === "pdfView" && (
+              {activeView === "pdfView" && (
                 <div className="space-y-10 text-gray-700">
-                    {pdfViewData.map((section) => (
-                      <section key={section.id} id={section.id}>
-                        <h2 className="text-2xl font-bold mb-4">
-                          {t.sectionTitles[section.id]}
-                        </h2>
-                        <div className="space-y-4">
-                          {section.links[language].map((link) => (
-                            <a
-                              key={link.title}
-                              href={link.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block p-4 border rounded-lg hover:bg-gray-50 hover:shadow-md transition"
-                            >
-                              <p className="font-semibold text-[#247e9f]">{link.title}</p>
-                              <p className="text-sm text-gray-600 mt-1">{link.description}</p>
-                            </a>
-                          ))}
-                        </div>
-                      </section>
-                    ))}
+                  {pdfViewData.map((section) => (
+                    <section key={section.id} id={section.id}>
+                      <h2 className="text-2xl font-bold mb-4">
+                        {t.sectionTitles[section.id]}
+                      </h2>
+                      <div className="space-y-4">
+                        {section.links[language].map((link) => (
+                          <a
+                            key={link.title}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block p-4 border rounded-lg hover:bg-gray-50 hover:shadow-md transition"
+                          >
+                            <p className="font-semibold text-[#247e9f]">
+                              {link.title}
+                            </p>
+                            <p className="text-sm text-gray-600 mt-1">
+                              {link.description}
+                            </p>
+                          </a>
+                        ))}
+                      </div>
+                    </section>
+                  ))}
                 </div>
               )}
             </div>

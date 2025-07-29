@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
+import { type SectionData, type Translations } from "../../types";
 
 // Data structure holding both English and Chinese links for University of Alberta
-const universityViewData = [
+const universityViewData: SectionData[]= [
   {
     id: "overview",
     links: {
@@ -398,7 +399,7 @@ const universityViewData = [
   },
 ];
 
-const pdfViewData = [
+const pdfViewData: SectionData[]= [
   {
     id: "admission_guides",
     links: {
@@ -570,7 +571,7 @@ const pdfViewData = [
 ];
 
 // Centralized object for all translated UI text
-const translations = {
+const translations: Translations = {
   en: {
     sidebar: {
       instructionsTitle: "Page Instructions:",
