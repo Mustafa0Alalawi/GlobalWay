@@ -3,8 +3,75 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for SAIC
-const universityViewData = [
+// --- TYPE DEFINITIONS FOR STRONGER TYPING (LOCAL TO THIS FILE) ---
+type LinkEntry = {
+  title: string;
+  description?: string;
+  url: string;
+};
+
+type SectionId =
+  | "overview"
+  | "academics"
+  | "admissions"
+  | "how-to-apply"
+  | "cost-funding"
+  | "campus-life"
+  | "residence-housing"
+  | "intl-support"
+  | "co-op-careers"
+  | "city-snapshot"
+  | "tours-media"
+  | "admission_guides"
+  | "orientation_and_housing"
+  | "finance_and_career"
+  | "department_handbooks";
+
+type SectionData = {
+  id: SectionId;
+  links: {
+    en: LinkEntry[];
+    cn: LinkEntry[];
+  };
+};
+
+type SidebarTranslations = {
+  instructionsTitle: string;
+  instructionsButton: string;
+  currentStudentTitle: string;
+  universityButton: string;
+  highSchoolTitle: string;
+  highSchoolButton: string;
+  pdfViewTitle: string;
+  pdfViewButton: string;
+  categoriesTitle: string;
+};
+
+type HeaderTranslations = {
+  title: string;
+  helpText: string;
+  bookButton: string;
+};
+
+type UniversityViewTranslations = {
+  infoPanelTitle: string;
+  aboutTitle: string;
+  aboutParagraph1: string;
+  aboutParagraph2: string;
+};
+
+type Translations = {
+  [lang: string]: {
+    sidebar: SidebarTranslations;
+    header: HeaderTranslations;
+    universityView: UniversityViewTranslations;
+    sectionTitles: { [key in SectionId]?: string };
+    instructions?: any;
+  };
+};
+
+// --- DATA FOR UNIVERSITY VIEW ---
+const universityViewData: SectionData[] = [
   {
     id: "overview",
     links: {
@@ -276,7 +343,7 @@ const universityViewData = [
   },
 ];
 
-const pdfViewData = [
+const pdfViewData: SectionData[] = [
   {
     id: "admission_guides",
     links: {
@@ -399,10 +466,55 @@ const pdfViewData = [
       ],
     },
   },
+  {
+    id: "department_handbooks",
+    links: {
+      en: [
+        {
+          title: "Textiles Program Handbook",
+          description:
+            "Details for textiles students on studio hours, safety protocols (dyes, chemicals), tool usage, and cleaning responsibilities.",
+          url: "https://portal-media.cca.edu/documents/Textiles_Program_Student_Handbook_2023-2024.pdf",
+        },
+        {
+          title: "Jewelry/Metal Arts Program Handbook",
+          description:
+            "Comprehensive guide for Jewelry/Metal Arts students, covering lab access, tool use, safety measures, and studio rules.",
+          url: "https://portal-media.cca.edu/documents/Jewelry_Metal_Arts_Program_Handbook.pdf",
+        },
+        {
+          title: "Glass Program Safety Handbook",
+          description:
+            "Safety handbook for glassmaking students, explaining furnace operation, handling of toxic materials, and emergency procedures.",
+          url: "https://portal-media.cca.edu/documents/Glass_Handbook-Health_Safety__Wellness_Spring_2020.pdf",
+        },
+      ],
+      cn: [
+        {
+          title: "纺织品专业手册",
+          description:
+            "详细说明纺织专业学生的工作室使用时间、安全规范（染料、化学品管理）、工具器材使用流程与清洁责任。",
+          url: "https://portal-media.cca.edu/documents/Textiles_Program_Student_Handbook_2023-2024.pdf",
+        },
+        {
+          title: "珠宝/金属艺术专业手册",
+          description:
+            "珠宝金属艺术专业学生的综合指南，涵盖实验室准入制度、使用工具、防护措施、安全程序与工作室规章。",
+          url: "https://portal-media.cca.edu/documents/Jewelry_Metal_Arts_Program_Handbook.pdf",
+        },
+        {
+          title: "玻璃专业安全手册",
+          description:
+            "玻璃制作专业学生安全手册，说明高温炉操作、毒化材料处理、紧急程序与设备共享协议等内容。",
+          url: "https://portal-media.cca.edu/documents/Glass_Handbook-Health_Safety__Wellness_Spring_2020.pdf",
+        },
+      ],
+    },
+  },
 ];
 
 // Centralized object for all translated UI text
-const translations = {
+const translations: Translations = {
   en: {
     sidebar: {
       instructionsTitle: "Page Instructions:",
@@ -443,6 +555,7 @@ const translations = {
       admission_guides: "Admission & General Guides",
       orientation_and_housing: "Orientation & Housing",
       finance_and_career: "Finance & Career",
+      department_handbooks: "Department Handbooks",
     },
   },
   cn: {
@@ -485,6 +598,7 @@ const translations = {
       admission_guides: "招生与通用指南",
       orientation_and_housing: "迎新与住宿",
       finance_and_career: "财务与职业",
+      department_handbooks: "院系手册",
     },
   },
 };
@@ -515,6 +629,10 @@ const SAICUniversityPage = () => {
   const [language, setLanguage] = useState<"en" | "cn">("en");
 
   const t = translations[language]; // Shortcut for current language translations
+
+  const getSectionTitle = (id: SectionId) => {
+    return t.sectionTitles[id] ?? id.replace(/_/g, " ");
+  };
 
   return (
     <>
@@ -612,21 +730,23 @@ const SAICUniversityPage = () => {
             {t.sidebar.categoriesTitle}
           </h2>
           <ul className="space-y-3">
-            {universityViewData.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  className="text-[#247e9f] hover:underline font-medium"
-                >
-                  {t.sectionTitles[section.id]}
-                </a>
-              </li>
-            ))}
+            {(activeView === "pdfView" ? pdfViewData : universityViewData).map(
+              (section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    className="text-[#247e9f] hover:underline font-medium"
+                  >
+                    {getSectionTitle(section.id)}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8">
+        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8 overflow-y-auto">
           <div className="flex-1 flex flex-col">
             {/* Sticky Header */}
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
@@ -636,7 +756,7 @@ const SAICUniversityPage = () => {
                   alt="SAIC Logo"
                   width={120}
                   height={120}
-                  className="mr-4"
+                  className="mr-4 object-contain"
                 />
                 <h1 className="text-3xl md:text-4xl font-bold text-[#247e9f]">
                   {t.header.title}
@@ -668,7 +788,7 @@ const SAICUniversityPage = () => {
                         {section.id === "overview" ? (
                           <>
                             <SectionHeaderWithArrow
-                              title={t.sectionTitles[section.id]}
+                              title={getSectionTitle(section.id)}
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
@@ -688,7 +808,7 @@ const SAICUniversityPage = () => {
                           </>
                         ) : (
                           <h2 className="text-2xl font-bold mb-2">
-                            {t.sectionTitles[section.id]}
+                            {getSectionTitle(section.id)}
                           </h2>
                         )}
                         <ul className="list-disc pl-5 space-y-1">
@@ -730,7 +850,7 @@ const SAICUniversityPage = () => {
                   {pdfViewData.map((section) => (
                     <section key={section.id} id={section.id}>
                       <h2 className="text-2xl font-bold mb-4">
-                        {t.sectionTitles[section.id]}
+                        {getSectionTitle(section.id)}
                       </h2>
                       <div className="space-y-4">
                         {section.links[language].map((link) => (

@@ -3,8 +3,75 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for University of Calgary
-const universityViewData = [
+// --- TYPE DEFINITIONS FOR STRONGER TYPING (LOCAL TO THIS FILE) ---
+type LinkEntry = {
+  title: string;
+  description?: string;
+  url: string;
+};
+
+type SectionId =
+  | "overview"
+  | "academics"
+  | "admissions"
+  | "how-to-apply"
+  | "cost-funding"
+  | "campus-life"
+  | "residence-housing"
+  | "intl-support"
+  | "co-op-careers"
+  | "city-snapshot"
+  | "tours-media"
+  | "admission_guides"
+  | "orientation_and_housing"
+  | "finance_and_career"
+  | "department_handbooks";
+
+type SectionData = {
+  id: SectionId;
+  links: {
+    en: LinkEntry[];
+    cn: LinkEntry[];
+  };
+};
+
+type SidebarTranslations = {
+  instructionsTitle: string;
+  instructionsButton: string;
+  currentStudentTitle: string;
+  universityButton: string;
+  highSchoolTitle: string;
+  highSchoolButton: string;
+  pdfViewTitle: string;
+  pdfViewButton: string;
+  categoriesTitle: string;
+};
+
+type HeaderTranslations = {
+  title: string;
+  helpText: string;
+  bookButton: string;
+};
+
+type UniversityViewTranslations = {
+  infoPanelTitle: string;
+  aboutTitle: string;
+  aboutParagraph1: string;
+  aboutParagraph2: string;
+};
+
+type Translations = {
+  [lang: string]: {
+    sidebar: SidebarTranslations;
+    header: HeaderTranslations;
+    universityView: UniversityViewTranslations;
+    sectionTitles: { [key in SectionId]?: string };
+    instructions?: any;
+  };
+};
+
+// --- DATA FOR UNIVERSITY VIEW ---
+const universityViewData: SectionData[] = [
   {
     id: "overview",
     links: {
@@ -367,7 +434,7 @@ const universityViewData = [
   },
 ];
 
-const pdfViewData = [
+const pdfViewData: SectionData[] = [
   {
     id: "admission_guides",
     links: {
@@ -375,19 +442,19 @@ const pdfViewData = [
         {
           title: "Canadian Undergraduate Viewbook (Domestic)",
           description:
-            "Undergraduate recruitment guide for Canadian students, including program overviews, admission requirements, scholarships, campus resources, application process, and important dates.",
+            "Undergraduate recruitment guide for Canadian students, including program overviews, admission requirements, scholarships, and campus resources.",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/15/viewbook-domestic.pdf",
         },
         {
           title: "Indigenous Viewbook (Fall 2025)",
           description:
-            "Recruitment material for Indigenous applicants, highlighting support strategies (like the Bridging Program), cultural community facilities (Writing Symbols Lodge), scholarship resources, and admission path transparency.",
+            "Recruitment material for Indigenous applicants, highlighting support strategies and cultural community facilities.",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/15/viewbook-indigenous.pdf",
         },
         {
           title: "Transfer Viewbook (Fall 2025 Transfer Applicants)",
           description:
-            "For transfer students, detailing credit transfer policies, application process, course matching rules, and success stories.",
+            "For transfer students, detailing credit transfer policies, application process, and course matching rules.",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/15/viewbook-transfer.pdf",
         },
       ],
@@ -395,19 +462,19 @@ const pdfViewData = [
         {
           title: "加拿大本科招生手册 (本地生)",
           description:
-            "面向加拿大学生的本科招生指南，含专业概览、录取要求、奖学金、校园资源、申请流程与重要日期，非常适合作为制作“加拿大学生申请指南”或“专业选择导航”内容素材。",
+            "面向加拿大学生的本科招生指南，含专业概览、录取要求、奖学金、校园资源、申请流程与重要日期。",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/15/viewbook-domestic.pdf",
         },
         {
           title: "原住民学生手册 (2025年秋季)",
           description:
-            "专供原住民申请者的招生资料，重点展示支持策略（如 Bridging Program）、文化社区设施（Writing Symbols Lodge）、奖学金资源与录取路径透明度，非常适合制作“多元招生故事”或“原住民学生申请指南”",
+            "专供原住民申请者的招生资料，重点展示支持策略、文化社区设施、奖学金资源与录取路径透明度。",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/15/viewbook-indigenous.pdf",
         },
         {
           title: "转学生手册 (2025年秋季)",
           description:
-            "针对已有学分转学学生，详细说明接受学分政策、转学流程、课程匹配规则及成功案例，内容适合“转学流程解读”或“学分转换说明”素材。",
+            "针对已有学分转学学生，详细说明接受学分政策、转学流程、课程匹配规则及成功案例。",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/15/viewbook-transfer.pdf",
         },
       ],
@@ -420,13 +487,13 @@ const pdfViewData = [
         {
           title: "New Student Orientation 2024",
           description:
-            "A two-day orientation schedule including faculty groups, check-in times, welcome ceremonies, social events, info sessions, and campus navigation.",
+            "A two-day orientation schedule including faculty groups, check-in times, welcome ceremonies, and social events.",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/81/Schedule-2024%20New%20Student%20Orientation%20August%2029%20and%2030.pdf",
         },
         {
           title: "New-to-Calgary Student Checklist (PDF)",
           description:
-            "Checklist from International Student Services covering tasks before and after arrival, such as registering for pre-arrival courses, getting your campus card, health insurance, transit pass, and bank account.",
+            "Checklist from International Student Services covering tasks before and after arrival.",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/69/New_International_Student_Checklist_Updated_Fall25.pdf",
         },
         {
@@ -440,19 +507,18 @@ const pdfViewData = [
         {
           title: "2024年新生迎新",
           description:
-            "包含为期两天的迎新详细活动安排，包括院系分组、报到时间、迎新仪式、社交活动、信息讲座、校园导航等，对制作“Orientation 活动拆解”系列内容非常实用。",
+            "包含为期两天的迎新详细活动安排，包括院系分组、报到时间、迎新仪式、社交活动等。",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/81/Schedule-2024%20New%20Student%20Orientation%20August%2029%20and%2030.pdf",
         },
         {
           title: "初到卡尔加里学生清单 (PDF)",
           description:
-            "由国际学生服务发布，涵盖到达前后需完成的事项，如注册预到课程、报到领卡、买保险、交通卡领取、注册银行账号等，是制作“到达前后必做事项”类内容的理想素材。",
+            "由国际学生服务发布，涵盖到达前后需完成的事项，如注册预到课程、报到领卡等。",
           url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/69/New_International_Student_Checklist_Updated_Fall25.pdf",
         },
         {
           title: "宿舍程序与社区标准",
-          description:
-            "详细阐述校内宿舍政策、社区行为规范与申诉流程，适合拆解成“公寓生活须知”或“宿舍规则详解”内容。",
+          description: "详细阐述校内宿舍政策、社区行为规范与申诉流程。",
           url: "https://www.ucalgary.ca/ancillary/sites/default/files/teams/11/Community_Standards_2021-2022.pdf",
         },
       ],
@@ -465,39 +531,37 @@ const pdfViewData = [
         {
           title: "2025–26 Undergraduate Tuition Outlook",
           description:
-            "University's forecast for tuition and service fee adjustments in the coming academic years, including campus recreation, sports, and student activity fees.",
+            "University's forecast for tuition and service fee adjustments in the coming academic years.",
           url: "https://www.ucalgary.ca/provost/sites/default/files/teams/1/2025-26%20Tuition%20Outlook_0.pdf",
         },
         {
           title: "Graduate Tuition and General Fees",
           description:
-            "Details the tuition structure for graduate students (Master's/PhD), including fees for thesis and course-based programs, and general term fees.",
+            "Details the tuition structure for graduate students (Master's/PhD).",
           url: "https://www.ucalgary.ca/sites/default/files/teams/14/Graduate_Tuition_and_Fees-2020_2021.pdf",
         },
         {
           title: "Co‑op Student Handbook – Haskayne School of Business",
           description:
-            "Covers the entire Co-op program process, from accepting a work term, registration, career coaching, to completing the final evaluation.",
+            "Covers the entire Co-op program process, from accepting a work term to completing the final evaluation.",
           url: "https://haskayne.ucalgary.ca/sites/default/files/teams/2/3c.%20Co-op%20Student%20Handbook_2024_v1.2.pdf?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "2025–26 本科生学费展望",
-          description:
-            "由校方预告未来多个学年的学费和服务费调整比例（包括校园再创、体育、学生活动费等），适用于“未来学费趋势解析”或“费用预测”内容创作。",
+          description: "由校方预告未来多个学年的学费和服务费调整比例。",
           url: "https://www.ucalgary.ca/provost/sites/default/files/teams/1/2025-26%20Tuition%20Outlook_0.pdf",
         },
         {
           title: "研究生学费和一般费用",
-          description:
-            "详细列出研究生（硕士/博士）学费结构，包括 thesis 和 course-based 课程的学费、每学期一般收费以及专业项目附加费用。",
+          description: "详细列出研究生（硕士/博士）学费结构。",
           url: "https://www.ucalgary.ca/sites/default/files/teams/14/Graduate_Tuition_and_Fees-2020_2021.pdf",
         },
         {
           title: "Co-op 学生手册 – Haskayne 商学院",
           description:
-            "涵盖 Co‑op 项目全流程——从接收工期、工作术语注册、职业辅导到完成终期评估。包含多项实用建议。",
+            "涵盖 Co‑op 项目全流程——从接收工期、工作术语注册、职业辅导到完成终期评估。",
           url: "https://haskayne.ucalgary.ca/sites/default/files/teams/2/3c.%20Co-op%20Student%20Handbook_2024_v1.2.pdf?utm_source=chatgpt.com",
         },
       ],
@@ -510,19 +574,19 @@ const pdfViewData = [
         {
           title: "Dance Undergraduate Handbook (2024–2025)",
           description:
-            "For undergraduate dance majors, includes curriculum, performance schedules, facility use, academic requirements, and professional resources.",
+            "For undergraduate dance majors, includes curriculum, performance schedules, and academic requirements.",
           url: "https://arts.ucalgary.ca/sites/default/files/teams/26/2024-25%20DANCE%20UG%20Student%20Handbook.pdf",
         },
         {
           title: "Art & Art History Undergraduate Handbook (2024–2025)",
           description:
-            "Guides students in Art & Art History through coursework, fieldwork, degree requirements, and campus culture.",
+            "Guides students in Art & Art History through coursework, fieldwork, and degree requirements.",
           url: "https://arts.ucalgary.ca/sites/default/files/teams/36/DAAH%20Undergraduate%20Student%20Handbook.pdf",
         },
         {
           title: "Philosophy Graduate Handbook (2021)",
           description:
-            "Graduate program guide, including Master's/PhD curriculum, course selection process, qualifying exams, and academic regulations.",
+            "Graduate program guide, including Master's/PhD curriculum and course selection.",
           url: "https://arts.ucalgary.ca/sites/default/files/teams/29/Handbook%20%282024%29.pdf",
         },
       ],
@@ -551,7 +615,7 @@ const pdfViewData = [
 ];
 
 // Centralized object for all translated UI text
-const translations = {
+const translations: Translations = {
   en: {
     sidebar: {
       instructionsTitle: "Page Instructions:",
@@ -667,6 +731,10 @@ const CalgaryUniversityPage = () => {
 
   const t = translations[language]; // Shortcut for current language translations
 
+  const getSectionTitle = (id: SectionId) => {
+    return t.sectionTitles[id] ?? id.replace(/_/g, " ");
+  };
+
   return (
     <>
       <Navbar />
@@ -763,21 +831,23 @@ const CalgaryUniversityPage = () => {
             {t.sidebar.categoriesTitle}
           </h2>
           <ul className="space-y-3">
-            {universityViewData.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  className="text-[#247e9f] hover:underline font-medium"
-                >
-                  {t.sectionTitles[section.id]}
-                </a>
-              </li>
-            ))}
+            {(activeView === "pdfView" ? pdfViewData : universityViewData).map(
+              (section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    className="text-[#247e9f] hover:underline font-medium"
+                  >
+                    {getSectionTitle(section.id)}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8">
+        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8 overflow-y-auto">
           <div className="flex-1 flex flex-col">
             {/* Sticky Header */}
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
@@ -787,7 +857,7 @@ const CalgaryUniversityPage = () => {
                   alt="University of Calgary Logo"
                   width={120}
                   height={120}
-                  className="mr-4"
+                  className="mr-4 object-contain"
                 />
                 <h1 className="text-3xl md:text-4xl font-bold text-[#247e9f]">
                   {t.header.title}
@@ -819,7 +889,7 @@ const CalgaryUniversityPage = () => {
                         {section.id === "overview" ? (
                           <>
                             <SectionHeaderWithArrow
-                              title={t.sectionTitles[section.id]}
+                              title={getSectionTitle(section.id)}
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
@@ -840,7 +910,7 @@ const CalgaryUniversityPage = () => {
                           </>
                         ) : (
                           <h2 className="text-2xl font-bold mb-2">
-                            {t.sectionTitles[section.id]}
+                            {getSectionTitle(section.id)}
                           </h2>
                         )}
                         <ul className="list-disc pl-5 space-y-1">
@@ -882,7 +952,7 @@ const CalgaryUniversityPage = () => {
                   {pdfViewData.map((section) => (
                     <section key={section.id} id={section.id}>
                       <h2 className="text-2xl font-bold mb-4">
-                        {t.sectionTitles[section.id]}
+                        {getSectionTitle(section.id)}
                       </h2>
                       <div className="space-y-4">
                         {section.links[language].map((link) => (
