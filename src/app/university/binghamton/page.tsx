@@ -3,8 +3,75 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for Binghamton University
-const universityViewData = [
+// --- TYPE DEFINITIONS FOR STRONGER TYPING (LOCAL TO THIS FILE) ---
+type LinkEntry = {
+  title: string;
+  description?: string;
+  url: string;
+};
+
+type SectionId =
+  | "overview"
+  | "academics"
+  | "admissions"
+  | "how-to-apply"
+  | "cost-funding"
+  | "campus-life"
+  | "residence-housing"
+  | "intl-support"
+  | "co-op-careers"
+  | "city-snapshot"
+  | "tours-media"
+  | "admission_guides"
+  | "orientation_and_housing"
+  | "finance_and_career"
+  | "department_handbooks";
+
+type SectionData = {
+  id: SectionId;
+  links: {
+    en: LinkEntry[];
+    cn: LinkEntry[];
+  };
+};
+
+type SidebarTranslations = {
+  instructionsTitle: string;
+  instructionsButton: string;
+  currentStudentTitle: string;
+  universityButton: string;
+  highSchoolTitle: string;
+  highSchoolButton: string;
+  pdfViewTitle: string;
+  pdfViewButton: string;
+  categoriesTitle: string;
+};
+
+type HeaderTranslations = {
+  title: string;
+  helpText: string;
+  bookButton: string;
+};
+
+type UniversityViewTranslations = {
+  infoPanelTitle: string;
+  aboutTitle: string;
+  aboutParagraph1: string;
+  aboutParagraph2: string;
+};
+
+type Translations = {
+  [lang: string]: {
+    sidebar: SidebarTranslations;
+    header: HeaderTranslations;
+    universityView: UniversityViewTranslations;
+    sectionTitles: { [key in SectionId]?: string };
+    instructions?: any;
+  };
+};
+
+// --- DATA FOR UNIVERSITY VIEW ---
+const universityViewData: SectionData[] = [
   {
     id: "overview",
     links: {
@@ -338,7 +405,7 @@ const universityViewData = [
   },
 ];
 
-const pdfViewData = [
+const pdfViewData: SectionData[] = [
   {
     id: "admission_guides",
     links: {
@@ -570,7 +637,7 @@ const pdfViewData = [
 ];
 
 // Centralized object for all translated UI text
-const translations = {
+const translations: Translations = {
   en: {
     sidebar: {
       instructionsTitle: "Page Instructions:",
@@ -686,6 +753,10 @@ const BinghamtonUniversityPage = () => {
 
   const t = translations[language]; // Shortcut for current language translations
 
+  const getSectionTitle = (id: SectionId) => {
+    return t.sectionTitles[id] ?? id.replace(/_/g, " ");
+  };
+
   return (
     <>
       <Navbar />
@@ -782,21 +853,23 @@ const BinghamtonUniversityPage = () => {
             {t.sidebar.categoriesTitle}
           </h2>
           <ul className="space-y-3">
-            {universityViewData.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  className="text-[#247e9f] hover:underline font-medium"
-                >
-                  {t.sectionTitles[section.id]}
-                </a>
-              </li>
-            ))}
+            {(activeView === "pdfView" ? pdfViewData : universityViewData).map(
+              (section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    className="text-[#247e9f] hover:underline font-medium"
+                  >
+                    {getSectionTitle(section.id)}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8">
+        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8 overflow-y-auto">
           <div className="flex-1 flex flex-col">
             {/* Sticky Header */}
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
@@ -806,7 +879,7 @@ const BinghamtonUniversityPage = () => {
                   alt="Binghamton University Logo"
                   width={120}
                   height={120}
-                  className="mr-4"
+                  className="mr-4 object-contain"
                 />
                 <h1 className="text-3xl md:text-4xl font-bold text-[#247e9f]">
                   {t.header.title}
@@ -838,7 +911,7 @@ const BinghamtonUniversityPage = () => {
                         {section.id === "overview" ? (
                           <>
                             <SectionHeaderWithArrow
-                              title={t.sectionTitles[section.id]}
+                              title={getSectionTitle(section.id)}
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
@@ -858,7 +931,7 @@ const BinghamtonUniversityPage = () => {
                           </>
                         ) : (
                           <h2 className="text-2xl font-bold mb-2">
-                            {t.sectionTitles[section.id]}
+                            {getSectionTitle(section.id)}
                           </h2>
                         )}
                         <ul className="list-disc pl-5 space-y-1">
@@ -900,7 +973,7 @@ const BinghamtonUniversityPage = () => {
                   {pdfViewData.map((section) => (
                     <section key={section.id} id={section.id}>
                       <h2 className="text-2xl font-bold mb-4">
-                        {t.sectionTitles[section.id]}
+                        {getSectionTitle(section.id)}
                       </h2>
                       <div className="space-y-4">
                         {section.links[language].map((link) => (
