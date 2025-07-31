@@ -12,52 +12,52 @@ const universities = [
   {
     name: "Queen's University",
     slug: "/university/queens",
-    logo: "/logo1.png",
+    logo: "/logos/queens.png",
   },
   {
     name: "University of Toronto",
     slug: "/university/toronto",
-    logo: "/logo6.png",
+    logo: "/logos/toronto.png",
   },
   {
     name: "University of British Columbia (UBC)",
     slug: "/university/ubc",
-    logo: "/logo5.png",
+    logo: "/logos/ubc.png",
   },
   {
     name: "McGill University",
     slug: "/university/mcgill",
-    logo: "/logo3.png",
+    logo: "/logos/mcgill.png",
   },
   {
     name: "Western University",
     slug: "/university/western",
-    logo: "/logo4.png",
+    logo: "/logos/western.png",
   },
   {
     name: "McMaster University",
     slug: "/university/mcmaster",
-    logo: "/logo2.png",
+    logo: "/logos/mcmaster.png",
   },
   {
     name: "University of Waterloo",
     slug: "/university/waterloo",
-    logo: "/logo7.png",
+    logo: "/logos/waterloo.png",
   },
   {
     name: "York University",
     slug: "/university/york",
-    logo: "/logo10.png",
+    logo: "/logos/york.png",
   },
   {
     name: "University of Alberta",
     slug: "/university/albert",
-    logo: "/logo9.png",
+    logo: "/logos/alberta.png",
   },
   {
     name: "University of Montreal",
     slug: "/university/montreal",
-    logo: "/logo8.png",
+    logo: "/logos/montreal.png",
   },
   {
     name: "California college of the Arts",

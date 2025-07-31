@@ -3,8 +3,40 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for University of Alberta
-const universityViewData = [
+// --- TYPE DEFINITIONS FOR STRONGER TYPING (LOCAL TO THIS FILE) ---
+type LinkEntry = {
+  title: string;
+  description?: string;
+  url: string;
+};
+
+type SectionId =
+  | "overview" | "academics" | "admissions" | "how-to-apply"
+  | "cost-funding" | "campus-life" | "residence-housing" | "intl-support"
+  | "co-op-careers" | "city-snapshot" | "tours-media"
+  | "admission_guides" | "orientation_and_housing" | "finance_and_career" | "department_handbooks";
+
+type SectionData = {
+  id: SectionId;
+  links: {
+    en: LinkEntry[];
+    cn: LinkEntry[];
+  };
+};
+
+type Translations = {
+  [lang: string]: {
+    sidebar: any;
+    header: any;
+    universityView: any;
+    sectionTitles: { [key in SectionId]?: string };
+    instructions?: any; 
+  };
+};
+
+
+// --- DATA FOR UNIVERSITY VIEW ---
+const universityViewData: SectionData[]= [
   {
     id: "overview",
     links: {
@@ -398,7 +430,7 @@ const universityViewData = [
   },
 ];
 
-const pdfViewData = [
+const pdfViewData: SectionData[]= [
   {
     id: "admission_guides",
     links: {
@@ -410,37 +442,55 @@ const pdfViewData = [
           url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_undergrad_2025-26.pdf",
         },
         {
+            title: "Undergraduate Viewbook 2024–25",
+            description: "Previous year's version, similar in structure, useful for comparison.",
+            url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2023/96250-viewbookundergraduate-24-25-completedigital_spreads.pdf"
+        },
+        {
           title: "International Undergraduate Handbook 2025–26",
           description:
             "For international students, explains guaranteed tuition rates, four-year tuition ranges, scholarships, and language policies.",
           url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_international_2025-26.pdf",
         },
         {
-          title: "Common Data Set 2024–2025",
-          description:
-            "Standardized admission data, listing applicant/admitted/enrolled numbers, SAT/GPA distribution, and required high school courses.",
-          url: "https://www.binghamton.edu/offices/oir/upload_data/cds20242025p.pdf",
+            title: "2025–26 Undergraduate Handbooks (AP / IB / Intl / Indigenous)",
+            description: "Custom handbooks for various groups like Advanced Placement, IB, International Students in Canada, and Indigenous Students.",
+            url: "https://www.ualberta.ca/en/admissions/publications.html"
         },
+        {
+            title: "Faculty Viewbooks (e.g., Arts)",
+            description: "Faculty-specific viewbooks for Science, Engineering, etc., can also be accessed via the Publications page.",
+            url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_arts_2025-26.pdf"
+        }
       ],
       cn: [
         {
           title: "本科招生手册 2025–26",
           description:
-            "综合本科申请手册，含校区简介、专业列表、申请流程、奖学金及校园生活等内容，适合作为全面介绍招生概览的素材。",
+            "综合本科申请手册，含校区简介、专业列表、申请流程、奖学金及校园生活等内容。",
           url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_undergrad_2025-26.pdf",
+        },
+        {
+            title: "本科招生手册 2024–25",
+            description: "上一年版本，结构接近当前内容，可用于内容对比或素材补充。",
+            url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2023/96250-viewbookundergraduate-24-25-completedigital_spreads.pdf"
         },
         {
           title: "国际本科生手册 2025–26",
           description:
-            "针对国际学生，说明保证学费率、入学四年学费范围、奖学金与语言政策，非常适合国际生预算规划。",
+            "针对国际学生，说明保证学费率、入学四年学费范围、奖学金与语言政策。",
           url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_international_2025-26.pdf",
         },
         {
-          title: "通用数据集 2024–2025",
-          description:
-            "标准化招生资料，列出申请人/录取人/注册人数据，SAT/GPA分布，高中必修课程要求及评价指标。",
-          url: "https://www.binghamton.edu/offices/oir/upload_data/cds20242025p.pdf",
+            title: "2025–26 本科手册系列",
+            description: "包含多个群体定制手册，例如 AP, IB, 加拿大国际学生, 和原住民学生指南等。",
+            url: "https://www.ualberta.ca/en/admissions/publications.html"
         },
+        {
+            title: "学院宣传册 (例如文学院)",
+            description: "其它如理学院、工学院等也可通过 Publications 页面获取。",
+            url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_arts_2025-26.pdf"
+        }
       ],
     },
   },
@@ -453,6 +503,11 @@ const pdfViewData = [
           description:
             "This handbook for first-year undergraduate students and their parents details campus adjustment, academic and social life, support resources, and important dates.",
           url: "https://www.ualberta.ca/en/augustana/media-library/admissions/incoming/fall-2022-parent-orientation-handbook.pdf?",
+        },
+        {
+            title: "New Student Orientation 2024",
+            description: "Two-day orientation schedule including check-in, ceremonies, social events, info sessions, and campus navigation.",
+            url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/81/Schedule-2024%20New%20Student%20Orientation%20August%2029%20and%2030.pdf"
         },
         {
           title: "Residence House Rules (April 2022)",
@@ -475,6 +530,11 @@ const pdfViewData = [
           url: "https://www.ualberta.ca/en/augustana/media-library/admissions/incoming/fall-2022-parent-orientation-handbook.pdf?",
         },
         {
+            title: "新生迎新活动 2024",
+            description: "为期两天的迎新详细活动安排，包括院系分组、报到时间、迎新仪式、社交活动、信息讲座、校园导航等。",
+            url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/81/Schedule-2024%20New%20Student%20Orientation%20August%2029%20and%2030.pdf"
+        },
+        {
           title: "宿舍规定 (2022年4月)",
           description:
             "详细说明校内宿舍的日常生活规范，包括访客、安全、噪声、清洁、禁烟规定等。",
@@ -493,6 +553,11 @@ const pdfViewData = [
     id: "finance_and_career",
     links: {
       en: [
+         {
+            title: "Undergraduate Tuition Trends (Student Union)",
+            description: "Historical data charts from 1972-2022 showing national and U of A tuition trends.",
+            url: "https://www2.su.ualberta.ca/media/uploads/1143/Undergraduate%20Tuition%20Trends%20in%20Canada%20and%20Alberta.pdf?utm_source=chatgpt.com"
+        },
         {
           title: "Job Search Guidebook",
           description:
@@ -513,6 +578,11 @@ const pdfViewData = [
         },
       ],
       cn: [
+        {
+            title: "加拿大及阿尔伯塔省本科学费趋势 (学生会发布)",
+            description: "由学生会编制历史数据图表，横跨 1972–2022，全国与艾大本地学费趋势。",
+            url: "https://www2.su.ualberta.ca/media/uploads/1143/Undergraduate%20Tuition%20Trends%20in%20Canada%20and%20Alberta.pdf?utm_source=chatgpt.com"
+        },
         {
           title: "求职指南",
           description:
@@ -550,6 +620,11 @@ const pdfViewData = [
             "A resource handbook from the Science student society, including semester planning, course resources, policy guides, and templates.",
           url: "https://www.isss.ca/handbook?utm_source",
         },
+         {
+            title: "GFC Handbook – Graduate & Faculty Governance",
+            description: "Comprehensive list of program structures, course approvals, and governance mechanisms at the General Faculties Council (GFC) level.",
+            url: "https://www2.su.ualberta.ca/media/uploads/580/GFCHandbook.pdf?utm_source=chatgpt.com"
+        }
       ],
       cn: [
         {
@@ -564,13 +639,19 @@ const pdfViewData = [
             "Science 学院学生协会发布的资源手册，包含学期规划、课程资源、政策指南、考试与规划表模板。",
           url: "https://www.isss.ca/handbook?utm_source",
         },
+        {
+            title: "GFC 手册 – 研究生与学院治理",
+            description: "全面罗列各学院在 GFC (General Faculties Council) 层面的专业设置结构、课程审批及项目治理机制。",
+            url: "https://www2.su.ualberta.ca/media/uploads/580/GFCHandbook.pdf?utm_source=chatgpt.com"
+        }
       ],
     },
   },
 ];
 
+
 // Centralized object for all translated UI text
-const translations = {
+const translations: Translations = {
   en: {
     sidebar: {
       instructionsTitle: "Page Instructions:",
@@ -782,7 +863,15 @@ const AlbertaUniversityPage = () => {
             {t.sidebar.categoriesTitle}
           </h2>
           <ul className="space-y-3">
-            {universityViewData.map((section) => (
+            {activeView === 'pdfView' ? 
+              pdfViewData.map((section) => (
+                <li key={section.id}>
+                  <a href={`#${section.id}`} className="text-[#247e9f] hover:underline font-medium">
+                    {t.sectionTitles[section.id]}
+                  </a>
+                </li>
+              )) :
+              universityViewData.map((section) => (
               <li key={section.id}>
                 <a
                   href={`#${section.id}`}
@@ -796,7 +885,7 @@ const AlbertaUniversityPage = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8">
+        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8 overflow-y-auto">
           <div className="flex-1 flex flex-col">
             {/* Sticky Header */}
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
@@ -806,7 +895,7 @@ const AlbertaUniversityPage = () => {
                   alt="University of Alberta Logo"
                   width={120}
                   height={120}
-                  className="mr-4"
+                  className="mr-4 object-contain"
                 />
                 <h1 className="text-3xl md:text-4xl font-bold text-[#247e9f]">
                   {t.header.title}
@@ -934,3 +1023,4 @@ const AlbertaUniversityPage = () => {
 };
 
 export default AlbertaUniversityPage;
+
