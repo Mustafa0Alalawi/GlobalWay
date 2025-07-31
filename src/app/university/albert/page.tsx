@@ -11,10 +11,21 @@ type LinkEntry = {
 };
 
 type SectionId =
-  | "overview" | "academics" | "admissions" | "how-to-apply"
-  | "cost-funding" | "campus-life" | "residence-housing" | "intl-support"
-  | "co-op-careers" | "city-snapshot" | "tours-media"
-  | "admission_guides" | "orientation_and_housing" | "finance_and_career" | "department_handbooks";
+  | "overview"
+  | "academics"
+  | "admissions"
+  | "how-to-apply"
+  | "cost-funding"
+  | "campus-life"
+  | "residence-housing"
+  | "intl-support"
+  | "co-op-careers"
+  | "city-snapshot"
+  | "tours-media"
+  | "admission_guides"
+  | "orientation_and_housing"
+  | "finance_and_career"
+  | "department_handbooks";
 
 type SectionData = {
   id: SectionId;
@@ -24,19 +35,44 @@ type SectionData = {
   };
 };
 
+// More specific types for the translations object
+type SidebarTranslations = {
+  instructionsTitle: string;
+  instructionsButton: string;
+  currentStudentTitle: string;
+  universityButton: string;
+  highSchoolTitle: string;
+  highSchoolButton: string;
+  pdfViewTitle: string;
+  pdfViewButton: string;
+  categoriesTitle: string;
+};
+
+type HeaderTranslations = {
+  title: string;
+  helpText: string;
+  bookButton: string;
+};
+
+type UniversityViewTranslations = {
+  infoPanelTitle: string;
+  aboutTitle: string;
+  aboutParagraph1: string;
+  aboutParagraph2: string;
+};
+
 type Translations = {
   [lang: string]: {
-    sidebar: any;
-    header: any;
-    universityView: any;
+    sidebar: SidebarTranslations;
+    header: HeaderTranslations;
+    universityView: UniversityViewTranslations;
     sectionTitles: { [key in SectionId]?: string };
-    instructions?: any; 
+    instructions?: any;
   };
 };
 
-
 // --- DATA FOR UNIVERSITY VIEW ---
-const universityViewData: SectionData[]= [
+const universityViewData: SectionData[] = [
   {
     id: "overview",
     links: {
@@ -430,7 +466,7 @@ const universityViewData: SectionData[]= [
   },
 ];
 
-const pdfViewData: SectionData[]= [
+const pdfViewData: SectionData[] = [
   {
     id: "admission_guides",
     links: {
@@ -442,9 +478,10 @@ const pdfViewData: SectionData[]= [
           url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_undergrad_2025-26.pdf",
         },
         {
-            title: "Undergraduate Viewbook 2024–25",
-            description: "Previous year's version, similar in structure, useful for comparison.",
-            url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2023/96250-viewbookundergraduate-24-25-completedigital_spreads.pdf"
+          title: "Undergraduate Viewbook 2024–25",
+          description:
+            "Previous year's version, similar in structure, useful for comparison.",
+          url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2023/96250-viewbookundergraduate-24-25-completedigital_spreads.pdf",
         },
         {
           title: "International Undergraduate Handbook 2025–26",
@@ -453,15 +490,18 @@ const pdfViewData: SectionData[]= [
           url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_international_2025-26.pdf",
         },
         {
-            title: "2025–26 Undergraduate Handbooks (AP / IB / Intl / Indigenous)",
-            description: "Custom handbooks for various groups like Advanced Placement, IB, International Students in Canada, and Indigenous Students.",
-            url: "https://www.ualberta.ca/en/admissions/publications.html"
+          title:
+            "2025–26 Undergraduate Handbooks (AP / IB / Intl / Indigenous)",
+          description:
+            "Custom handbooks for various groups like Advanced Placement, IB, International Students in Canada, and Indigenous Students.",
+          url: "https://www.ualberta.ca/en/admissions/publications.html",
         },
         {
-            title: "Faculty Viewbooks (e.g., Arts)",
-            description: "Faculty-specific viewbooks for Science, Engineering, etc., can also be accessed via the Publications page.",
-            url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_arts_2025-26.pdf"
-        }
+          title: "Faculty Viewbooks (e.g., Arts)",
+          description:
+            "Faculty-specific viewbooks for Science, Engineering, etc., can also be accessed via the Publications page.",
+          url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_arts_2025-26.pdf",
+        },
       ],
       cn: [
         {
@@ -471,9 +511,10 @@ const pdfViewData: SectionData[]= [
           url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_undergrad_2025-26.pdf",
         },
         {
-            title: "本科招生手册 2024–25",
-            description: "上一年版本，结构接近当前内容，可用于内容对比或素材补充。",
-            url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2023/96250-viewbookundergraduate-24-25-completedigital_spreads.pdf"
+          title: "本科招生手册 2024–25",
+          description:
+            "上一年版本，结构接近当前内容，可用于内容对比或素材补充。",
+          url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2023/96250-viewbookundergraduate-24-25-completedigital_spreads.pdf",
         },
         {
           title: "国际本科生手册 2025–26",
@@ -482,15 +523,16 @@ const pdfViewData: SectionData[]= [
           url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_international_2025-26.pdf",
         },
         {
-            title: "2025–26 本科手册系列",
-            description: "包含多个群体定制手册，例如 AP, IB, 加拿大国际学生, 和原住民学生指南等。",
-            url: "https://www.ualberta.ca/en/admissions/publications.html"
+          title: "2025–26 本科手册系列",
+          description:
+            "包含多个群体定制手册，例如 AP, IB, 加拿大国际学生, 和原住民学生指南等。",
+          url: "https://www.ualberta.ca/en/admissions/publications.html",
         },
         {
-            title: "学院宣传册 (例如文学院)",
-            description: "其它如理学院、工学院等也可通过 Publications 页面获取。",
-            url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_arts_2025-26.pdf"
-        }
+          title: "学院宣传册 (例如文学院)",
+          description: "其它如理学院、工学院等也可通过 Publications 页面获取。",
+          url: "https://www.ualberta.ca/en/admissions/media-library/uai-assets/docs/viewbook-2025-26/uofa_arts_2025-26.pdf",
+        },
       ],
     },
   },
@@ -505,9 +547,10 @@ const pdfViewData: SectionData[]= [
           url: "https://www.ualberta.ca/en/augustana/media-library/admissions/incoming/fall-2022-parent-orientation-handbook.pdf?",
         },
         {
-            title: "New Student Orientation 2024",
-            description: "Two-day orientation schedule including check-in, ceremonies, social events, info sessions, and campus navigation.",
-            url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/81/Schedule-2024%20New%20Student%20Orientation%20August%2029%20and%2030.pdf"
+          title: "New Student Orientation 2024",
+          description:
+            "Two-day orientation schedule including check-in, ceremonies, social events, info sessions, and campus navigation.",
+          url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/81/Schedule-2024%20New%20Student%20Orientation%20August%2029%20and%2030.pdf",
         },
         {
           title: "Residence House Rules (April 2022)",
@@ -530,9 +573,10 @@ const pdfViewData: SectionData[]= [
           url: "https://www.ualberta.ca/en/augustana/media-library/admissions/incoming/fall-2022-parent-orientation-handbook.pdf?",
         },
         {
-            title: "新生迎新活动 2024",
-            description: "为期两天的迎新详细活动安排，包括院系分组、报到时间、迎新仪式、社交活动、信息讲座、校园导航等。",
-            url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/81/Schedule-2024%20New%20Student%20Orientation%20August%2029%20and%2030.pdf"
+          title: "新生迎新活动 2024",
+          description:
+            "为期两天的迎新详细活动安排，包括院系分组、报到时间、迎新仪式、社交活动、信息讲座、校园导航等。",
+          url: "https://www.ucalgary.ca/live-uc-ucalgary-site/sites/default/files/teams/81/Schedule-2024%20New%20Student%20Orientation%20August%2029%20and%2030.pdf",
         },
         {
           title: "宿舍规定 (2022年4月)",
@@ -553,10 +597,11 @@ const pdfViewData: SectionData[]= [
     id: "finance_and_career",
     links: {
       en: [
-         {
-            title: "Undergraduate Tuition Trends (Student Union)",
-            description: "Historical data charts from 1972-2022 showing national and U of A tuition trends.",
-            url: "https://www2.su.ualberta.ca/media/uploads/1143/Undergraduate%20Tuition%20Trends%20in%20Canada%20and%20Alberta.pdf?utm_source=chatgpt.com"
+        {
+          title: "Undergraduate Tuition Trends (Student Union)",
+          description:
+            "Historical data charts from 1972-2022 showing national and U of A tuition trends.",
+          url: "https://www2.su.ualberta.ca/media/uploads/1143/Undergraduate%20Tuition%20Trends%20in%20Canada%20and%20Alberta.pdf?utm_source=chatgpt.com",
         },
         {
           title: "Job Search Guidebook",
@@ -579,9 +624,10 @@ const pdfViewData: SectionData[]= [
       ],
       cn: [
         {
-            title: "加拿大及阿尔伯塔省本科学费趋势 (学生会发布)",
-            description: "由学生会编制历史数据图表，横跨 1972–2022，全国与艾大本地学费趋势。",
-            url: "https://www2.su.ualberta.ca/media/uploads/1143/Undergraduate%20Tuition%20Trends%20in%20Canada%20and%20Alberta.pdf?utm_source=chatgpt.com"
+          title: "加拿大及阿尔伯塔省本科学费趋势 (学生会发布)",
+          description:
+            "由学生会编制历史数据图表，横跨 1972–2022，全国与艾大本地学费趋势。",
+          url: "https://www2.su.ualberta.ca/media/uploads/1143/Undergraduate%20Tuition%20Trends%20in%20Canada%20and%20Alberta.pdf?utm_source=chatgpt.com",
         },
         {
           title: "求职指南",
@@ -620,11 +666,12 @@ const pdfViewData: SectionData[]= [
             "A resource handbook from the Science student society, including semester planning, course resources, policy guides, and templates.",
           url: "https://www.isss.ca/handbook?utm_source",
         },
-         {
-            title: "GFC Handbook – Graduate & Faculty Governance",
-            description: "Comprehensive list of program structures, course approvals, and governance mechanisms at the General Faculties Council (GFC) level.",
-            url: "https://www2.su.ualberta.ca/media/uploads/580/GFCHandbook.pdf?utm_source=chatgpt.com"
-        }
+        {
+          title: "GFC Handbook – Graduate & Faculty Governance",
+          description:
+            "Comprehensive list of program structures, course approvals, and governance mechanisms at the General Faculties Council (GFC) level.",
+          url: "https://www2.su.ualberta.ca/media/uploads/580/GFCHandbook.pdf?utm_source=chatgpt.com",
+        },
       ],
       cn: [
         {
@@ -640,15 +687,15 @@ const pdfViewData: SectionData[]= [
           url: "https://www.isss.ca/handbook?utm_source",
         },
         {
-            title: "GFC 手册 – 研究生与学院治理",
-            description: "全面罗列各学院在 GFC (General Faculties Council) 层面的专业设置结构、课程审批及项目治理机制。",
-            url: "https://www2.su.ualberta.ca/media/uploads/580/GFCHandbook.pdf?utm_source=chatgpt.com"
-        }
+          title: "GFC 手册 – 研究生与学院治理",
+          description:
+            "全面罗列各学院在 GFC (General Faculties Council) 层面的专业设置结构、课程审批及项目治理机制。",
+          url: "https://www2.su.ualberta.ca/media/uploads/580/GFCHandbook.pdf?utm_source=chatgpt.com",
+        },
       ],
     },
   },
 ];
-
 
 // Centralized object for all translated UI text
 const translations: Translations = {
@@ -767,6 +814,10 @@ const AlbertaUniversityPage = () => {
 
   const t = translations[language]; // Shortcut for current language translations
 
+  const getSectionTitle = (id: SectionId) => {
+    return t.sectionTitles[id] ?? id.replace(/_/g, " ");
+  };
+
   return (
     <>
       <Navbar />
@@ -863,24 +914,18 @@ const AlbertaUniversityPage = () => {
             {t.sidebar.categoriesTitle}
           </h2>
           <ul className="space-y-3">
-            {activeView === 'pdfView' ? 
-              pdfViewData.map((section) => (
+            {(activeView === "pdfView" ? pdfViewData : universityViewData).map(
+              (section) => (
                 <li key={section.id}>
-                  <a href={`#${section.id}`} className="text-[#247e9f] hover:underline font-medium">
-                    {t.sectionTitles[section.id]}
+                  <a
+                    href={`#${section.id}`}
+                    className="text-[#247e9f] hover:underline font-medium"
+                  >
+                    {getSectionTitle(section.id)}
                   </a>
                 </li>
-              )) :
-              universityViewData.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  className="text-[#247e9f] hover:underline font-medium"
-                >
-                  {t.sectionTitles[section.id]}
-                </a>
-              </li>
-            ))}
+              )
+            )}
           </ul>
         </aside>
 
@@ -927,7 +972,7 @@ const AlbertaUniversityPage = () => {
                         {section.id === "overview" ? (
                           <>
                             <SectionHeaderWithArrow
-                              title={t.sectionTitles[section.id]}
+                              title={getSectionTitle(section.id)}
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
@@ -947,7 +992,7 @@ const AlbertaUniversityPage = () => {
                           </>
                         ) : (
                           <h2 className="text-2xl font-bold mb-2">
-                            {t.sectionTitles[section.id]}
+                            {getSectionTitle(section.id)}
                           </h2>
                         )}
                         <ul className="list-disc pl-5 space-y-1">
@@ -989,7 +1034,7 @@ const AlbertaUniversityPage = () => {
                   {pdfViewData.map((section) => (
                     <section key={section.id} id={section.id}>
                       <h2 className="text-2xl font-bold mb-4">
-                        {t.sectionTitles[section.id]}
+                        {getSectionTitle(section.id)}
                       </h2>
                       <div className="space-y-4">
                         {section.links[language].map((link) => (
@@ -1023,4 +1068,3 @@ const AlbertaUniversityPage = () => {
 };
 
 export default AlbertaUniversityPage;
-
