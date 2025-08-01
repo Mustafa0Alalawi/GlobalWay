@@ -3,8 +3,65 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for McMaster University
-const universityViewData = [
+// --- TYPE DEFINITIONS FOR STRONGER TYPING (LOCAL TO THIS FILE) ---
+type LinkEntry = {
+  title: string;
+  description?: string;
+  url: string;
+};
+
+type SectionId =
+  | "overview" | "academics" | "admissions" | "how-to-apply"
+  | "cost-funding" | "campus-life" | "residence-housing" | "intl-support"
+  | "co-op-careers" | "city-snapshot" | "tours-media"
+  | "admission_guides" | "orientation_and_housing" | "finance_and_career" | "department_handbooks";
+
+type SectionData = {
+  id: SectionId;
+  links: {
+    en: LinkEntry[];
+    cn: LinkEntry[];
+  };
+};
+
+type SidebarTranslations = {
+  instructionsTitle: string;
+  instructionsButton: string;
+  currentStudentTitle: string;
+  universityButton: string;
+  highSchoolTitle: string;
+  highSchoolButton: string;
+  pdfViewTitle: string;
+  pdfViewButton: string;
+  categoriesTitle: string;
+};
+
+type HeaderTranslations = {
+  title: string;
+  helpText: string;
+  bookButton: string;
+};
+
+type UniversityViewTranslations = {
+  infoPanelTitle: string;
+  aboutTitle: string;
+  aboutParagraph1: string;
+  aboutParagraph2: string;
+};
+
+type Translations = {
+  [lang: string]: {
+    sidebar: SidebarTranslations;
+    header: HeaderTranslations;
+    universityView: UniversityViewTranslations;
+    sectionTitles: { [key in SectionId]?: string };
+    instructions?: any;
+  };
+};
+
+
+// --- DATA FOR UNIVERSITY VIEW ---
+const universityViewData: SectionData[] = [
   {
     id: "overview",
     links: {
@@ -308,166 +365,67 @@ const universityViewData = [
   },
 ];
 
-const pdfViewData = [
-  {
-    id: "admission_guides",
-    links: {
-      en: [
-        {
-          title: "2025 McMaster Viewbook",
-          description:
-            "Official undergraduate recruitment brochure, outlining faculty and program features, admission requirements, campus life, and financial information.",
-          url: "https://future.mcmaster.ca/wp-content/uploads/2024/08/MCM_2025Viewbook_08012024.pdf?utm_source",
-        },
-        {
-          title: "Circular–International Student Brochure (2024)",
-          description:
-            "Designed for international students, including admission process, requirements, visa instructions, and advice for new students.",
-          url: "https://future.mcmaster.ca/wp-content/uploads/2023/03/International-Student-Brochure.pdf",
-        },
-        {
-          title: "Level‑1 Enrolment Guide 2024",
-          description:
-            "A registration guide for first-year students, detailing the Mosaic course selection process, credit limits, and scheduling recommendations.",
-          url: "https://futuresocsci.mcmaster.ca/app/uploads/2024/07/Level-1-Enrolment-Guide-2024-1.pdf",
-        },
-      ],
-      cn: [
-        {
-          title: "2025年麦克马斯特大学宣传册",
-          description:
-            "官方本科申请宣传册，概览各学院和专业特色、入学要求、校园生活与财务信息，适合作为整体入学信息盘点素材。",
-          url: "https://future.mcmaster.ca/wp-content/uploads/2024/08/MCM_2025Viewbook_08012024.pdf?utm_source",
-        },
-        {
-          title: "国际学生手册 (2024)",
-          description:
-            "面向国际留学生设计，包含入学流程、录取要求、签证说明与新生活建议。",
-          url: "https://future.mcmaster.ca/wp-content/uploads/2023/03/International-Student-Brochure.pdf",
-        },
-        {
-          title: "大一注册指南 2024",
-          description:
-            "为大一新生提供的注册指南，详细说明 Mosaic 选课流程、学分限制与学时安排建议。",
-          url: "https://futuresocsci.mcmaster.ca/app/uploads/2024/07/Level-1-Enrolment-Guide-2024-1.pdf",
-        },
-      ],
+const pdfViewData: SectionData[] = [
+    {
+        id: "admission_guides",
+        links: {
+            en: [
+                { title: "2025 McMaster Viewbook", description: "Official undergraduate recruitment brochure, outlining faculty and program features, admission requirements, campus life, and financial information.", url: "https://future.mcmaster.ca/wp-content/uploads/2024/08/MCM_2025Viewbook_08012024.pdf?utm_source" },
+                { title: "Circular–International Student Brochure (2024)", description: "Designed for international students, including admission process, requirements, visa instructions, and advice for new students.", url: "https://future.mcmaster.ca/wp-content/uploads/2023/03/International-Student-Brochure.pdf" },
+                { title: "Level‑1 Enrolment Guide 2024", description: "A registration guide for first-year students, detailing the Mosaic course selection process, credit limits, and scheduling recommendations.", url: "https://futuresocsci.mcmaster.ca/app/uploads/2024/07/Level-1-Enrolment-Guide-2024-1.pdf" },
+            ],
+            cn: [
+                { title: "2025年麦克马斯特大学宣传册", description: "官方本科申请宣传册，概览各学院和专业特色、入学要求、校园生活与财务信息，适合作为整体入学信息盘点素材。", url: "https://future.mcmaster.ca/wp-content/uploads/2024/08/MCM_2025Viewbook_08012024.pdf?utm_source" },
+                { title: "国际学生手册 (2024)", description: "面向国际留学生设计，包含入学流程、录取要求、签证说明与新生活建议。", url: "https://future.mcmaster.ca/wp-content/uploads/2023/03/International-Student-Brochure.pdf" },
+                { title: "大一注册指南 2024", description: "为大一新生提供的注册指南，详细说明 Mosaic 选课流程、学分限制与学时安排建议。", url: "https://futuresocsci.mcmaster.ca/app/uploads/2024/07/Level-1-Enrolment-Guide-2024-1.pdf" },
+            ]
+        }
     },
-  },
-  {
-    id: "orientation_and_housing",
-    links: {
-      en: [
-        {
-          title: "Policy on First Year Experience",
-          description:
-            "Official university policy covering the first-year experience, including Welcome Week safety, inclusion, and support services.",
-          url: "https://secretariat.mcmaster.ca/app/uploads/First-Year-Experience-Orientation-and-Transition-for-Undergraduate-Students-Policy-on-the.pdf",
-        },
-        {
-          title: "Residence Handbook 2024–2025",
-          description:
-            "Essential guide for students in residence, covering code of conduct, services, facilities, safety, and health support.",
-          url: "https://housing.mcmaster.ca/app/uploads/2024/06/Residence-Handbook-2024-2025.pdf",
-        },
-      ],
-      cn: [
-        {
-          title: "新生体验政策 (迎新与过渡)",
-          description:
-            "McMaster 大学官方政策文档，覆盖从录取确认至开学初六周内首年体验，包括 Welcome Week 安全、融合与支持服务的规划原则与责任分工。",
-          url: "https://secretariat.mcmaster.ca/app/uploads/First-Year-Experience-Orientation-and-Transition-for-Undergraduate-Students-Policy-on-the.pdf",
-        },
-        {
-          title: "宿舍手册 2024–2025",
-          description:
-            "提供关于 McMaster 校内宿舍社区生活的重要信息，包括行为守则、服务中心、设施使用、安全与健康支持，是新生入住宿舍的必备指南。",
-          url: "https://housing.mcmaster.ca/app/uploads/2024/06/Residence-Handbook-2024-2025.pdf",
-        },
-      ],
+    {
+        id: 'orientation_and_housing',
+        links: {
+            en: [
+                { title: "Policy on First Year Experience", description: "Official university policy covering the first-year experience, including Welcome Week safety, inclusion, and support services.", url: "https://secretariat.mcmaster.ca/app/uploads/First-Year-Experience-Orientation-and-Transition-for-Undergraduate-Students-Policy-on-the.pdf" },
+                { title: "Residence Handbook 2024–2025", description: "Essential guide for students in residence, covering code of conduct, services, facilities, safety, and health support.", url: "https://housing.mcmaster.ca/app/uploads/2024/06/Residence-Handbook-2024-2025.pdf" },
+            ],
+            cn: [
+                { title: "新生体验政策 (迎新与过渡)", description: "McMaster 大学官方政策文档，覆盖从录取确认至开学初六周内首年体验，包括 Welcome Week 安全、融合与支持服务的规划原则与责任分工。", url: "https://secretariat.mcmaster.ca/app/uploads/First-Year-Experience-Orientation-and-Transition-for-Undergraduate-Students-Policy-on-the.pdf" },
+                { title: "宿舍手册 2024–2025", description: "提供关于 McMaster 校内宿舍社区生活的重要信息，包括行为守则、服务中心、设施使用、安全与健康支持，是新生入住宿舍的必备指南。", url: "https://housing.mcmaster.ca/app/uploads/2024/06/Residence-Handbook-2024-2025.pdf" },
+            ]
+        }
     },
-  },
-  {
-    id: "finance_and_career",
-    links: {
-      en: [
-        {
-          title: "Undergraduate Tuition Fee Schedule 2023–24 & 2024–25",
-          description:
-            "Details tuition standards and annual growth rates for domestic and international students by year level.",
-          url: "https://financial-affairs.mcmaster.ca/app/uploads/2024/01/Final-2023-24-2024-25-Tuition-Fee-Schedule-May-30-2023.pdf",
-        },
-        {
-          title: "Career Planning Notebook – Student Success Centre (2023)",
-          description:
-            "A structured handbook for career goal setting, self-assessment, and connecting with mentors, including a guide to the 'OSCARplus' system.",
-          url: "https://studentsuccess.mcmaster.ca/wp-content/uploads/2023/11/SSC-Career-planning-notebook-2023_Fillable.pdf",
-        },
-      ],
-      cn: [
-        {
-          title: "本科学费表 2023–24 & 2024–25",
-          description: "详细列出本地学生与国际学生按年级的学费标准和年增长率。",
-          url: "https://financial-affairs.mcmaster.ca/app/uploads/2024/01/Final-2023-24-2024-25-Tuition-Fee-Schedule-May-30-2023.pdf",
-        },
-        {
-          title: "职业规划手册 – 学生成功中心 (2023)",
-          description:
-            "一本结构化的手册，指导学生进行职业目标设定、自我评估、连接导师与机会，并提供“OSCARplus”系统使用指南。",
-          url: "https://studentsuccess.mcmaster.ca/wp-content/uploads/2023/11/SSC-Career-planning-notebook-2023_Fillable.pdf",
-        },
-      ],
+    {
+        id: 'finance_and_career',
+        links: {
+            en: [
+                { title: "Undergraduate Tuition Fee Schedule 2023–24 & 2024–25", description: "Details tuition standards and annual growth rates for domestic and international students by year level.", url: "https://financial-affairs.mcmaster.ca/app/uploads/2024/01/Final-2023-24-2024-25-Tuition-Fee-Schedule-May-30-2023.pdf" },
+                { title: "Career Planning Notebook – Student Success Centre (2023)", description: "A structured handbook for career goal setting, self-assessment, and connecting with mentors, including a guide to the 'OSCARplus' system.", url: "https://studentsuccess.mcmaster.ca/wp-content/uploads/2023/11/SSC-Career-planning-notebook-2023_Fillable.pdf" },
+            ],
+            cn: [
+                { title: "本科学费表 2023–24 & 2024–25", description: "详细列出本地学生与国际学生按年级的学费标准和年增长率。", url: "https://financial-affairs.mcmaster.ca/app/uploads/2024/01/Final-2023-24-2024-25-Tuition-Fee-Schedule-May-30-2023.pdf" },
+                { title: "职业规划手册 – 学生成功中心 (2023)", description: "一本结构化的手册，指导学生进行职业目标设定、自我评估、连接导师与机会，并提供“OSCARplus”系统使用指南。", url: "https://studentsuccess.mcmaster.ca/wp-content/uploads/2023/11/SSC-Career-planning-notebook-2023_Fillable.pdf" },
+            ]
+        }
     },
-  },
-  {
-    id: "department_handbooks",
-    links: {
-      en: [
-        {
-          title: "McMaster Undergraduate Academic Calendar 2024–2025",
-          description:
-            "Official annual compilation of undergraduate courses and policies, including program structures, prerequisites, and academic regulations.",
-          url: "https://registrar.mcmaster.ca/wp-content/uploads/2024/09/UGRD-Calendar-2024-2025-pdf-version-1.pdf",
-        },
-        {
-          title: "Occupational Therapy Program Handbook 2024–2025",
-          description:
-            "Handbook for the OT program, covering curriculum, assessment, lab protocols, and clinical practices.",
-          url: "https://srs-ot.healthsci.mcmaster.ca/wp-content/uploads/2024/05/Occupational-Therapy-Program-Handbook-2024-2025_vFINAL_08-14-24.pdf",
-        },
-        {
-          title: "Globalization Studies Student Handbook 2023–2024",
-          description:
-            "Undergraduate handbook for the Institute on Globalization, including course paths, research opportunities, and professional development advice.",
-          url: "https://globalization.mcmaster.ca/app/uploads/2024/06/Institute-on-Globalization-and-the-Human-Condition.pdf",
-        },
-      ],
-      cn: [
-        {
-          title: "麦克马斯特大学本科校历 2024–2025",
-          description:
-            "官方年度本科课程与政策汇编，包括各专业核心课程结构、先修要求、Co‑op 项目细则和学术规章。",
-          url: "https://registrar.mcmaster.ca/wp-content/uploads/2024/09/UGRD-Calendar-2024-2025-pdf-version-1.pdf",
-        },
-        {
-          title: "职业治疗项目手册 2024–2025",
-          description:
-            "康复科学学院 OT 专业书籍，涵括入学课程、评估流程、实验室规定、临床实践和学术期望。",
-          url: "https://srs-ot.healthsci.mcmaster.ca/wp-content/uploads/2024/05/Occupational-Therapy-Program-Handbook-2024-2025_vFINAL_08-14-24.pdf",
-        },
-        {
-          title: "全球化研究学生手册 2023–2024",
-          description:
-            "国际研究学院本科手册，包含课程选修路径、学术技能、研究机会与专业发展建议。",
-          url: "https://globalization.mcmaster.ca/app/uploads/2024/06/Institute-on-Globalization-and-the-Human-Condition.pdf",
-        },
-      ],
-    },
-  },
+    {
+        id: 'department_handbooks',
+        links: {
+            en: [
+                { title: "McMaster Undergraduate Academic Calendar 2024–2025", description: "Official annual compilation of undergraduate courses and policies, including program structures, prerequisites, and academic regulations.", url: "https://registrar.mcmaster.ca/wp-content/uploads/2024/09/UGRD-Calendar-2024-2025-pdf-version-1.pdf" },
+                { title: "Occupational Therapy Program Handbook 2024–2025", description: "Handbook for the OT program, covering curriculum, assessment, lab protocols, and clinical practices.", url: "https://srs-ot.healthsci.mcmaster.ca/wp-content/uploads/2024/05/Occupational-Therapy-Program-Handbook-2024-2025_vFINAL_08-14-24.pdf" },
+                { title: "Globalization Studies Student Handbook 2023–2024", description: "Undergraduate handbook for the Institute on Globalization, including course paths, research opportunities, and professional development advice.", url: "https://globalization.mcmaster.ca/app/uploads/2024/06/Institute-on-Globalization-and-the-Human-Condition.pdf" },
+            ],
+            cn: [
+                { title: "麦克马斯特大学本科校历 2024–2025", description: "官方年度本科课程与政策汇编，包括各专业核心课程结构、先修要求、Co‑op 项目细则和学术规章。", url: "https://registrar.mcmaster.ca/wp-content/uploads/2024/09/UGRD-Calendar-2024-2025-pdf-version-1.pdf" },
+                { title: "职业治疗项目手册 2024–2025", description: "康复科学学院 OT 专业书籍，涵括入学课程、评估流程、实验室规定、临床实践和学术期望。", url: "https://srs-ot.healthsci.mcmaster.ca/wp-content/uploads/2024/05/Occupational-Therapy-Program-Handbook-2024-2025_vFINAL_08-14-24.pdf" },
+                { title: "全球化研究学生手册 2023–2024", description: "国际研究学院本科手册，包含课程选修路径、学术技能、研究机会与专业发展建议。", url: "https://globalization.mcmaster.ca/app/uploads/2024/06/Institute-on-Globalization-and-the-Human-Condition.pdf" },
+            ]
+        }
+    }
 ];
 
 // Centralized object for all translated UI text
-const translations = {
+const translations: Translations = {
   en: {
     sidebar: {
       instructionsTitle: "Page Instructions:",
@@ -583,6 +541,10 @@ const McMasterUniversityPage = () => {
 
   const t = translations[language]; // Shortcut for current language translations
 
+  const getSectionTitle = (id: SectionId) => {
+    return t.sectionTitles[id] ?? id.replace(/_/g, " ");
+  };
+
   return (
     <>
       <Navbar />
@@ -679,13 +641,13 @@ const McMasterUniversityPage = () => {
             {t.sidebar.categoriesTitle}
           </h2>
           <ul className="space-y-3">
-            {universityViewData.map((section) => (
+            {(activeView === 'pdfView' ? pdfViewData : universityViewData).map((section) => (
               <li key={section.id}>
                 <a
                   href={`#${section.id}`}
                   className="text-[#247e9f] hover:underline font-medium"
                 >
-                  {t.sectionTitles[section.id]}
+                  {getSectionTitle(section.id)}
                 </a>
               </li>
             ))}
@@ -693,7 +655,7 @@ const McMasterUniversityPage = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8">
+        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8 overflow-y-auto">
           <div className="flex-1 flex flex-col">
             {/* Sticky Header */}
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
@@ -703,7 +665,7 @@ const McMasterUniversityPage = () => {
                   alt="McMaster University Logo"
                   width={120}
                   height={120}
-                  className="mr-4"
+                  className="mr-4 object-contain"
                 />
                 <h1 className="text-3xl md:text-4xl font-bold text-[#247e9f]">
                   {t.header.title}
@@ -735,14 +697,15 @@ const McMasterUniversityPage = () => {
                         {section.id === "overview" ? (
                           <>
                             <SectionHeaderWithArrow
-                              title={t.sectionTitles[section.id]}
+                              title={getSectionTitle(section.id)}
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
                               📍 1280 Main St W, Hamilton, ON L8S 4L8, Canada
                               <br />
                               📞 (905) 525-9140
-                              <br />�{" "}
+                              <br />
+                              🌐{" "}
                               <a
                                 href="https://www.mcmaster.ca/"
                                 target="_blank"
@@ -754,7 +717,7 @@ const McMasterUniversityPage = () => {
                           </>
                         ) : (
                           <h2 className="text-2xl font-bold mb-2">
-                            {t.sectionTitles[section.id]}
+                            {getSectionTitle(section.id)}
                           </h2>
                         )}
                         <ul className="list-disc pl-5 space-y-1">
@@ -796,7 +759,7 @@ const McMasterUniversityPage = () => {
                   {pdfViewData.map((section) => (
                     <section key={section.id} id={section.id}>
                       <h2 className="text-2xl font-bold mb-4">
-                        {t.sectionTitles[section.id]}
+                        {getSectionTitle(section.id)}
                       </h2>
                       <div className="space-y-4">
                         {section.links[language].map((link) => (

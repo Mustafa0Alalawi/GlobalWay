@@ -3,8 +3,82 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 
-// Data structure holding both English and Chinese links for UBC
-const universityViewData = [
+// --- TYPE DEFINITIONS FOR STRONGER TYPING (LOCAL TO THIS FILE) ---
+type LinkEntry = {
+  title: string;
+  description?: string;
+  url: string;
+};
+
+type SectionId =
+  | "overview"
+  | "academics"
+  | "admissions"
+  | "how-to-apply"
+  | "cost-funding"
+  | "campus-life"
+  | "residence-housing"
+  | "intl-support"
+  | "co-op-careers"
+  | "city-snapshot"
+  | "tours-media"
+  | "admission_guides"
+  | "orientation_and_planning"
+  | "housing_and_finance"
+  | "career_resources"
+  | "department_handbooks"
+  | "why-ubc"
+  | "programs-faculties"
+  | "admissions-deadlines"
+  | "costs-scholarships"
+  | "campus-life-snapshot"
+  | "contact-info";
+
+type SectionData = {
+  id: SectionId;
+  links: {
+    en: LinkEntry[];
+    cn: LinkEntry[];
+  };
+};
+
+type SidebarTranslations = {
+  instructionsTitle: string;
+  instructionsButton: string;
+  currentStudentTitle: string;
+  universityButton: string;
+  highSchoolTitle: string;
+  highSchoolButton: string;
+  pdfViewTitle: string;
+  pdfViewButton: string;
+  categoriesTitle: string;
+};
+
+type HeaderTranslations = {
+  title: string;
+  helpText: string;
+  bookButton: string;
+};
+
+type UniversityViewTranslations = {
+  infoPanelTitle: string;
+  aboutTitle: string;
+  aboutParagraph1: string;
+  aboutParagraph2: string;
+};
+
+type Translations = {
+  [lang: string]: {
+    sidebar: SidebarTranslations;
+    header: HeaderTranslations;
+    universityView: UniversityViewTranslations;
+    sectionTitles: { [key in SectionId]?: string };
+    instructions?: any;
+  };
+};
+
+// --- DATA FOR UNIVERSITY VIEW ---
+const universityViewData: SectionData[] = [
   {
     id: "overview",
     links: {
@@ -341,7 +415,152 @@ const universityViewData = [
   },
 ];
 
-const pdfViewData = [
+const highSchoolViewData: SectionData[] = [
+  {
+    id: "why-ubc",
+    links: {
+      en: [
+        { title: "Official Website", url: "https://www.ubc.ca/" },
+        {
+          title: "Undergraduate Viewbook (Domestic)",
+          url: "https://you.ubc.ca/wp-content/uploads/2023/11/2024_UBCStudentGuide_web.pdf",
+        },
+        {
+          title: "Undergraduate Viewbook (International)",
+          url: "https://you.ubc.ca/wp-content/uploads/2024/09/2025_UBCStudentGuide_web.pdf",
+        },
+      ],
+      cn: [
+        { title: "官方网站", url: "https://www.ubc.ca/" },
+        {
+          title: "本科招生手册 (国内)",
+          url: "https://you.ubc.ca/wp-content/uploads/2023/11/2024_UBCStudentGuide_web.pdf",
+        },
+        {
+          title: "本科招生手册 (国际)",
+          url: "https://you.ubc.ca/wp-content/uploads/2024/09/2025_UBCStudentGuide_web.pdf",
+        },
+      ],
+    },
+  },
+  {
+    id: "programs-faculties",
+    links: {
+      en: [
+        { title: "Explore Programs", url: "https://you.ubc.ca/programs/" },
+        {
+          title: "Faculties List",
+          url: "https://www.ubc.ca/our-campuses/vancouver/directories/faculties-schools.html",
+        },
+      ],
+      cn: [
+        { title: "专业探索", url: "https://you.ubc.ca/programs/" },
+        {
+          title: "学院列表",
+          url: "https://www.ubc.ca/our-campuses/vancouver/directories/faculties-schools.html",
+        },
+      ],
+    },
+  },
+  {
+    id: "admissions-deadlines",
+    links: {
+      en: [
+        {
+          title: "How to Apply",
+          url: "https://you.ubc.ca/applying-ubc/how-to-apply/application/",
+        },
+        {
+          title: "Important Dates",
+          url: "https://you.ubc.ca/applying-ubc/dates-deadlines/",
+        },
+        {
+          title: "Common App",
+          url: "https://www.commonapp.org/apply/first-year-students",
+        },
+      ],
+      cn: [
+        {
+          title: "申请流程",
+          url: "https://you.ubc.ca/applying-ubc/how-to-apply/application/",
+        },
+        {
+          title: "重要日期",
+          url: "https://you.ubc.ca/applying-ubc/dates-deadlines/",
+        },
+        {
+          title: "Common App",
+          url: "https://www.commonapp.org/apply/first-year-students",
+        },
+      ],
+    },
+  },
+  {
+    id: "costs-scholarships",
+    links: {
+      en: [
+        {
+          title: "Financial Aid",
+          url: "https://students.ubc.ca/finances/awards-scholarships-bursaries/",
+        },
+        {
+          title: "Entrance Scholarships",
+          url: "https://you.ubc.ca/financial-planning/scholarships-awards/international-scholars/",
+        },
+      ],
+      cn: [
+        {
+          title: "财务援助",
+          url: "https://students.ubc.ca/finances/awards-scholarships-bursaries/",
+        },
+        {
+          title: "入学奖学金",
+          url: "https://you.ubc.ca/financial-planning/scholarships-awards/international-scholars/",
+        },
+      ],
+    },
+  },
+  {
+    id: "campus-life-snapshot",
+    links: {
+      en: [
+        { title: "Residence", url: "https://vancouver.housing.ubc.ca/" },
+        {
+          title: "Clubs & Activities",
+          url: "https://www.ams.ubc.ca/student-life/clubs/campusbase/",
+        },
+      ],
+      cn: [
+        { title: "宿舍", url: "https://vancouver.housing.ubc.ca/" },
+        {
+          title: "社团与活动",
+          url: "https://www.ams.ubc.ca/student-life/clubs/campusbase/",
+        },
+      ],
+    },
+  },
+  {
+    id: "contact-info",
+    links: {
+      en: [
+        {
+          title: "Email: admission.question@ubc.ca",
+          url: "mailto:admission.question@ubc.ca",
+        },
+        { title: "Phone: (604) 822-8999", url: "tel:604-822-8999" },
+      ],
+      cn: [
+        {
+          title: "邮箱: admission.question@ubc.ca",
+          url: "mailto:admission.question@ubc.ca",
+        },
+        { title: "电话: (604) 822-8999", url: "tel:604-822-8999" },
+      ],
+    },
+  },
+];
+
+const pdfViewData: SectionData[] = [
   {
     id: "admission_guides",
     links: {
@@ -365,7 +584,7 @@ const pdfViewData = [
           url: "https://you.ubc.ca/wp-content/uploads/2022/08/2023_UBCStudentGuide_web.pdf",
         },
         {
-          title: "UBC Indigenous Student Handbook 2024",
+          title: "2024 UBC Indigenous Student Handbook",
           description:
             "Designed for Indigenous new students, covering orientation, community support, priority housing, and cultural resources.",
           url: "https://you.ubc.ca/wp-content/uploads/2023/09/2024_UBCIndigenousHandbook.pdf",
@@ -414,7 +633,7 @@ const pdfViewData = [
           url: "https://students.ok.ubc.ca/wp-content/uploads/sites/90/2025/06/FYP-Guide_SciNur_UBCO-25_v2.pdf",
         },
         {
-          title: "First-Year Planning Guide – B.A.Sc. (Okanagan 2025)",
+          title: "First‑Year Planning Guide – B.A.Sc. (Okanagan 2025)",
           description:
             "Admission planning guide for Applied Science freshmen, including course recommendations and registration notes.",
           url: "https://students.ok.ubc.ca/wp-content/uploads/sites/90/2025/05/FYP-Guide_ApSci_UBCO-25.pdf",
@@ -447,19 +666,19 @@ const pdfViewData = [
     links: {
       en: [
         {
-          title: "Year-Round Residence Contract 2025–2026",
+          title: "Year‑Round Residence Contract 2025–2026",
           description:
             "Details year-round housing contract terms, eligibility, fees, and payment schedules.",
           url: "https://vancouver.housing.ubc.ca/wp-content/uploads/2025/02/2025-2026-YRH-contract.pdf",
         },
         {
-          title: "Term 1 Winter Session Residence Contract 2025–2026",
+          title: "Term‑1 Winter Session Residence Contract 2025–2026",
           description:
             "Contract for the Winter Session (Term 1), including meal plan terms and community standards.",
           url: "https://vancouver.housing.ubc.ca/wp-content/uploads/2025/06/2025-2026-Term-1-Winter-Session-Contract.pdf",
         },
         {
-          title: "Tuition and Non-Instructional Fees 2025–2026",
+          title: "Tuition and Non‑Instructional Fees 2025–2026 (PDF)",
           description:
             "Report approved by the Board of Governors detailing fee increases for domestic and international students.",
           url: "https://bog3.sites.olt.ubc.ca/files/2024/11/1.5_2024.12_Tuition-and-Non-Instructional-Fees-2025-2026-Revised.pdf",
@@ -479,7 +698,7 @@ const pdfViewData = [
           url: "https://vancouver.housing.ubc.ca/wp-content/uploads/2025/06/2025-2026-Term-1-Winter-Session-Contract.pdf",
         },
         {
-          title: "2025–2026 学费与非教学费用",
+          title: "2025–2026 学费与非教学费用 (PDF)",
           description:
             "由大学理事会批准的报告，明确国内学生学费上涨2%，新入学国际本科生上涨5%（续读3%），强制性杂费上涨2%。",
           url: "https://bog3.sites.olt.ubc.ca/files/2024/11/1.5_2024.12_Tuition-and-Non-Instructional-Fees-2025-2026-Revised.pdf",
@@ -559,7 +778,7 @@ const pdfViewData = [
 ];
 
 // Centralized object for all translated UI text
-const translations = {
+const translations: Translations = {
   en: {
     sidebar: {
       instructionsTitle: "Page Instructions:",
@@ -601,6 +820,12 @@ const translations = {
       orientation_and_planning: "Orientation & Planning",
       housing_and_finance: "Housing & Finance",
       career_resources: "Career & Engineering Guides",
+      "why-ubc": "Why UBC?",
+      "programs-faculties": "Programs & Faculties",
+      "admissions-deadlines": "Admissions & Deadlines",
+      "costs-scholarships": "Costs & Scholarships",
+      "campus-life-snapshot": "Campus Life Snapshot",
+      "contact-info": "Contact Info",
     },
   },
   cn: {
@@ -644,6 +869,12 @@ const translations = {
       orientation_and_planning: "迎新与规划",
       housing_and_finance: "住宿与财务",
       career_resources: "职业与工程指南",
+      "why-ubc": "了解UBC",
+      "programs-faculties": "专业与学院",
+      "admissions-deadlines": "招生与截止日期",
+      "costs-scholarships": "费用与奖学金",
+      "campus-life-snapshot": "校园生活速览",
+      "contact-info": "联系信息",
     },
   },
 };
@@ -674,6 +905,10 @@ const UBCUniversityPage = () => {
   const [language, setLanguage] = useState<"en" | "cn">("en");
 
   const t = translations[language]; // Shortcut for current language translations
+
+  const getSectionTitle = (id: SectionId) => {
+    return t.sectionTitles[id] ?? id.replace(/_/g, " ");
+  };
 
   return (
     <>
@@ -771,13 +1006,18 @@ const UBCUniversityPage = () => {
             {t.sidebar.categoriesTitle}
           </h2>
           <ul className="space-y-3">
-            {universityViewData.map((section) => (
+            {(activeView === "pdfView"
+              ? pdfViewData
+              : activeView === "highschool"
+              ? highSchoolViewData
+              : universityViewData
+            ).map((section) => (
               <li key={section.id}>
                 <a
                   href={`#${section.id}`}
                   className="text-[#247e9f] hover:underline font-medium"
                 >
-                  {t.sectionTitles[section.id]}
+                  {getSectionTitle(section.id)}
                 </a>
               </li>
             ))}
@@ -785,7 +1025,7 @@ const UBCUniversityPage = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8">
+        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8 overflow-y-auto">
           <div className="flex-1 flex flex-col">
             {/* Sticky Header */}
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
@@ -795,7 +1035,7 @@ const UBCUniversityPage = () => {
                   alt="UBC Logo"
                   width={120}
                   height={120}
-                  className="mr-4"
+                  className="mr-4 object-contain"
                 />
                 <h1 className="text-3xl md:text-4xl font-bold text-[#247e9f]">
                   {t.header.title}
@@ -827,7 +1067,7 @@ const UBCUniversityPage = () => {
                         {section.id === "overview" ? (
                           <>
                             <SectionHeaderWithArrow
-                              title={t.sectionTitles[section.id]}
+                              title={getSectionTitle(section.id)}
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
@@ -847,7 +1087,7 @@ const UBCUniversityPage = () => {
                           </>
                         ) : (
                           <h2 className="text-2xl font-bold mb-2">
-                            {t.sectionTitles[section.id]}
+                            {getSectionTitle(section.id)}
                           </h2>
                         )}
                         <ul className="list-disc pl-5 space-y-1">
@@ -883,13 +1123,39 @@ const UBCUniversityPage = () => {
                   )}
                 </div>
               )}
+              {/* HIGHSCHOOL VIEW */}
+              {activeView === "highschool" && (
+                <div className="space-y-10 text-gray-700">
+                  {highSchoolViewData.map((section) => (
+                    <section key={section.id} id={section.id}>
+                      <h2 className="text-2xl font-bold mb-2">
+                        {getSectionTitle(section.id)}
+                      </h2>
+                      <ul className="list-disc pl-5 space-y-1">
+                        {section.links[language].map((link) => (
+                          <li key={link.title}>
+                            <a
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#247e9f] underline"
+                            >
+                              {link.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  ))}
+                </div>
+              )}
               {/* PDF VIEW */}
               {activeView === "pdfView" && (
                 <div className="space-y-10 text-gray-700">
                   {pdfViewData.map((section) => (
                     <section key={section.id} id={section.id}>
                       <h2 className="text-2xl font-bold mb-4">
-                        {t.sectionTitles[section.id]}
+                        {getSectionTitle(section.id)}
                       </h2>
                       <div className="space-y-4">
                         {section.links[language].map((link) => (

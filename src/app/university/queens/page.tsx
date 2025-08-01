@@ -2,7 +2,73 @@
 
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
-import { type SectionData, type Translations } from "../../types";
+
+// --- TYPE DEFINITIONS FOR STRONGER TYPING (LOCAL TO THIS FILE) ---
+type LinkEntry = {
+  title: string;
+  description?: string;
+  url: string;
+};
+
+type SectionId =
+  | "overview"
+  | "academics"
+  | "admissions"
+  | "how-to-apply"
+  | "cost-funding"
+  | "campus-life"
+  | "residence-housing"
+  | "intl-support"
+  | "co-op-careers"
+  | "city-snapshot"
+  | "tours-media"
+  | "general_admissions"
+  | "faculty_and_academics"
+  | "housing_and_campus_life"
+  | "career_and_employment";
+
+type SectionData = {
+  id: SectionId;
+  links: {
+    en: LinkEntry[];
+    cn: LinkEntry[];
+  };
+};
+
+type SidebarTranslations = {
+  instructionsTitle: string;
+  instructionsButton: string;
+  currentStudentTitle: string;
+  universityButton: string;
+  highSchoolTitle: string;
+  highSchoolButton: string;
+  pdfViewTitle: string;
+  pdfViewButton: string;
+  categoriesTitle: string;
+};
+
+type HeaderTranslations = {
+  title: string;
+  helpText: string;
+  bookButton: string;
+};
+
+type UniversityViewTranslations = {
+  infoPanelTitle: string;
+  aboutTitle: string;
+  aboutParagraph1: string;
+  aboutParagraph2: string;
+};
+
+type Translations = {
+  [lang: string]: {
+    sidebar: SidebarTranslations;
+    header: HeaderTranslations;
+    universityView: UniversityViewTranslations;
+    sectionTitles: { [key in SectionId]?: string };
+    instructions?: any;
+  };
+};
 
 // --- DATA FOR UNIVERSITY VIEW ---
 const universityViewData: SectionData[] = [
@@ -301,7 +367,6 @@ const universityViewData: SectionData[] = [
   },
 ];
 
-// --- NEW DATA FOR PDF VIEW ---
 const pdfViewData: SectionData[] = [
   {
     id: "general_admissions",
@@ -572,9 +637,10 @@ const translations: Translations = {
       "co-op-careers": "Co-op Careers",
       "city-snapshot": "City Snapshot",
       "tours-media": "Tours & Media",
-      general_admissions_guides: "General & Admissions Guides",
-      faculty_specific_guides: "Faculty-Specific Handbooks",
-      campus_life_and_career_guides: "Campus Life & Career Guides",
+      general_admissions: "General & Admissions Guides",
+      faculty_and_academics: "Faculty & Academics Handbooks",
+      housing_and_campus_life: "Housing & Campus Life",
+      career_and_employment: "Career & Employment",
     },
   },
   cn: {
@@ -696,6 +762,10 @@ const QueensUniversityPage = () => {
 
   const t = translations[language];
 
+  const getSectionTitle = (id: SectionId) => {
+    return t.sectionTitles[id] ?? id.replace(/_/g, " ");
+  };
+
   return (
     <>
       <Navbar />
@@ -792,16 +862,18 @@ const QueensUniversityPage = () => {
             {t.sidebar.categoriesTitle}
           </h2>
           <ul className="space-y-3">
-            {universityViewData.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  className="text-[#247e9f] hover:underline font-medium"
-                >
-                  {t.sectionTitles[section.id]}
-                </a>
-              </li>
-            ))}
+            {(activeView === "pdfView" ? pdfViewData : universityViewData).map(
+              (section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    className="text-[#247e9f] hover:underline font-medium"
+                  >
+                    {getSectionTitle(section.id)}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </aside>
 
@@ -893,7 +965,7 @@ const QueensUniversityPage = () => {
                         {section.id === "overview" ? (
                           <>
                             <SectionHeaderWithArrow
-                              title={t.sectionTitles[section.id]}
+                              title={getSectionTitle(section.id)}
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
@@ -909,7 +981,7 @@ const QueensUniversityPage = () => {
                               </a>
                               <br />
                               📞 (613) 533-2218
-                              <br />�{" "}
+                              <br />{" "}
                               <a
                                 href="https://www.queensu.ca/"
                                 target="_blank"
@@ -922,7 +994,7 @@ const QueensUniversityPage = () => {
                           </>
                         ) : (
                           <h2 className="text-2xl font-bold mb-2">
-                            {t.sectionTitles[section.id]}
+                            {getSectionTitle(section.id)}
                           </h2>
                         )}
                         <ul className="list-disc pl-5 space-y-1">
@@ -1102,7 +1174,7 @@ const QueensUniversityPage = () => {
                   {pdfViewData.map((section) => (
                     <section key={section.id} id={section.id}>
                       <h2 className="text-2xl font-bold mb-4">
-                        {t.sectionTitles[section.id]}
+                        {getSectionTitle(section.id)}
                       </h2>
                       <div className="space-y-4">
                         {section.links[language].map((link) => (
