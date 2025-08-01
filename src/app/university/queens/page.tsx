@@ -22,10 +22,10 @@ type SectionId =
   | "co-op-careers"
   | "city-snapshot"
   | "tours-media"
-  | "general_admissions"
-  | "faculty_and_academics"
-  | "housing_and_campus_life"
-  | "career_and_employment";
+  | "admission_guides"
+  | "orientation_and_housing"
+  | "finance_and_career"
+  | "department_handbooks";
 
 type SectionData = {
   id: SectionId;
@@ -78,16 +78,16 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "QS Ranking",
-          url: "https://www.topuniversities.com/universities/queens-university",
+          url: "https://www.yorku.ca/yfile/2025/06/20/york-u-continues-positive-trajectory-in-qs-world-university-rankings/?utm_source=chatgpt.com",
         },
-        { title: "Campus Map", url: "https://www.queensu.ca/campusmap/" },
+        { title: "Campus Map", url: "https://students.yorku.ca/campus-maps" },
       ],
       cn: [
         {
           title: "QS 排名",
-          url: "https://www.topuniversities.com/universities/queens-university",
+          url: "https://www.yorku.ca/yfile/2025/06/20/york-u-continues-positive-trajectory-in-qs-world-university-rankings/?utm_source=chatgpt.com",
         },
-        { title: "校区地图", url: "https://www.queensu.ca/campusmap/" },
+        { title: "校区地图", url: "https://students.yorku.ca/campus-maps" },
       ],
     },
   },
@@ -97,19 +97,22 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "Programs List / Viewbook",
-          url: "https://www.queensu.ca/academics/programs",
+          url: "https://futurestudents.yorku.ca/sites/futurestudents/files/viewbooks/viewbook.ap.pdf?utm_source=chatgpt.com",
         },
         {
           title: "Faculty Introduction",
-          url: "https://www.queensu.ca/academics/programs",
+          url: "https://www.yorku.ca/about/our-faculties/?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "专业列表 / 宣传册",
-          url: "https://www.queensu.ca/academics/programs",
+          url: "https://futurestudents.yorku.ca/sites/futurestudents/files/viewbooks/viewbook.ap.pdf?utm_source=chatgpt.com",
         },
-        { title: "学院介绍", url: "https://www.queensu.ca/academics/programs" },
+        {
+          title: "学院介绍",
+          url: "https://www.yorku.ca/about/our-faculties/?utm_source=chatgpt.com",
+        },
       ],
     },
   },
@@ -119,26 +122,37 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "Undergraduate Admission Home",
-          url: "https://www.queensu.ca/admission/",
+          url: "https://futurestudents.yorku.ca/program-search",
         },
         {
           title: "Entry Requirements",
-          url: "https://www.queensu.ca/admission/applying/admission-requirements",
+          url: "https://futurestudents.yorku.ca/requirements",
         },
         {
-          title: "Important Dates",
-          url: "https://www.queensu.ca/registrar/key-dates?utm_source=chatgpt.com",
+          title: "Important Dates (Fall/Winter)",
+          url: "https://registrar.yorku.ca/enrol/dates/2025-2026/fall-winter",
+        },
+        {
+          title: "Application Deadlines",
+          url: "https://futurestudents.yorku.ca/requirements/deadlines",
         },
       ],
       cn: [
-        { title: "本科申请主页", url: "https://www.queensu.ca/admission/" },
         {
-          title: "入学要求",
-          url: "https://www.queensu.ca/admission/applying/admission-requirements",
+          title: "本科申请主页",
+          url: "https://futurestudents.yorku.ca/program-search",
         },
         {
-          title: "重要日期",
-          url: "https://www.queensu.ca/registrar/key-dates?utm_source=chatgpt.com",
+          title: "入学要求",
+          url: "https://futurestudents.yorku.ca/requirements",
+        },
+        {
+          title: "重要日期 (秋冬季)",
+          url: "https://registrar.yorku.ca/enrol/dates/2025-2026/fall-winter",
+        },
+        {
+          title: "申请截止日期",
+          url: "https://futurestudents.yorku.ca/requirements/deadlines",
         },
       ],
     },
@@ -149,29 +163,21 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "Ontario (OUAC) Process",
-          url: "https://www.ouac.on.ca/guide/undergrad-guide/?utm_source=chatgpt.com",
+          url: "https://futurestudents.yorku.ca/how-do-i-apply?utm_source=chatgpt.com",
         },
         {
-          title: "Common App Process",
-          url: "https://www.commonapp.org/apply/first-year-students",
-        },
-        {
-          title: "Direct Application (Exclusive)",
-          url: "https://www.queensu.ca/admission/applying/how-to-apply",
+          title: "Direct Application",
+          url: "https://futurestudents.yorku.ca/requirements/apply",
         },
       ],
       cn: [
         {
           title: "安省申请流程（OUAC）",
-          url: "https://www.ouac.on.ca/guide/undergrad-guide/?utm_source=chatgpt.com",
+          url: "https://futurestudents.yorku.ca/how-do-i-apply?utm_source=chatgpt.com",
         },
         {
-          title: "Common App 流程",
-          url: "https://www.commonapp.org/apply/first-year-students",
-        },
-        {
-          title: "直申通道（Exclusive）",
-          url: "https://www.queensu.ca/admission/applying/how-to-apply",
+          title: "直接申请",
+          url: "https://futurestudents.yorku.ca/requirements/apply",
         },
       ],
     },
@@ -182,29 +188,45 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "Tuition Fees",
-          url: "https://www.queensu.ca/registrar/tuition-fees?utm_source=chatgpt.com",
+          url: "https://future.studentsv2.uit.yorku.ca/tuition",
         },
         {
-          title: "Scholarship Search",
-          url: "https://www.queensu.ca/registrar/financial-aid/application-required/current-students/scholarships-awards?utm_source=chatgpt.com",
+          title: "Budgeting for your Education",
+          url: "https://yorkinternational.yorku.ca/budgeting-for-your-education/?utm_source=chatgpt.com",
+        },
+        {
+          title: "Scholarships & Bursaries",
+          url: "https://futurestudents.yorku.ca/financing-your-degree/scholarships-bursaries?utm_source=chatgpt.com",
+        },
+        {
+          title: "Scholarships for Incoming Students",
+          url: "https://futurestudents.yorku.ca/scholarships-incoming-students?utm_source=chatgpt.com",
         },
         {
           title: "Work-Study / On-campus Job",
-          url: "https://www.queensu.ca/registrar/financial-aid/application-required/current-students/work-study?utm_source=chatgpt.com",
+          url: "https://careers.yorku.ca/workstudy-programs-campus-employment?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "学费表",
-          url: "https://www.queensu.ca/registrar/tuition-fees?utm_source=chatgpt.com",
+          url: "https://future.studentsv2.uit.yorku.ca/tuition",
         },
         {
-          title: "奖学金查询",
-          url: "https://www.queensu.ca/registrar/financial-aid/application-required/current-students/scholarships-awards?utm_source=chatgpt.com",
+          title: "教育预算",
+          url: "https://yorkinternational.yorku.ca/budgeting-for-your-education/?utm_source=chatgpt.com",
+        },
+        {
+          title: "奖学金与助学金",
+          url: "https://futurestudents.yorku.ca/financing-your-degree/scholarships-bursaries?utm_source=chatgpt.com",
+        },
+        {
+          title: "新生奖学金",
+          url: "https://futurestudents.yorku.ca/scholarships-incoming-students?utm_source=chatgpt.com",
         },
         {
           title: "勤工助学 / 校园兼职",
-          url: "https://www.queensu.ca/registrar/financial-aid/application-required/current-students/work-study?utm_source=chatgpt.com",
+          url: "https://careers.yorku.ca/workstudy-programs-campus-employment?utm_source=chatgpt.com",
         },
       ],
     },
@@ -214,24 +236,24 @@ const universityViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "AMS Club Directory (Clubs)",
-          url: "https://quic.queensu.ca/student-life/clubs",
+          title: "Clubs Directory",
+          url: "https://www.yorku.ca/colleges/clubs/",
         },
-        { title: "Athletics & Recreation", url: "https://gogaelsgo.com/" },
+        {
+          title: "Athletics & Recreation",
+          url: "https://www.yorku.ca/about/campus-life/",
+        },
         {
           title: "Dining & Meal Plan",
-          url: "https://www.queensu.ca/food/meal-plans/campus-meal-plans",
+          url: "https://www.yorku.ca/foodservices/meal-plans/",
         },
       ],
       cn: [
-        {
-          title: "社团目录（AMS）",
-          url: "https://quic.queensu.ca/student-life/clubs",
-        },
-        { title: "体育与运动", url: "https://gogaelsgo.com/" },
+        { title: "社团目录", url: "https://www.yorku.ca/colleges/clubs/" },
+        { title: "体育与运动", url: "https://www.yorku.ca/about/campus-life/" },
         {
           title: "校园餐饮计划",
-          url: "https://www.queensu.ca/food/meal-plans/campus-meal-plans",
+          url: "https://www.yorku.ca/foodservices/meal-plans/",
         },
       ],
     },
@@ -240,25 +262,31 @@ const universityViewData: SectionData[] = [
     id: "residence-housing",
     links: {
       en: [
-        { title: "Residence Home", url: "https://www.queensu.ca/residences/" },
+        {
+          title: "Residence Home",
+          url: "https://futurestudents.yorku.ca/admitted/4-residence?utm_source=chatgpt.com",
+        },
         {
           title: "Room Types & Fees",
-          url: "https://www.queensu.ca/residences/buildings",
+          url: "https://www.yorku.ca/housing/keele-campus/p-york-apartments/monthly-rental-rates/?utm_source=chatgpt.com",
         },
         {
           title: "Off-Campus Housing Office",
-          url: "https://www.queensu.ca/ocla/off-campus-housing",
+          url: "https://www.yorku.ca/housing/off-campus/resource-hub/?utm_source=chatgpt.com",
         },
       ],
       cn: [
-        { title: "宿舍主页", url: "https://www.queensu.ca/residences/" },
+        {
+          title: "宿舍主页",
+          url: "https://futurestudents.yorku.ca/admitted/4-residence?utm_source=chatgpt.com",
+        },
         {
           title: "房型与费用",
-          url: "https://www.queensu.ca/residences/buildings",
+          url: "https://www.yorku.ca/housing/keele-campus/p-york-apartments/monthly-rental-rates/?utm_source=chatgpt.com",
         },
         {
           title: "校外住宿办公室",
-          url: "https://www.queensu.ca/ocla/off-campus-housing",
+          url: "https://www.yorku.ca/housing/off-campus/resource-hub/?utm_source=chatgpt.com",
         },
       ],
     },
@@ -268,24 +296,38 @@ const universityViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "International Office",
-          url: "https://www.queensu.ca/ipo/incoming-exchange/student-life-and-services",
+          title: "International Student Support",
+          url: "https://yorkinternational.yorku.ca/international-student-support/",
         },
-        { title: "Study Permit / PGWP Guide", url: "#" },
+        {
+          title: "Study Permits Guide",
+          url: "https://yorkinternational.yorku.ca/immigration-overview/study-permits/",
+        },
+        {
+          title: "PGWP Updates",
+          url: "https://yorkinternational.yorku.ca/pgwp-updates-2/",
+        },
         {
           title: "Health & Wellness",
-          url: "https://www.queensu.ca/studentwellness/supports-resources",
+          url: "https://students.yorku.ca/counselling",
         },
       ],
       cn: [
         {
-          title: "国际事务办公室",
-          url: "https://www.queensu.ca/ipo/incoming-exchange/student-life-and-services",
+          title: "国际学生支持",
+          url: "https://yorkinternational.yorku.ca/international-student-support/",
         },
-        { title: "学签 / PGWP 指南", url: "#" },
+        {
+          title: "学签指南",
+          url: "https://yorkinternational.yorku.ca/immigration-overview/study-permits/",
+        },
+        {
+          title: "PGWP 更新",
+          url: "https://yorkinternational.yorku.ca/pgwp-updates-2/",
+        },
         {
           title: "健康与心理支持",
-          url: "https://www.queensu.ca/studentwellness/supports-resources",
+          url: "https://students.yorku.ca/counselling",
         },
       ],
     },
@@ -294,20 +336,36 @@ const universityViewData: SectionData[] = [
     id: "co-op-careers",
     links: {
       en: [
-        { title: "Career Centre Home", url: "https://careers.queensu.ca/" },
+        { title: "Career Centre Home", url: "https://careers.yorku.ca/" },
+        { title: "LAPS Co-op", url: "https://www.yorku.ca/laps/co-op/" },
+        { title: "Lassonde Co-op", url: "https://lassonde.yorku.ca/co-op/" },
         {
-          title: "Co-op / Internship Info",
-          url: "https://careers.queensu.ca/jobs-experience/internships-quip",
+          title: "Participate in Co-op or Internship",
+          url: "https://careers.yorku.ca/resource-library/want-build-your-experience/participate-co-op-or-internship",
         },
-        { title: "Alumni Network", url: "https://www.queensu.ca/alumni/" },
+        {
+          title: "Alumni Network",
+          url: "https://www.yorku.ca/alumniandfriends/connect/alumni-networks/",
+        },
       ],
       cn: [
-        { title: "职业中心主页", url: "https://careers.queensu.ca/" },
+        { title: "职业中心主页", url: "https://careers.yorku.ca/" },
         {
-          title: "Co-op / 实习信息",
-          url: "https://careers.queensu.ca/jobs-experience/internships-quip",
+          title: "文科与专业研究学院 Co-op",
+          url: "https://www.yorku.ca/laps/co-op/",
         },
-        { title: "校友网络", url: "https://www.queensu.ca/alumni/" },
+        {
+          title: "拉松德工程学院 Co-op",
+          url: "https://lassonde.yorku.ca/co-op/",
+        },
+        {
+          title: "参与 Co-op 或实习",
+          url: "https://careers.yorku.ca/resource-library/want-build-your-experience/participate-co-op-or-internship",
+        },
+        {
+          title: "校友网络",
+          url: "https://www.yorku.ca/alumniandfriends/connect/alumni-networks/",
+        },
       ],
     },
   },
@@ -316,19 +374,31 @@ const universityViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "Transportation & Housing Guide",
-          url: "https://www.queensu.ca/facilities/services/commuter/bus-transpass-program",
+          title: "Resident Handbook",
+          url: "https://www.yorku.ca/housing/keele-campus/c-york-apartments/resident-handbook/",
         },
-        { title: "Weather / Safety Report", url: "#" },
-        { title: "Chinese Student Resources", url: "#" },
+        {
+          title: "Shuttle Service",
+          url: "https://www.yorku.ca/transportation/markham-keele-shuttle-service/",
+        },
+        {
+          title: "Weather Emergency Procedures",
+          url: "https://www.yorku.ca/yfile/2023/11/16/stay-up-to-date-with-yorks-weather-emergency-procedures/",
+        },
       ],
       cn: [
         {
-          title: "交通 & 租房指南",
-          url: "https://www.queensu.ca/facilities/services/commuter/bus-transpass-program",
+          title: "住户手册",
+          url: "https://www.yorku.ca/housing/keele-campus/c-york-apartments/resident-handbook/",
         },
-        { title: "天气 / 安全报告", url: "#" },
-        { title: "华人资源链接", url: "#" },
+        {
+          title: "班车服务",
+          url: "https://www.yorku.ca/transportation/markham-keele-shuttle-service/",
+        },
+        {
+          title: "恶劣天气应急程序",
+          url: "https://www.yorku.ca/yfile/2023/11/16/stay-up-to-date-with-yorks-weather-emergency-procedures/",
+        },
       ],
     },
   },
@@ -338,29 +408,31 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "Book Campus Tour",
-          url: "https://www.queensu.ca/admission/visit/campus-tours",
+          url: "https://futurestudents.yorku.ca/tours",
         },
         {
           title: "Virtual Campus VR",
-          url: "https://www.queensu.ca/admission/visit/campus-tours",
+          url: "https://futurestudents.yorku.ca/tours",
         },
         {
-          title: "Official YouTube / Instagram",
-          url: "https://www.youtube.com/QueensUCanada",
+          title: "Official YouTube",
+          url: "https://www.youtube.com/user/YorkUniversity",
+        },
+        {
+          title: "Official Instagram",
+          url: "https://www.instagram.com/yorkuniversity/",
         },
       ],
       cn: [
+        { title: "预约校园参观", url: "https://futurestudents.yorku.ca/tours" },
+        { title: "虚拟校园 VR", url: "https://futurestudents.yorku.ca/tours" },
         {
-          title: "预约校园参观",
-          url: "https://www.queensu.ca/admission/visit/campus-tours",
+          title: "官方 YouTube",
+          url: "https://www.youtube.com/user/YorkUniversity",
         },
         {
-          title: "虚拟校园 VR",
-          url: "https://www.queensu.ca/admission/visit/campus-tours",
-        },
-        {
-          title: "官方 YouTube / Instagram",
-          url: "https://www.youtube.com/QueensUCanada",
+          title: "官方 Instagram",
+          url: "https://www.instagram.com/yorkuniversity/",
         },
       ],
     },
@@ -369,177 +441,133 @@ const universityViewData: SectionData[] = [
 
 const pdfViewData: SectionData[] = [
   {
-    id: "general_admissions",
+    id: "admission_guides",
     links: {
       en: [
         {
-          title: "Undergraduate Viewbook 2025",
+          title: "2025-2026 Undergraduate Student Handbook",
           description:
-            "Academic overview, campus support, application & scholarship summary (38-page color brochure).",
-          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+            "56 pp viewbook: Program directory, campus life, support services.",
+          url: "https://futurestudents.yorku.ca/sites/futurestudents/files/2024-09/YorkU-2025-2026-Undergrad-Handbook.pdf",
         },
         {
-          title: "Undergraduate Admission Viewbook 2024",
-          description:
-            "A different year's version from the one above, can be used for comparison.",
-          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+          title: "2025-2026 International Student Handbook",
+          description: "Pre-arrival visa, UHIP, housing, finances, community.",
+          url: "https://futurestudents.yorku.ca/sites/futurestudents/files/viewbooks/YorkU-2025-26-INTL-handbook.pdf",
         },
         {
-          title: "International Applicant Handbook 2024",
+          title: "Exchange-Partner Factsheet 2025-26",
           description:
-            "Visa timeline, language requirements, cost estimation for international students.",
-          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_2024_Intl_Applicant_Handbook.pdf?utm_source=chatgpt.com",
-        },
-        {
-          title: "International Undergraduate Viewbook 2025",
-          description:
-            "A “Why Queen’s” brochure designed for overseas high school students.",
-          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_International_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+            "Academic calendar, course load, language requirements (for study abroad & exchange students).",
+          url: "https://yorkinternational.yorku.ca/files/2024/10/YorkU-2025-26-Exchange-Partner-Factsheet-Final.pdf",
         },
       ],
       cn: [
         {
-          title: "Undergraduate Viewbook 2025",
-          description: "学术概况、校园支持、申请与奖学金综览（38 页彩册）。",
-          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+          title: "2025-2026 本科生手册",
+          description: "56页 viewbook：专业目录、校园生活、支持服务。",
+          url: "https://futurestudents.yorku.ca/sites/futurestudents/files/2024-09/YorkU-2025-2026-Undergrad-Handbook.pdf",
         },
         {
-          title: "Undergraduate Admission Viewbook 2024",
-          description: "与上一本不同年度版本，可双版本并列供对比。",
-          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+          title: "2025-2026 国际学生手册",
+          description: "行前签证、UHIP、住宿、资金、社群。",
+          url: "https://futurestudents.yorku.ca/sites/futurestudents/files/viewbooks/YorkU-2025-26-INTL-handbook.pdf",
         },
         {
-          title: "International Applicant Handbook 2024",
-          description: "国际生签证时程、语言要求、费用估算。",
-          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_2024_Intl_Applicant_Handbook.pdf?utm_source=chatgpt.com",
-        },
-        {
-          title: "International Undergraduate Viewbook 2025",
-          description: "专为海外高中生设计的“Why Queen’s”彩册。",
-          url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_International_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
+          title: "2025-26年交换合作伙伴情况说明书",
+          description: "校历、课程负荷、语言要求（供出国 & 交换生参考）。",
+          url: "https://yorkinternational.yorku.ca/files/2024/10/YorkU-2025-26-Exchange-Partner-Factsheet-Final.pdf",
         },
       ],
     },
   },
   {
-    id: "faculty_and_academics",
+    id: "orientation_and_housing",
     links: {
       en: [
         {
-          title: "First-Year Student Handbook (Arts & Science)",
+          title: "Transfer-Student Orientation Plan 2025",
           description:
-            "Course selection rules, first-year course combinations, Plan application instructions.",
-          url: "https://healthsci.queensu.ca/liscbchm/sites/liscbchm/files/inline-files/first_year_handbook_2021.pdf?utm_source=chatgpt.com",
+            "Framework for the orientation process, useful as a reference for the Welcome Week schedule.",
+          url: "https://students.yorku.ca/sites/default/files/2025-04/Plan%20for%20Transfer%20Student%20Orientation_0.pdf",
         },
         {
-          title: "Public Health Sciences First-Year Handbook",
-          description: "Major requirements & research/internship pathways.",
-          url: "https://phs.queensu.ca/source/PHS/2021%2008%2017%20MPH%20Student%20handbook%20-%202021-22%20Academic%20Year.pdf?utm_source=chatgpt.com",
+          title: "“Looking Ahead at Your First Year” (Slides PDF)",
+          description: "Important timelines, YU Start, YU Prep.",
+          url: "https://yorkinternational.yorku.ca/files/2024/05/Look-Ahead-at-Your-First-Year-at-York-Slides.pdf",
         },
         {
-          title: "Exchange Student Handbook – Smith School of Business",
-          description:
-            "Course selection for exchange students, arrival process, life guide.",
-          url: "https://smith.queensu.ca/_templates/documents/international/Exchange_Student_Handbook.pdf?utm_source=chatgpt.com",
+          title: "Residence Application Handbook 2025-26",
+          description: "33 pp: Room types, application steps, fee examples.",
+          url: "https://www.yorku.ca/housing/wp-content/uploads/sites/57/2025/02/25-26-Keele-Application-Handbook.pdf",
         },
       ],
       cn: [
         {
-          title: "新生手册 (文理学院)",
-          description: "选课规则、第一学年课程组合、Plan 申请说明。",
-          url: "https://healthsci.queensu.ca/liscbchm/sites/liscbchm/files/inline-files/first_year_handbook_2021.pdf?utm_source=chatgpt.com",
+          title: "2025年转学生迎新计划",
+          description: "项目框架，可借鉴新生周流程。",
+          url: "https://students.yorku.ca/sites/default/files/2025-04/Plan%20for%20Transfer%20Student%20Orientation_0.pdf",
         },
         {
-          title: "公共卫生科学新生手册",
-          description: "专业必修 & 研究/实习路线图。",
-          url: "https://phs.queensu.ca/source/PHS/2021%2008%2017%20MPH%20Student%20handbook%20-%202021-22%20Academic%20Year.pdf?utm_source=chatgpt.com",
+          title: "“展望你的第一年” (幻灯片 PDF)",
+          description: "重要时间线、YU Start、YU Prep。",
+          url: "https://yorkinternational.yorku.ca/files/2024/05/Look-Ahead-at-Your-First-Year-at-York-Slides.pdf",
         },
         {
-          title: "交换生手册 – 史密斯商学院",
-          description: "交换生选课、到达流程、生活指南。",
-          url: "https://smith.queensu.ca/_templates/documents/international/Exchange_Student_Handbook.pdf?utm_source=chatgpt.com",
+          title: "2025-26年宿舍申请手册",
+          description: "33页：房型、申请步骤、费用示例。",
+          url: "https://www.yorku.ca/housing/wp-content/uploads/sites/57/2025/02/25-26-Keele-Application-Handbook.pdf",
         },
       ],
     },
   },
   {
-    id: "housing_and_campus_life",
+    id: "finance_and_career",
     links: {
       en: [
         {
-          title: "Residence Contract & Community Standards",
-          description: "Housing terms, demerit point system, code of conduct.",
-          url: "https://www.queensu.ca/residences/sites/residencewww/files/uploaded_files/Conduct/ResidenceContractFinal.pdf?utm_source=chatgpt.com",
+          title: "Schulich Int’l Tuition Letter 2025-26",
+          description:
+            "Includes 2025-26 fee rates & living cost estimates (example faculty).",
+          url: "https://schulich.yorku.ca/wp-content/uploads/2025/03/FA25-Tuition-Letter_MHIA_Intl.pdf",
         },
         {
-          title: "Residence Move-in Web PDF (with checklist)",
+          title: "Schulich iBBA Employment Report 2025",
           description:
-            "Move-in week schedule, must-bring items, parking routes.",
-          url: "https://www.queensu.ca/registrar/registration/student-guide-registration",
+            "91% employment rate, starting salaries, industry distribution.",
+          url: "https://schulich.yorku.ca/wp-content/uploads/2025-CCD_iBBA_SalarySurvey_OUT.pdf",
         },
       ],
       cn: [
         {
-          title: "住宿合同与社区标准",
-          description: "住宿条款、违规点制、行为准则。",
-          url: "https://www.queensu.ca/residences/sites/residencewww/files/uploaded_files/Conduct/ResidenceContractFinal.pdf?utm_source=chatgpt.com",
+          title: "舒立克学院2025-26年度国际学费信",
+          description: "含 2025-26 费率 & 生活费预估（示例学院）。",
+          url: "https://schulich.yorku.ca/wp-content/uploads/2025/03/FA25-Tuition-Letter_MHIA_Intl.pdf",
         },
         {
-          title: "住宿入住指南PDF（含清单）",
-          description: "报到周时程、必带物品、停车路线。",
-          url: "https://www.queensu.ca/registrar/registration/student-guide-registration",
+          title: "舒立克学院 iBBA 2025年就业报告",
+          description: "91 % 就业率、起薪、行业分布。",
+          url: "https://schulich.yorku.ca/wp-content/uploads/2025-CCD_iBBA_SalarySurvey_OUT.pdf",
         },
       ],
     },
   },
   {
-    id: "career_and_employment",
+    id: "department_handbooks",
     links: {
       en: [
         {
-          title: "BCom Employment Report 2023",
+          title: "LA&PS Faculty Viewbook 2025-26",
           description:
-            "Business school undergraduate employment rate, starting salary, industry breakdown.",
-          url: "https://smith.queensu.ca/_templates/documents/bcom/cac-bcom-employment-report.pdf?utm_source=chatgpt.com",
-        },
-        {
-          title: "BCom Employment Report 2022",
-          description: "Can be used for year-over-year comparison.",
-          url: "https://smith.queensu.ca/_templates/documents/bcom/CAC-BCom2022-employment-report.pdf?utm_source=chatgpt.com",
-        },
-        {
-          title: "Queen’s University Employment Rate 2021 (Provincial KPI)",
-          description:
-            "Overall undergraduate 6-month & 24-month employment rate.",
-          url: "https://www.queensu.ca/planningandbudget/irp/sites/irpwww/files/uploaded_files/KPIs/Emp%20Rate%202021%20for%202019%20grads%20-%2012Jan23.pdf?utm_source=chatgpt.com",
-        },
-        {
-          title: "Career Services Tipsheet – CV for Grad School",
-          description:
-            "CV samples for new job seekers / graduate school applications.",
-          url: "https://careers.queensu.ca/sites/cars3www/files/uploaded_files/TipSheets/CV_for_GradSchool_Tipsheet%20Visual%20Updated_0.pdf?utm_source=chatgpt.com",
+            "Courses from the Faculty of Liberal Arts & Professional Studies, new programs at Markham Campus.",
+          url: "https://futurestudents.yorku.ca/sites/futurestudents/files/2024-08/viewbook.ap_.pdf",
         },
       ],
       cn: [
         {
-          title: "BCom 就业报告 2023",
-          description: "商学院本科就业率、起薪、行业去向。",
-          url: "https://smith.queensu.ca/_templates/documents/bcom/cac-bcom-employment-report.pdf?utm_source=chatgpt.com",
-        },
-        {
-          title: "BCom 就业报告 2022",
-          description: "可做历年对比。",
-          url: "https://smith.queensu.ca/_templates/documents/bcom/CAC-BCom2022-employment-report.pdf?utm_source=chatgpt.com",
-        },
-        {
-          title: "女王大学就业率 2021 (省级KPI)",
-          description: "本科整体 6 月 & 24 月就业率。",
-          url: "https://www.queensu.ca/planningandbudget/irp/sites/irpwww/files/uploaded_files/KPIs/Emp%20Rate%202021%20for%202019%20grads%20-%2012Jan23.pdf?utm_source=chatgpt.com",
-        },
-        {
-          title: "职业服务提示 – 研究生院简历",
-          description: "新生求职 / 研究生申请 CV 样例。",
-          url: "https://careers.queensu.ca/sites/cars3www/files/uploaded_files/TipSheets/CV_for_GradSchool_Tipsheet%20Visual%20Updated_0.pdf?utm_source=chatgpt.com",
+          title: "文科与专业研究学院2025-26宣传册",
+          description: "文理及专业学院课程、Markham Campus 新专业。",
+          url: "https://futurestudents.yorku.ca/sites/futurestudents/files/2024-08/viewbook.ap_.pdf",
         },
       ],
     },
@@ -561,69 +589,17 @@ const translations: Translations = {
       categoriesTitle: "Categories",
     },
     header: {
-      title: "Queen’s University",
+      title: "York University",
       helpText: "Need help? Book a meeting",
       bookButton: "Book Now",
     },
-    instructions: {
-      title: "How to Use the Link Hub",
-      intro:
-        "Our Queen’s “Important Links” hub is split into seven high-value sections. Use it like a quick dashboard:",
-      tableHeaders: ["Section", "When to click", "What you’ll find"],
-      tableContent: [
-        [
-          "International Centre (QUIC)",
-          "For visas, health insurance, orientation",
-          "Study-permit & visa guides, UHIP details, arrival checklists, peer programs",
-        ],
-        [
-          "Admission Transition",
-          "After getting accepted, before classes start",
-          "First-year “Next Steps”, summer events, peer-mentor (QSuccess), English prep",
-        ],
-        [
-          "SOLUS System",
-          "For course selection, grades, tuition payment",
-          "Secure login + help pages for Queen’s main student information system",
-        ],
-        [
-          "Tuition Fees",
-          "To check fee details or payment deadlines",
-          "Fee schedules, payment options, tax forms, add-on fee explanations",
-        ],
-        [
-          "Residence",
-          "To apply for or manage on-campus housing",
-          "Residence application portal, meal plans, move-in dates",
-        ],
-        [
-          "Mental Health",
-          "When you need medical or psychological support",
-          "Student Wellness booking, counselling groups, peer health education",
-        ],
-        [
-          "Clubs (AMS)",
-          "To join clubs and expand your network",
-          "200+ club directory, event listings, student government resources",
-        ],
-      ],
-      tipsTitle: "Tips",
-      tips: [
-        "Filter: Use the 'High School' ⇄ 'University' view toggle in the sidebar to see only the most relevant links.",
-        "Quick Search: Use Ctrl+F or Cmd+F to search for keywords (e.g., 'visa', 'residence', 'career').",
-        "Mobile Access: Long-press any link to save it to your reading list for offline viewing.",
-        "Updates: We check official URLs every semester. If a link is broken, please let us know!",
-      ],
-      outro:
-        "With this hub, you can skip jumping between multiple official websites and get straight to the most useful Queen’s resources. Good luck with your research and enjoy your campus life!",
-    },
     universityView: {
       infoPanelTitle: "Overview:",
-      aboutTitle: "🏰 About Queen’s University (Kingston, Ontario)",
+      aboutTitle: "🦁 About York University",
       aboutParagraph1:
-        "Founded in 1841 by Royal Charter, Queen’s University is one of Canada’s oldest public research institutions. Located on the shores of Lake Ontario in the historic city of Kingston, Queen’s offers an intimate, walk-able campus, more than 200 undergraduate and graduate programs across eight faculties and schools, and a community of 33,000 students from 100+ countries.",
+        "York University is a public research university in Toronto, Ontario, Canada. It is Canada's third-largest university, with a community of 55,700 students, 7,000 faculty and staff, and over 325,000 alumni worldwide.",
       aboutParagraph2:
-        "The university is a member of the U15 Group of Canadian Research Universities, home to Nobel- and Turing-affiliated scholars, and is consistently ranked for student satisfaction, research intensity, and global impact. From its storied limestone buildings to its modern innovation hubs, Queen’s blends tradition with forward-looking teaching, discovery, and community engagement. Wikipedia女王大学",
+        "Founded in 1959, York is known for its diverse student body and a wide range of programs, particularly in liberal arts, law, business, and fine arts. It has two main campuses, the Keele campus and the bilingual Glendon campus.",
     },
     sectionTitles: {
       overview: "Overview",
@@ -637,10 +613,10 @@ const translations: Translations = {
       "co-op-careers": "Co-op Careers",
       "city-snapshot": "City Snapshot",
       "tours-media": "Tours & Media",
-      general_admissions: "General & Admissions Guides",
-      faculty_and_academics: "Faculty & Academics Handbooks",
-      housing_and_campus_life: "Housing & Campus Life",
-      career_and_employment: "Career & Employment",
+      admission_guides: "Admission & General Guides",
+      orientation_and_housing: "Orientation & Housing",
+      finance_and_career: "Finance & Career",
+      department_handbooks: "Department Handbooks",
     },
   },
   cn: {
@@ -656,65 +632,17 @@ const translations: Translations = {
       categoriesTitle: "分类",
     },
     header: {
-      title: "女王大学",
+      title: "约克大学",
       helpText: "需要帮助？预约会议",
       bookButton: "立即预约",
     },
-    instructions: {
-      title: "如何使用链接中心",
-      intro:
-        "我们的女王大学“重要链接”中心分为七个高价值部分。像使用快速仪表盘一样使用它：",
-      tableHeaders: ["部分", "何时点击", "你会找到什么"],
-      tableContent: [
-        [
-          "国际中心 (QUIC)",
-          "国际学生办理签证、健康保险、迎新攻略时",
-          "学习许可和签证指南、UHIP详情、抵达清单、同伴项目",
-        ],
-        [
-          "入学过渡",
-          "已拿到录取、准备开学，或想知道迎新/下一步",
-          "新生“后续步骤”、暑期活动、同伴导师 (QSuccess)、英语准备",
-        ],
-        [
-          "学校系统 SOLUS",
-          "选课、查成绩、交学费时",
-          "女王大学主要学生信息系统的安全登录和帮助页面",
-        ],
-        [
-          "学费",
-          "想查看费用明细或付款截止日期时",
-          "费用表、付款方式、税表、附加费用解释",
-        ],
-        ["住宿", "申请或管理校内宿舍时", "住宿申请门户、膳食计划、入住日期"],
-        [
-          "心理健康",
-          "需要医疗或心理支持时",
-          "学生健康服务预约、咨询小组、同伴健康教育",
-        ],
-        [
-          "社团 (AMS)",
-          "想加入社团、拓展人脉时",
-          "200多个社团目录、活动列表、学生会资源",
-        ],
-      ],
-      tipsTitle: "小贴士",
-      tips: [
-        "筛选：在侧边栏使用“高中”⇄“大学”视图切换，只查看与你最相关的链接。",
-        "快速搜索：使用 Ctrl+F 或 Cmd+F 搜索关键词（例如“visa”, “residence”, “career”）。",
-        "手机访问：长按任何链接可收藏至微信/浏览器阅读列表，方便离线查看。",
-        "实时更新：我们每学期核对官方网址。如遇失效链接，请告知我们！",
-      ],
-      outro:
-        "借助这个集中导航，你无需在多个官网页面来回跳转——一步直达最实用的女王大学资源。祝你研究顺利，校园生活愉快！",
-    },
     universityView: {
       infoPanelTitle: "概览:",
-      aboutTitle: "🏰 关于女王大学（安大略省金斯顿）",
+      aboutTitle: "🦁 关于约克大学",
       aboutParagraph1:
-        "女王大学于1841年根据皇家宪章成立，是加拿大最古老的公立研究型大学之一。它坐落在历史名城金斯顿的安大略湖畔，拥有一个温馨、适合步行的校园，设有八个学院和学院，提供200多个本科和研究生课程，汇集了来自100多个国家的33,000名学生。",
+        "约克大学是位于加拿大多伦多市的一所公立研究型大学。它是加拿大第三大规模的大学，拥有55,700名学生、7,000名教职员工和全球超过325,000名校友。",
       aboutParagraph2:
-        "该大学是加拿大U15研究型大学联盟的成员，拥有诺贝尔奖和图灵奖相关的学者，并因其学生满意度、研究强度和全球影响力而持续获得高排名。从其历史悠久的石灰岩建筑到现代化的创新中心，女王大学将传统与前瞻性的教学、发现和社区参与融为一体。维基百科女王大学",
+        "约克大学成立于1959年，以其多元化的学生群体和广泛的课程而闻名，尤其是在文科、法律、商科和美术领域。它拥有两个主要校区：基尔校区和双语的格兰登校区。",
     },
     sectionTitles: {
       overview: "学校概览",
@@ -728,9 +656,10 @@ const translations: Translations = {
       "co-op-careers": "实习与就业",
       "city-snapshot": "城市生活概况",
       "tours-media": "校园参观与媒体",
-      general_admissions_guides: "通用与招生指南",
-      faculty_specific_guides: "各学院手册",
-      campus_life_and_career_guides: "校园生活与职业指南",
+      admission_guides: "招生与通用指南",
+      orientation_and_housing: "迎新与住宿",
+      finance_and_career: "财务与职业",
+      department_handbooks: "院系手册",
     },
   },
 };
@@ -746,21 +675,21 @@ const SectionHeaderWithArrow = ({
     <h2 className="text-2xl font-bold">{title}</h2>
     <button
       onClick={onClick}
-      className="text-[#247e9f] text-base hover:underline flex items-center"
+      className="text-[#247e.9f] text-base hover:underline flex items-center"
     >
       ➡ Show Info
     </button>
   </div>
 );
 
-const QueensUniversityPage = () => {
+const YorkUniversityPage = () => {
   const [showInfoPanel, setShowInfoPanel] = useState(true);
   const [activeView, setActiveView] = useState<
     "university" | "highschool" | "instructions" | "pdfView"
-  >("instructions");
+  >("university");
   const [language, setLanguage] = useState<"en" | "cn">("en");
 
-  const t = translations[language];
+  const t = translations[language]; // Shortcut for current language translations
 
   const getSectionTitle = (id: SectionId) => {
     return t.sectionTitles[id] ?? id.replace(/_/g, " ");
@@ -878,17 +807,17 @@ const QueensUniversityPage = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8">
+        <main className="flex-1 flex min-h-screen px-4 md:px-12 py-8 overflow-y-auto">
           <div className="flex-1 flex flex-col">
             {/* Sticky Header */}
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
               <div className="flex items-center">
                 <img
-                  src="/logos/queens.png"
-                  alt="Queen's University Logo"
+                  src="/logos/york.png"
+                  alt="York University Logo"
                   width={120}
                   height={120}
-                  className="mr-4"
+                  className="mr-4 object-contain"
                 />
                 <h1 className="text-3xl md:text-4xl font-bold text-[#247e9f]">
                   {t.header.title}
@@ -911,51 +840,6 @@ const QueensUniversityPage = () => {
 
             {/* Content Area */}
             <div className="mt-8">
-              {/* Instructions View */}
-              {activeView === "instructions" && (
-                <div className="prose max-w-4xl text-gray-800">
-                  <h2 className="text-2xl font-bold mb-4">
-                    {t.instructions.title}
-                  </h2>
-                  <p>{t.instructions.intro}</p>
-                  <table className="table-auto border mt-6 w-full text-left text-sm">
-                    <thead>
-                      <tr>
-                        <th className="border px-4 py-2 font-semibold">
-                          {t.instructions.tableHeaders[0]}
-                        </th>
-                        <th className="border px-4 py-2 font-semibold">
-                          {t.instructions.tableHeaders[1]}
-                        </th>
-                        <th className="border px-4 py-2 font-semibold">
-                          {t.instructions.tableHeaders[2]}
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {t.instructions.tableContent.map((row, i) => (
-                        <tr key={i}>
-                          <td className="border px-4 py-2 font-bold">
-                            {row[0]}
-                          </td>
-                          <td className="border px-4 py-2">{row[1]}</td>
-                          <td className="border px-4 py-2">{row[2]}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <h3 className="text-xl font-semibold mt-8">
-                    {t.instructions.tipsTitle}
-                  </h3>
-                  <ol className="list-decimal list-inside space-y-2 mt-2">
-                    {t.instructions.tips.map((tip, i) => (
-                      <li key={i}>{tip}</li>
-                    ))}
-                  </ol>
-                  <p className="mt-4">{t.instructions.outro}</p>
-                </div>
-              )}
-
               {/* UNIVERSITY VIEW */}
               {activeView === "university" && (
                 <div className="flex gap-8">
@@ -969,26 +853,17 @@ const QueensUniversityPage = () => {
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
-                              📍 74 Union St., Gordon Hall, Kingston, ON K7L
-                              2N8, Canada
+                              📍 4700 Keele St, Toronto, ON M3J 1P3, Canada
                               <br />
-                              📧{" "}
-                              <a
-                                href="mailto:admission@queensu.ca"
-                                className="text-[#247e9f] underline"
-                              >
-                                admission@queensu.ca
-                              </a>
+                              📞 (416) 736-2100
                               <br />
-                              📞 (613) 533-2218
-                              <br />{" "}
+                              🌐{" "}
                               <a
-                                href="https://www.queensu.ca/"
+                                href="https://www.yorku.ca/"
                                 target="_blank"
-                                rel="noopener noreferrer"
                                 className="text-[#247e9f] underline"
                               >
-                                www.queensu.ca
+                                www.yorku.ca
                               </a>
                             </p>
                           </>
@@ -1030,144 +905,6 @@ const QueensUniversityPage = () => {
                   )}
                 </div>
               )}
-              {/* HIGHSCHOOL VIEW */}
-              {activeView === "highschool" && (
-                <div>
-                  <div className="space-y-10 text-gray-700">
-                    <section>
-                      <h2 className="text-2xl font-bold mb-2">Why Queen’s?</h2>
-                      <ul className="list-disc pl-5">
-                        <li>
-                          <a
-                            href="https://www.queensu.ca/"
-                            className="text-[#247e9f] underline"
-                          >
-                            Official Website
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://bit.ly/Queens_Viewbook"
-                            className="text-[#247e9f] underline"
-                          >
-                            Viewbook (Domestic)
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://bit.ly/Queens_Int_Viewbook"
-                            className="text-[#247e9f] underline"
-                          >
-                            Viewbook (International)
-                          </a>
-                        </li>
-                      </ul>
-                    </section>
-                    <section>
-                      <h2 className="text-2xl font-bold mb-2">
-                        Programs & Faculties
-                      </h2>
-                      <a
-                        href="https://www.queensu.ca/academics/programs"
-                        className="text-[#247e9f] underline"
-                      >
-                        Explore Programs
-                      </a>
-                    </section>
-                    <section>
-                      <h2 className="text-2xl font-bold mb-2">
-                        Admissions & Deadlines
-                      </h2>
-                      <ul className="list-disc pl-5">
-                        <li>
-                          <a
-                            href="https://www.queensu.ca/admission/applying/how-to-apply"
-                            className="text-[#247e9f] underline"
-                          >
-                            How to Apply
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://www.queensu.ca/admission/applying/dates-deadlines"
-                            className="text-[#247e9f] underline"
-                          >
-                            Important Dates
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://www.ouac.on.ca/guide/undergrad-guide"
-                            className="text-[#247e9f] underline"
-                          >
-                            OUAC
-                          </a>
-                        </li>
-                      </ul>
-                    </section>
-                    <section>
-                      <h2 className="text-2xl font-bold mb-2">
-                        Costs & Scholarships
-                      </h2>
-                      <ul className="list-disc pl-5">
-                        <li>
-                          <a
-                            href="https://www.queensu.ca/registrar/financial-aid"
-                            className="text-[#247e9f] underline"
-                          >
-                            Financial Aid
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://www.queensu.ca/admission/scholarships"
-                            className="text-[#247e9f] underline"
-                          >
-                            Entrance Scholarships
-                          </a>
-                        </li>
-                      </ul>
-                    </section>
-                    <section>
-                      <h2 className="text-2xl font-bold mb-2">
-                        Campus Life Snapshot
-                      </h2>
-                      <ul className="list-disc pl-5">
-                        <li>
-                          <a
-                            href="https://www.queensu.ca/residences/"
-                            className="text-[#247e9f] underline"
-                          >
-                            Residence
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://www.myams.org/clubs/club-directory/"
-                            className="text-[#247e9f] underline"
-                          >
-                            Clubs & Activities
-                          </a>
-                        </li>
-                      </ul>
-                    </section>
-                    <section>
-                      <h2 className="text-2xl font-bold mb-2">Contact Info</h2>
-                      <p>
-                        📧{" "}
-                        <a
-                          href="mailto:admission@queensu.ca"
-                          className="text-[#247e9f] underline"
-                        >
-                          admission@queensu.ca
-                        </a>
-                        <br />
-                        📞 (613) 533-2218
-                      </p>
-                    </section>
-                  </div>
-                </div>
-              )}
               {/* PDF VIEW */}
               {activeView === "pdfView" && (
                 <div className="space-y-10 text-gray-700">
@@ -1198,6 +935,7 @@ const QueensUniversityPage = () => {
                   ))}
                 </div>
               )}
+              {/* Other views can be added here */}
             </div>
           </div>
         </main>
@@ -1206,4 +944,4 @@ const QueensUniversityPage = () => {
   );
 };
 
-export default QueensUniversityPage;
+export default YorkUniversityPage;
