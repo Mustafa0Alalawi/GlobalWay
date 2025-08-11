@@ -78,19 +78,22 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "QS Ranking",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          url: "https://www.topuniversities.com/universities/university-ottawa?utm_source=chatgpt.com",
         },
         {
           title: "Campus Map",
-          url: "https://plancampus.umontreal.ca/montreal/",
+          url: "https://www.uottawa.ca/about-us/administration-services/facilities/campus-maps?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "QS 排名",
-          url: "https://www.topuniversities.com/universities/universite-de-montreal",
+          url: "https://www.topuniversities.com/universities/university-ottawa?utm_source=chatgpt.com",
         },
-        { title: "校区地图", url: "https://plancampus.umontreal.ca/montreal/" },
+        {
+          title: "校区地图",
+          url: "https://www.uottawa.ca/about-us/administration-services/facilities/campus-maps?utm_source=chatgpt.com",
+        },
       ],
     },
   },
@@ -100,21 +103,21 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "Programs List / Viewbook",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          url: "https://catalogue.uottawa.ca/en/undergrad/",
         },
         {
           title: "Faculty Introduction",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.uottawa.ca/about-us/faculties?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "专业列表 / 宣传册",
-          url: "https://admission.umontreal.ca/en/programs-of-study/",
+          url: "https://catalogue.uottawa.ca/en/undergrad/",
         },
         {
           title: "学院介绍",
-          url: "https://www.umontreal.ca/en/faculties-and-schools/",
+          url: "https://www.uottawa.ca/about-us/faculties?utm_source=chatgpt.com",
         },
       ],
     },
@@ -125,29 +128,29 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "Undergraduate Admission Home",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.uottawa.ca/study/undergraduate-studies",
         },
         {
           title: "Entry Requirements",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.uottawa.ca/study/undergraduate-studies/program-prerequisites?utm_source=chatgpt.com",
         },
         {
           title: "Important Dates",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.uottawa.ca/study/undergraduate-studies/application-deadlines-available-programs-international",
         },
       ],
       cn: [
         {
           title: "本科申请主页",
-          url: "https://admission.umontreal.ca/programmes-de-1er-cycle/",
+          url: "https://www.uottawa.ca/study/undergraduate-studies",
         },
         {
           title: "入学要求",
-          url: "https://admission.umontreal.ca/en/studies/undergraduate-programs/",
+          url: "https://www.uottawa.ca/study/undergraduate-studies/program-prerequisites?utm_source=chatgpt.com",
         },
         {
           title: "重要日期",
-          url: "https://admission.umontreal.ca/en/admissions/preparing-your-application/respect-official-deadlines/?utm_source=chatgpt.com",
+          url: "https://www.uottawa.ca/study/undergraduate-studies/application-deadlines-available-programs-international",
         },
       ],
     },
@@ -157,14 +160,14 @@ const universityViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "Direct Application",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          title: "Direct Application (International)",
+          url: "https://www.uottawa.ca/study/undergraduate-studies/international-applicants",
         },
       ],
       cn: [
         {
-          title: "直申通道",
-          url: "https://admission.umontreal.ca/en/admissions/submitting-your-application/submit-an-application/",
+          title: "直申通道（国际生）",
+          url: "https://www.uottawa.ca/study/undergraduate-studies/international-applicants",
         },
       ],
     },
@@ -175,29 +178,29 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "Tuition Fees",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          url: "https://www.uottawa.ca/study/fees-financial-support/university-fees?utm_source=chatgpt.com",
         },
         {
           title: "Scholarship Search",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://www.uottawa.ca/study/fees-financial-support/scholarships-awards-overview?utm_source=chatgpt.com",
         },
         {
-          title: "Work-Study Program",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          title: "Work-Study / On-campus Job",
+          url: "https://www.uottawa.ca/study/career-experiential-learning/campus-employment",
         },
       ],
       cn: [
         {
           title: "学费表",
-          url: "https://esp.umontreal.ca/english/what-you-need-to-know/admission/tuition-fees/",
+          url: "https://www.uottawa.ca/study/fees-financial-support/university-fees?utm_source=chatgpt.com",
         },
         {
           title: "奖学金查询",
-          url: "https://admission.umontreal.ca/bourses-pour-etudiants-internationaux/",
+          url: "https://www.uottawa.ca/study/fees-financial-support/scholarships-awards-overview?utm_source=chatgpt.com",
         },
         {
-          title: "勤工助学项目",
-          url: "https://vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/programme-etudes-travail",
+          title: "勤工助学 / 校园兼职",
+          url: "https://www.uottawa.ca/study/career-experiential-learning/campus-employment",
         },
       ],
     },
@@ -207,22 +210,30 @@ const universityViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "Student Groups",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
+          title: "Clubs Directory",
+          url: "https://www.uottawa.ca/campus-life/student-clubs-organizations?utm_source=chatgpt.com",
         },
         {
           title: "Athletics & Recreation",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          url: "https://www.uottawa.ca/campus-life/recreation/facilities?utm_source=chatgpt.com",
+        },
+        {
+          title: "Dining & Meal Plan",
+          url: "https://www.uottawa.ca/campus-life/eat-campus/meal-plans?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
-          title: "学生社团",
-          url: "https://vieetudiante.umontreal.ca/experience-etudiante/implication-benevole/regroupements-etudiants",
+          title: "社团目录",
+          url: "https://www.uottawa.ca/campus-life/student-clubs-organizations?utm_source=chatgpt.com",
         },
         {
           title: "体育与运动",
-          url: "https://www.umontreal.ca/en/activities-and-services/",
+          url: "https://www.uottawa.ca/campus-life/recreation/facilities?utm_source=chatgpt.com",
+        },
+        {
+          title: "校园餐饮计划",
+          url: "https://www.uottawa.ca/campus-life/eat-campus/meal-plans?utm_source=chatgpt.com",
         },
       ],
     },
@@ -232,22 +243,30 @@ const universityViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "Student Services (Housing)",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
+          title: "Residence Home",
+          url: "https://www.uottawa.ca/campus-life/housing",
+        },
+        {
+          title: "Room Types & Fees",
+          url: "https://www.uottawa.ca/campus-life/housing/fees-payment-information",
         },
         {
           title: "Off-Campus Housing Office",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          url: "https://www.uottawa.ca/campus-life/housing/off-campus-housing-information-resources",
         },
       ],
       cn: [
         {
-          title: "学生服务（住宿）",
-          url: "https://admission.umontreal.ca/decouvrir-ludem/joindre-la-communaute/services-aux-etudiants/",
+          title: "宿舍主页",
+          url: "https://www.uottawa.ca/campus-life/housing",
+        },
+        {
+          title: "房型与费用",
+          url: "https://www.uottawa.ca/campus-life/housing/fees-payment-information",
         },
         {
           title: "校外住宿办公室",
-          url: "https://vieetudiante.umontreal.ca/a-propos/service/logement-hors-campus",
+          url: "https://www.uottawa.ca/campus-life/housing/off-campus-housing-information-resources",
         },
       ],
     },
@@ -258,37 +277,37 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "International Office",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
+          url: "https://www.uottawa.ca/study/international-students?utm_source=chatgpt.com",
         },
         {
-          title: "Immigration Info",
-          url: "https://international.umontreal.ca/english/home/",
+          title: "How to Apply for a Study Permit",
+          url: "https://www.uottawa.ca/study/international-students/immigration/how-apply-study-permit?utm_source=chatgpt.com",
         },
         {
-          title: "Required Documents",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          title: "Immigration Information",
+          url: "https://www.uottawa.ca/study/international-students/immigration?utm_source=chatgpt.com",
         },
         {
           title: "Health & Wellness",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.uottawa.ca/campus-life/health-wellness/student-health-wellness-centre?utm_source=chatgpt.com",
         },
       ],
       cn: [
         {
           title: "国际事务办公室",
-          url: "https://admission.umontreal.ca/en/who-are-you/foreign-student/",
+          url: "https://www.uottawa.ca/study/international-students?utm_source=chatgpt.com",
+        },
+        {
+          title: "如何申请学签",
+          url: "https://www.uottawa.ca/study/international-students/immigration/how-apply-study-permit?utm_source=chatgpt.com",
         },
         {
           title: "移民信息",
-          url: "https://international.umontreal.ca/english/home/",
-        },
-        {
-          title: "所需文件",
-          url: "https://registraire.umontreal.ca/etudes-et-services/etudiants-internationaux-exigences-documentaires/international-students-required-documents/",
+          url: "https://www.uottawa.ca/study/international-students/immigration?utm_source=chatgpt.com",
         },
         {
           title: "健康与心理支持",
-          url: "https://vieetudiante.umontreal.ca/sante-bien-etre",
+          url: "https://www.uottawa.ca/campus-life/health-wellness/student-health-wellness-centre?utm_source=chatgpt.com",
         },
       ],
     },
@@ -298,27 +317,30 @@ const universityViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "Career Centre Home",
-          url: "https://www.umontreal.ca/carrieres/",
+          title: "Career Centre Home (Telfer)",
+          url: "https://telfer.uottawa.ca/en/careercentre/?utm_source=chatgpt.com",
         },
         {
-          title: "Co-op / Internship Info",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          title: "Co-op Programs",
+          url: "https://www.uottawa.ca/study/career-experiential-learning/coop/coop-programs?utm_source=chatgpt.com",
         },
         {
-          title: "Alumni Network",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
+          title: "Work-Study Program",
+          url: "https://www.uottawa.ca/study/career-experiential-learning/campus-employment/work-study-program",
         },
       ],
       cn: [
-        { title: "职业中心主页", url: "https://www.umontreal.ca/carrieres/" },
         {
-          title: "Co-op / 实习信息",
-          url: "https://diro.umontreal.ca/english/student-resources/internships/co-op-option/",
+          title: "职业中心主页 (Telfer)",
+          url: "https://telfer.uottawa.ca/en/careercentre/?utm_source=chatgpt.com",
         },
         {
-          title: "校友网络",
-          url: "https://reseau.umontreal.ca/s/1857/bp18/Home.aspx?gid=2&pgid=61",
+          title: "Co-op 项目",
+          url: "https://www.uottawa.ca/study/career-experiential-learning/coop/coop-programs?utm_source=chatgpt.com",
+        },
+        {
+          title: "勤工助学项目",
+          url: "https://www.uottawa.ca/study/career-experiential-learning/campus-employment/work-study-program",
         },
       ],
     },
@@ -328,38 +350,30 @@ const universityViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "10 Things to Do When You Arrive",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
+          title: "Housing Guide",
+          url: "https://www.uottawa.ca/campus-life/housing",
         },
         {
-          title: "Finding an Apartment",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
+          title: "Health & Safety Quick Reference",
+          url: "https://www.uottawa.ca/about-us/administration-services/office-chief-risk-officer/health-safety-environmental-management/quick-reference",
         },
         {
-          title: "COVID-19 Info",
-          url: "https://infocovid19.umontreal.ca/en/english/",
-        },
-        {
-          title: "Chinese Student Resources (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "Resources for Applicants from China",
+          url: "https://www.uottawa.ca/study/undergraduate-studies/international-applicants/china",
         },
       ],
       cn: [
         {
-          title: "抵达蒙特利尔后要做的10件事",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/10-things-to-do-when-you-arrive-in-montreal/",
+          title: "住宿指南",
+          url: "https://www.uottawa.ca/campus-life/housing",
         },
         {
-          title: "寻找公寓",
-          url: "https://admission.umontreal.ca/en/focus-udem/article/finding-an-apartment-in-montreal-the-first-steps/",
+          title: "健康与安全快速参考",
+          url: "https://www.uottawa.ca/about-us/administration-services/office-chief-risk-officer/health-safety-environmental-management/quick-reference",
         },
         {
-          title: "COVID-19 信息",
-          url: "https://infocovid19.umontreal.ca/en/english/",
-        },
-        {
-          title: "华人学生资源 (CSSA)",
-          url: "https://ca.linkedin.com/in/udem-cssa-405b46184",
+          title: "中国申请人资源",
+          url: "https://www.uottawa.ca/study/undergraduate-studies/international-applicants/china",
         },
       ],
     },
@@ -370,34 +384,29 @@ const universityViewData: SectionData[] = [
       en: [
         {
           title: "Book Campus Tour",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.uottawa.ca/study/campus-tours-admissions-events/campus-tours?utm_source=chatgpt.com",
         },
         {
           title: "Virtual Campus VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
+          url: "https://www.uottawa.ca/campus-life/events-all/virtual-tours-new-students?utm_source=chatgpt.com",
         },
         {
           title: "Official YouTube",
-          url: "https://www.youtube.com/@umontreal",
-        },
-        {
-          title: "Official Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          url: "https://www.youtube.com/watch?v=JeAqNmyiQjo",
         },
       ],
       cn: [
         {
           title: "预约校园参观",
-          url: "https://vieetudiante.umontreal.ca/activites/campus-tour-in-english/15187",
+          url: "https://www.uottawa.ca/study/campus-tours-admissions-events/campus-tours?utm_source=chatgpt.com",
         },
         {
           title: "虚拟校园 VR",
-          url: "https://admission.umontreal.ca/universite-de-montreal/visite-virtuelle/",
+          url: "https://www.uottawa.ca/campus-life/events-all/virtual-tours-new-students?utm_source=chatgpt.com",
         },
-        { title: "官方 YouTube", url: "https://www.youtube.com/@umontreal" },
         {
-          title: "官方 Instagram",
-          url: "https://www.umontreal.ca/reseaux-sociaux/instagram/",
+          title: "官方 YouTube",
+          url: "https://www.youtube.com/watch?v=JeAqNmyiQjo",
         },
       ],
     },
@@ -410,43 +419,30 @@ const pdfViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "Admission Brochure – Undergraduate",
+          title: "Undergraduate Viewbook 2025",
           description:
-            "Official UdeM guide covering all undergraduate programs, academic requirements, admission process, tuition, campus life, and student services.",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "A comprehensive guide to uOttawa's 550+ undergraduate programs, admission requirements, Co-op, French immersion, and application steps.",
+          url: "https://www.uottawa.ca/study/sites/g/files/bhrskd296/files/2024-09/uOttawa-Viewbook-2025.pdf?",
         },
         {
-          title:
-            "“Starting University” Roadmap – International Students (2025)",
+          title: "International Undergraduate Viewbook",
           description:
-            "A timeline guide for new international students, covering budget, housing, transport, language adaptation, student services, and community events.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
-        },
-        {
-          title: "Future Students Out of Quebec” Viewbook (2022–23)",
-          description:
-            "For Canadian and international applicants outside Quebec, detailing programs, scholarships, tuition, language support, and application steps.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "For international applicants, covering admission requirements, language tests, Co-op, scholarships, and fees.",
+          url: "https://www.uottawa.ca/study/sites/g/files/bhrskd296/files/2025-07/Viewbook-International-2026-EN.pdf?utm_source",
         },
       ],
       cn: [
         {
-          title: "本科招生手册",
+          title: "2025年本科招生宣传册",
           description:
-            "来自官网“下载我们的招生手册”页面，由 UdeM 官方提供，内容涵盖所有本科专业、学术要求、入学流程、学费、校园生活与学生服务等。",
-          url: "https://registraire.umontreal.ca/fileadmin/registrariat/documents/Annuaires/Guide_admission/Guide_admission-2023-2024.pdf",
+            "全面介绍 uOttawa 的本科专业（共 550+）、入学要求、Co-op 项目、法语沉浸、双学位方案、重要申请流程与步骤。",
+          url: "https://www.uottawa.ca/study/sites/g/files/bhrskd296/files/2024-09/uOttawa-Viewbook-2025.pdf?",
         },
         {
-          title: "“开启大学生活”路线图 – 国际学生 (2025)",
+          title: "国际本科招生宣传册",
           description:
-            "聚焦国际新生，列出入学前到入学后的关键事项指南，如预算、住宿、交通、语言适应、学生服务与社区活动。“从申请到第一节课”的时间线清晰。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/Conversion_2025/RDV-Admis-Livret-International_2025_EN.pdf",
-        },
-        {
-          title: "魁北克省外未来学生宣传册 (2022–23)",
-          description:
-            "专为魁北克省以外的加拿大省份及国际申请者准备，介绍项目、奖学金、学费、语言支持与申请步骤，内容仍具参考价值。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/pages/Brochures/2022-2023/Brochure_UdeM_Hors_Quebec_2022-2023_EN.pdf",
+            "针对国际申请者，涵盖国际入学要求、语言测试、法语沉浸项目、Co-op + 双学位机会，还包含奖学金与费用等信息。",
+          url: "https://www.uottawa.ca/study/sites/g/files/bhrskd296/files/2025-07/Viewbook-International-2026-EN.pdf?utm_source",
         },
       ],
     },
@@ -456,30 +452,42 @@ const pdfViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "Université de Montréal International",
+          title: "Express Pathway Program Overview",
           description:
-            "Explains that on-campus housing is mainly for local students with fewer options for exchange students; provides steps and platform recommendations for finding off-campus housing.",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "Details uOttawa's language transition program, including online prep, on-campus integration, and language testing.",
+          url: "https://www.uottawa.ca/about-us/sites/g/files/bhrskd336/files/2025-05/20250501%20ILOB_EPP_brochure_web--updated__v3.pdf",
         },
         {
-          title: "UdeM Campus Tour Map",
+          title: "Incoming Exchange Students Fact Sheet",
           description:
-            "PDF campus map marking locations of student service centers, international office, off-campus housing assistance office, etc.",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "For undergraduate exchange students, includes arrival times, virtual orientation, Buddy Program, housing, and health insurance.",
+          url: "https://www.uottawa.ca/study/sites/g/files/bhrskd296/files/2025-01/FACT-SHEET_INCOMING-STUDENTS-EN-2024.pdf",
+        },
+        {
+          title: "Residence Agreement, Code of Conduct 2024–2025",
+          description:
+            "Details on-campus housing contract terms, visitor policies, roommate agreements, and disciplinary procedures.",
+          url: "https://www.uottawa.ca/campus-life/sites/g/files/bhrskd281/files/2024-04/Residence%20Agreement%202024-2025.pdf",
         },
       ],
       cn: [
         {
-          title: "蒙特利尔大学国际部",
+          title: "快速通道项目概述（预科+过渡课程）",
           description:
-            "介绍校内住宿主要面向本地学生，交换生选择较少；提供寻找校外住房的步骤与平台建议（如学生住房银行、Facebook社群），并列出医疗保险、签证等实用信息。",
-          url: "https://international.umontreal.ca/fileadmin/international/documents/Mobilite/Fiche_information_UdeM.pdf",
+            "说明 uOttawa 的语言过渡项目，包括在线预备学习、校内学术融合课程、语言能力测试等内容。",
+          url: "https://www.uottawa.ca/about-us/sites/g/files/bhrskd336/files/2025-05/20250501%20ILOB_EPP_brochure_web--updated__v3.pdf",
         },
         {
-          title: "UdeM校园导览",
+          title: "入境交换生情况说明书",
           description:
-            "校园地图PDF，标注学生服务中心、国际办公室、校外住宿帮助办公地点等常用设施。",
-          url: "https://plancampus.umontreal.ca/public/plancampus/uploads/Depliant-plan-campus-HR.pdf",
+            "该手册面向本科交换生，包括推荐到校时间、虚拟迎新说明、Buddy Program、住宿安排和健康保险等内容。",
+          url: "https://www.uottawa.ca/study/sites/g/files/bhrskd296/files/2025-01/FACT-SHEET_INCOMING-STUDENTS-EN-2024.pdf",
+        },
+        {
+          title: "2024-2025年住宿协议与行为准则",
+          description:
+            "详述校内住宿合约条款、访客规定、室友协议、守则与违规后果等。",
+          url: "https://www.uottawa.ca/campus-life/sites/g/files/bhrskd281/files/2024-04/Residence%20Agreement%202024-2025.pdf",
         },
       ],
     },
@@ -489,42 +497,30 @@ const pdfViewData: SectionData[] = [
     links: {
       en: [
         {
-          title: "Official Regulations – Tuition & Other Fees (2025)",
+          title: "The Resume and Cover Letter Guide",
           description:
-            "Legal document detailing the fee structure, including per-credit fees, semester fees, student service fees, and specialized program fees.",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
+            "Designed for undergraduate and law students, this guide explains how to structure clear resumes and cover letters with examples.",
+          url: "https://www.uottawa.ca/faculty-law/sites/g/files/bhrskd406/files/2022-03/resume-cover-letter-2021.pdf",
         },
         {
-          title: "Job Search for Students and Graduates",
+          title: "Student‑Proposed Internship (SPI) Step‑By‑Step Guide",
           description:
-            "Produced by the Faculty of Law's Career Development Centre, this guide details strategies to enhance job competitiveness within Canada, including job platform recommendations.",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
-        },
-        {
-          title: "CV and Letter Samples",
-          description:
-            "Published by the Student Affairs Office, includes resume and cover letter templates for positions like research assistant, project coordinator, and research roles.",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
+            "A guide for law undergrads on how to find, contact, and secure their own internship opportunities.",
+          url: "https://www.uottawa.ca/faculty-law/sites/g/files/bhrskd406/files/2023-09/Step-by-Step%20Guide%20-%20Student%20Proposed%20Internship%20%28SPI%29.pdf",
         },
       ],
       cn: [
         {
-          title: "官方规定 - 学费及其他费用 (2025版)",
+          title: "简历与求职信指南",
           description:
-            "法规文件，详细列出收费结构，包括学分费、学期费、学生服务费、专家课程费等项，适用于制定预算与合规参考。",
-          url: "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/doc_officiels/reglements/enseignement/regl20_1-reglement-relatif-droits-scolarite-autres-frais-exigibles-des-etudiants.pdf",
+            "专为本科生和法学院学生设计，详细说明如何构建清晰结构的简历和求职信，提供准备流程示例。",
+          url: "https://www.uottawa.ca/faculty-law/sites/g/files/bhrskd406/files/2022-03/resume-cover-letter-2021.pdf",
         },
         {
-          title: "学生与毕业生的求职",
+          title: "学生自荐实习 (SPI) 分步指南",
           description:
-            "由法学院职业发展中心制作，详述加拿大境内提升就业竞争力的策略，包含就业平台推荐、简历/求职信注意事项等。",
-          url: "https://droit.umontreal.ca/fileadmin/droit/documents/PDF/CDP_Aminata/La_recherche_d_emploi_pour_etudiants_et_finissantes.pdf",
-        },
-        {
-          title: "简历与信函范例",
-          description:
-            "由学生事务办公室发布，包含简历与求职信模板示例，涵盖研究助理、项目协调、科研职位等。",
-          url: "https://cdn.vieetudiante.umontreal.ca/aide-financiere-emploi/travail-etudiant-perspectives-carriere/consultation-conseils-carriere-offres-emploi/Dossier-candidature-CV-lettre-annexes.pdf",
+            "特别为法学院本科生设计的自拟实习指南，详细说明如何寻找、联系并落实实习机会。",
+          url: "https://www.uottawa.ca/faculty-law/sites/g/files/bhrskd406/files/2023-09/Step-by-Step%20Guide%20-%20Student%20Proposed%20Internship%20%28SPI%29.pdf",
         },
       ],
     },
@@ -534,31 +530,42 @@ const pdfViewData: SectionData[] = [
     links: {
       en: [
         {
-          title:
-            "Undergraduate Guide to Biomedical Sciences (Faculty of Medicine)",
+          title: "Faculty of Education – Practicum Guide 2024–2025",
           description:
-            "Details the goals, curriculum, faculty, and support for the biomedical sciences program.",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
+            "For teacher education programs, detailing practicum timelines, teaching objectives, and safety/ethics policies.",
+          url: "https://www.uottawa.ca/faculty-education/sites/g/files/bhrskd391/files/2024-07/UO_FEFE_Practicum-Guide_24-25.pdf",
         },
         {
-          title: "Guide to a Minor in Arts and Sciences",
+          title: "Faculty of Engineering – Engineering Program Guide (2023)",
           description:
-            "For the Arts and Sciences minor program, explaining course options, program flexibility, and credit requirements.",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "Undergraduate guide for engineering, with details on 11 Co-op programs, internship benefits, and average salaries.",
+          url: "https://www.uottawa.ca/faculty-engineering/sites/g/files/bhrskd396/files/2022-09/engineering-program-guide-2023.pdf",
+        },
+        {
+          title: "Faculty of Social Sciences – 2023 Program Guide",
+          description:
+            "Guide to the faculty's structure, program options, support resources, and internship/career paths.",
+          url: "https://www.uottawa.ca/faculty-social-sciences/sites/g/files/bhrskd371/files/2022-10/Guide2023_web.En_.%C6%92_v2.pdf",
         },
       ],
       cn: [
         {
-          title: "生物医学科学本科指南（医学院）",
+          title: "教育学院 – 实习指南 2024–2025",
           description:
-            "详尽介绍生物医学科学专业目标、课程结构、教学团队及入学支持。",
-          url: "https://admission.umontreal.ca/fileadmin/fichiers/documents/references_pdf/Admission_a_un_Prog-Quebec_v4.pdf?utm_source=chatgpt.com",
+            "专为教师教育项目设计，详细列出实习时间表、教学实务目标、安全/职业伦理政策与角色分工说明。",
+          url: "https://www.uottawa.ca/faculty-education/sites/g/files/bhrskd391/files/2024-07/UO_FEFE_Practicum-Guide_24-25.pdf",
         },
         {
-          title: "文理辅修指南",
+          title: "工程学院 – 工程项目指南 (2023)",
           description:
-            "针对文理学院辅修项目，说明辅修课程设置、专业灵活性与学分要求。",
-          url: "https://safire.umontreal.ca/public/FAS/safire/Documents/Guide_%C3%A9tudiant_MAS.pdf",
+            "工程学院本科导览手册，含 11 个专业 Co‑op 项目详情、实习收益、平均工资及国际实习路径等。",
+          url: "https://www.uottawa.ca/faculty-engineering/sites/g/files/bhrskd396/files/2022-09/engineering-program-guide-2023.pdf",
+        },
+        {
+          title: "社会科学学院 – 2023年项目指南",
+          description:
+            "社会科学学院项目指南，介绍学院结构、专业可选方向、支持资源与实习/职业发展路径。",
+          url: "https://www.uottawa.ca/faculty-social-sciences/sites/g/files/bhrskd371/files/2022-10/Guide2023_web.En_.%C6%92_v2.pdf",
         },
       ],
     },
@@ -580,17 +587,17 @@ const translations: Translations = {
       categoriesTitle: "Categories",
     },
     header: {
-      title: "Université de Montréal",
+      title: "University of Ottawa",
       helpText: "Need help? Book a meeting",
       bookButton: "Book Now",
     },
     universityView: {
       infoPanelTitle: "Overview:",
-      aboutTitle: "⚜️ About Université de Montréal",
+      aboutTitle: "🏛️ About University of Ottawa",
       aboutParagraph1:
-        "The Université de Montréal is a French-language public research university in Montreal, Quebec, Canada. It is one of the largest universities in the country and a member of the U15 Group of Canadian Research Universities.",
+        "The University of Ottawa is the largest bilingual (English-French) university in the world, located in the heart of Canada's capital. Founded in 1848, it is a major research university and a member of the U15 Group of Canadian Research Universities.",
       aboutParagraph2:
-        "Founded in 1878, UdeM is renowned for its comprehensive programs, particularly in health sciences, and its vibrant campus life in the multicultural city of Montreal. It attracts students from all over the world, contributing to a diverse and dynamic academic environment.",
+        "With a diverse student population from over 150 countries, uOttawa offers a wide range of programs across 10 faculties. Its location in downtown Ottawa provides unique opportunities for students to engage with national institutions, embassies, and NGOs.",
     },
     sectionTitles: {
       overview: "Overview",
@@ -623,17 +630,17 @@ const translations: Translations = {
       categoriesTitle: "分类",
     },
     header: {
-      title: "蒙特利尔大学",
+      title: "渥太华大学",
       helpText: "需要帮助？预约会议",
       bookButton: "立即预约",
     },
     universityView: {
       infoPanelTitle: "概览:",
-      aboutTitle: "⚜️ 关于蒙特利尔大学",
+      aboutTitle: "🏛️ 关于渥太华大学",
       aboutParagraph1:
-        "蒙特利尔大学是位于加拿大魁北克省蒙特利尔市的一所法语公立研究型大学。它是加拿大规模最大的大学之一，也是加拿大U15研究型大学联盟的成员。",
+        "渥太华大学是全球最大的英法双语大学，位于加拿大首都的中心地带。它成立于1848年，是一所主要的研究型大学，也是加拿大U15研究型大学联盟的成员。",
       aboutParagraph2:
-        "UdeM成立于1878年，以其全面的课程，尤其是在健康科学领域的卓越表现，以及在多元文化城市蒙特利尔充满活力的校园生活而闻名。它吸引了来自世界各地的学生，为多元化和充满活力的学术环境做出了贡献。",
+        "渥太华大学拥有来自150多个国家的多样化学生群体，通过10个学院提供广泛的课程。其位于渥太华市中心的位置为学生提供了与国家机构、大使馆和非政府组织互动的独特机会。",
     },
     sectionTitles: {
       overview: "学校概览",
@@ -673,7 +680,7 @@ const SectionHeaderWithArrow = ({
   </div>
 );
 
-const MontrealUniversityPage = () => {
+const OttawaUniversityPage = () => {
   const [showInfoPanel, setShowInfoPanel] = useState(true);
   const [activeView, setActiveView] = useState<
     "university" | "highschool" | "instructions" | "pdfView"
@@ -804,8 +811,8 @@ const MontrealUniversityPage = () => {
             <div className="sticky top-0 z-50 bg-white flex items-center justify-between px-4 md:px-12 py-4 border-b">
               <div className="flex items-center">
                 <img
-                  src="/logos/montreal.png"
-                  alt="Université de Montréal Logo"
+                  src="/logos/ottawa.png"
+                  alt="University of Ottawa Logo"
                   width={120}
                   height={120}
                   className="mr-4 object-contain"
@@ -844,18 +851,17 @@ const MontrealUniversityPage = () => {
                               onClick={() => setShowInfoPanel(!showInfoPanel)}
                             />
                             <p className="mb-4">
-                              📍 2900 Edouard Montpetit Blvd, Montreal, Quebec
-                              H3T 1J4, Canada
+                              📍 75 Laurier Ave. E, Ottawa, ON K1N 6N5, Canada
                               <br />
-                              📞 (514) 343-6111
+                              📞 (613) 562-5700
                               <br />
                               🌐{" "}
                               <a
-                                href="https://www.umontreal.ca/en/"
+                                href="https://www.uottawa.ca/en"
                                 target="_blank"
                                 className="text-[#247e9f] underline"
                               >
-                                www.umontreal.ca
+                                www.uottawa.ca
                               </a>
                             </p>
                           </>
@@ -936,4 +942,4 @@ const MontrealUniversityPage = () => {
   );
 };
 
-export default MontrealUniversityPage;
+export default OttawaUniversityPage;
