@@ -60,13 +60,23 @@ type UniversityViewTranslations = {
   aboutParagraph2: string;
 };
 
+type InstructionsTranslations = {
+  title: string;
+  intro: string;
+  tableHeaders: string[];
+  tableContent: string[][];
+  tipsTitle: string;
+  tips: string[];
+  outro: string;
+};
+
 type Translations = {
   [lang: string]: {
     sidebar: SidebarTranslations;
     header: HeaderTranslations;
     universityView: UniversityViewTranslations;
+    instructions: InstructionsTranslations;
     sectionTitles: { [key in SectionId]?: string };
-    instructions?: any;
   };
 };
 
@@ -399,22 +409,22 @@ const pdfViewData: SectionData[] = [
       ],
       cn: [
         {
-          title: "Undergraduate Viewbook 2025",
+          title: "本科招生手册 2025",
           description: "学术概况、校园支持、申请与奖学金综览（38 页彩册）。",
           url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "Undergraduate Admission Viewbook 2024",
+          title: "本科招生手册 2024",
           description: "与上一本不同年度版本，可双版本并列供对比。",
           url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "International Applicant Handbook 2024",
+          title: "国际申请人手册 2024",
           description: "国际生签证时程、语言要求、费用估算。",
           url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_2024_Intl_Applicant_Handbook.pdf?utm_source=chatgpt.com",
         },
         {
-          title: "International Undergraduate Viewbook 2025",
+          title: "国际本科招生手册 2025",
           description: "专为海外高中生设计的“Why Queen’s”彩册。",
           url: "https://www.queensu.ca/admission/sites/uarwww/files/uploaded_files/QU_International_Undergraduate_Viewbook.pdf?utm_source=chatgpt.com",
         },
@@ -728,9 +738,10 @@ const translations: Translations = {
       "co-op-careers": "实习与就业",
       "city-snapshot": "城市生活概况",
       "tours-media": "校园参观与媒体",
-      general_admissions_guides: "通用与招生指南",
-      faculty_specific_guides: "各学院手册",
-      campus_life_and_career_guides: "校园生活与职业指南",
+      general_admissions: "整体入学指南",
+      faculty_and_academics: "学院 / 专业新生手册",
+      housing_and_campus_life: "住宿与校园生活",
+      career_and_employment: "职业与就业",
     },
   },
 };
